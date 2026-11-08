@@ -1,8 +1,9 @@
 {
   "device": "a7lte",
   "product": "lineage_a7lte",
-  "source_commit": "c4e35c56619f76a2dfb769410ee37ca4343dbcf7",
-  "requested_at_utc": "2026-11-08 18:41:54 UTC",
+  "source_commit": "0190e542edcb43fce94b47f99c90a6305c3568a8",
+  "requested_at_utc": "2026-11-08 19:06:21 UTC",
   "requested_build": "brunch a7lte",
-  "allow_missing_dependencies": true
+  "allow_missing_dependencies": true,
+  "retry_reason": "Uploaded progress archive has no vendor; acquire genuine CSB1 SYSTEM, clean iosssd and skip Darwin/emulator prebuilts"
 }
