@@ -1,0 +1,95 @@
+{
+  "checked_utc": "2026-11-08",
+  "model": "SM-A700FD",
+  "region": "ZTO",
+  "ap": "A700FDXXS1CSB1",
+  "csc": "A700FDZTO1CSB1",
+  "cp": "A700FDXXU1CPF1",
+  "android": "6.0.1",
+  "sources": [
+    {
+      "name": "SamFW",
+      "type": "third-party firmware mirror index",
+      "url": "https://samfw.com/firmware/SM-A700FD/ZTO/A700FDXXS1CSB1",
+      "http_status": 200,
+      "package_size_reported": "1.8 GB",
+      "package_md5_reported": "9e0832c89ff36ad18f494ee5b8777a64",
+      "retrieval": "Direct download uses Cloudflare Turnstile; acquire URL using normal authorized site flow. Not bypassed."
+    },
+    {
+      "name": "SamFrew",
+      "type": "third-party firmware mirror index",
+      "url": "https://samfrew.com/download/Galaxy__A7__/kucw/ZTO/A700FDXXS1CSB1/A700FDZTO1CSB1",
+      "http_status": 200,
+      "file_index": "https://samfrew.com/files/zf493a399a400/SM-A700FD_1_20190309000427_inzulpmz4j.zip",
+      "package_name_reported": "SM-A700FD_1_20190309000427_inzulpmz4j.zip",
+      "package_bytes_reported": 1454404384,
+      "package_md5_reported": "150c9a4b318c20cb6fe043ce7cccfaf4",
+      "tar_name_reported": "A700FDXXS1CSB1_A700FDZTO1CSB1_A700FDXXU1CPF1_HOME.tar.md5",
+      "tar_bytes_reported": 2487040088,
+      "retrieval": "Standard ZIP flow has verification; individual TAR is marked unavailable for anonymous download. No direct binary downloaded."
+    },
+    {
+      "name": "Samsung FOTA metadata",
+      "type": "official Samsung OTA metadata service",
+      "url": "https://fota-cloud-dn.ospserver.net/firmware/ZTO/SM-A700FD/version.xml",
+      "http_status": 403,
+      "retrieval": "Akamai Access Denied from this cloud environment; does not establish whether exact firmware is retained."
+    },
+    {
+      "name": "Samsung FUS",
+      "type": "official Samsung firmware service",
+      "url": "https://neofussvr.sslcs.cdngc.net/NF_DownloadGenerateNonce.do",
+      "http_status": 200,
+      "retrieval": "Confirmed modern metadata S00 and authorized HTTPS Range206. Complete stock boot/recovery/PIT extracted from partial streamed AP/CSC TAR entries; full archive CRC not checked.",
+      "protocol_status": "S00",
+      "metadata_endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "auth_client": "MIT Bifrost/SamloaderKotlin ed73a034d3b27d84c68b2c21622a9de6618455de",
+      "package_name": "SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "package_bytes": 1935783696,
+      "encrypted_package_crc32": 1404645705,
+      "evidence": "logs/phase3-firmware/official-components-20261108/components-result.json",
+      "components": [
+        {
+          "path": "boot.img",
+          "archive": "AP_A700FDXXS1CSB1_CL9442021_QB22009706_REV03_user_low_ship_MULTI_CERT.tar.md5",
+          "bytes": 11895056,
+          "sha256": "01e1ff5ad1d1530cb922ae884f6796794e3dadae620341107fd5ebc993e27e12",
+          "zip_entry_crc_verified": false,
+          "identity_scope": "official FUS exact-version archive; partial streamed TAR, complete image bytes"
+        },
+        {
+          "path": "recovery.img",
+          "archive": "AP_A700FDXXS1CSB1_CL9442021_QB22009706_REV03_user_low_ship_MULTI_CERT.tar.md5",
+          "bytes": 13490448,
+          "sha256": "ff6668d81c6dd5b29762858609f68bca83afe2d8eef26ad0b75f83d19df5f82c",
+          "zip_entry_crc_verified": false,
+          "identity_scope": "official FUS exact-version archive; partial streamed TAR, complete image bytes"
+        },
+        {
+          "path": "A7LTE_EUR_OPEN.pit",
+          "archive": "CSC_ZTO_A700FDZTO1CSB1_CL9442021_QB22268351_REV03_user_low_ship_MULTI_CERT.tar.md5",
+          "bytes": 4376,
+          "sha256": "efab84121a4b5a9d45a9f860225336f1a8386a75240bb2d46ad11e0061a52b11",
+          "zip_entry_crc_verified": false,
+          "identity_scope": "official FUS exact-version archive; partial streamed TAR, complete image bytes"
+        }
+      ]
+    },
+    {
+      "name": "Samsung Open Source Release Center",
+      "type": "official GPL source distribution, not proprietary firmware",
+      "url": "https://opensource.samsung.com/uploadSearch?searchValue=SM-A700FD",
+      "http_status": 200,
+      "retrieval": "Model query returned zero results. Even available GPL packages do not supply the closed vendor HALs."
+    },
+    {
+      "name": "MSM8939-Samsung historical A7 vendor repository",
+      "type": "community-maintained Samsung device vendor files, not an official Samsung repository",
+      "url": "https://github.com/MSM8939-Samsung/android_vendor_samsung_a7lte",
+      "revision": "0f039d3c6c76b8fc9ece945f54a09056a09d9dcf",
+      "retrieval": "2016-era Marshmallow commits predate the 2019 CSB1 firmware. Useful for candidate list and ABI study only; not accepted as verified CSB1 blobs."
+    }
+  ],
+  "warning": "Mirror package hashes differ. Apply each hash only to its corresponding archive. Neither a web index nor MD5 alone authenticates Samsung image contents."
+}

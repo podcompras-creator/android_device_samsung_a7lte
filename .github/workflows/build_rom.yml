@@ -1,0 +1,193 @@
+name: LineageOS 16 a7lte
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [ci/build-trigger.json]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: a7lte-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 360
+    env:
+      ANDROID_TREE: ${{ github.workspace }}/lineage
+      PORT_ROOT: ${{ github.workspace }}/port
+      USE_CCACHE: '1'
+      CCACHE_DIR: ${{ github.workspace }}/ccache
+      CCACHE_MAXSIZE: 2G
+      ALLOW_MISSING_DEPENDENCIES: 'true'
+
+    steps:
+      - name: Checkout do projeto
+        uses: actions/checkout@v4
+        with:
+          path: port
+          fetch-depth: 1
+
+      - name: Liberar disco do runner descartavel
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$RUNNER_ENVIRONMENT" == github-hosted ]]
+          mkdir -p "$GITHUB_WORKSPACE/logs"
+          df -h /
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup \
+            /usr/local/lib/android /usr/local/share/boost \
+            /opt/hostedtoolcache/CodeQL
+          mapfile -t packages < <(dpkg-query -W -f='${binary:Package}\n' | \
+            awk '/^(dotnet-|aspnetcore-|ghc|haskell-|azure-cli)/')
+          if ((${#packages[@]})); then
+            sudo apt-get purge -y "${packages[@]}"
+          fi
+          sudo docker image prune --all --force || true
+          sudo apt-get clean
+          df -h /
+
+      - name: Instalar dependencias Android 9
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
+            bc bison build-essential ccache curl flex g++-multilib \
+            gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev \
+            lib32readline-dev lib32z1-dev liblz4-tool libncurses5 \
+            libncurses5-dev libtinfo5 libsdl1.2-dev libssl-dev libxml2 \
+            libxml2-utils lzop pngcrush rsync schedtool squashfs-tools \
+            xsltproc zip unzip zlib1g-dev python2 python3 openjdk-8-jdk \
+            libelf-dev m4 ca-certificates
+          sudo apt-get clean
+          ccache -M "$CCACHE_MAXSIZE"
+          mkdir -p "$ANDROID_TREE" "$GITHUB_WORKSPACE/logs"
+          git config --global user.name 'a7lte Actions builder'
+          git config --global user.email 'a7lte-builder@users.noreply.github.com'
+
+      - name: repo init e manifesto local
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$ANDROID_TREE"
+          python3 "$PORT_ROOT/tooling/repo" init \
+            -u https://github.com/LineageOS/android.git \
+            -b lineage-16.0 --depth=1 --no-clone-bundle --repo-rev=v2.54
+          python3 - <<'PYXML'
+          import os
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          tree = ET.parse(Path(os.environ['PORT_ROOT']) / 'local_manifests.xml')
+          for project in tree.getroot().findall('project'):
+              if project.get('name') == '__PORT_REPOSITORY__':
+                  project.set('name', os.environ['GITHUB_REPOSITORY'])
+                  project.set('revision', os.environ['GITHUB_SHA'])
+          output = Path('.repo/local_manifests/a7lte.xml')
+          output.parent.mkdir(parents=True, exist_ok=True)
+          ET.indent(tree)
+          tree.write(output, encoding='utf-8', xml_declaration=True)
+          PYXML
+          python3 "$PORT_ROOT/tooling/repo" manifest \
+            -o "$GITHUB_WORKSPACE/logs/manifest-expanded.xml"
+
+      - name: repo sync raso
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cat > "$RUNNER_TEMP/a7lte-askpass" <<'SH'
+          #!/usr/bin/env bash
+          case "$1" in
+            *Username*) echo x-access-token ;;
+            *) printf '%s\n' "$GH_TOKEN" ;;
+          esac
+          SH
+          chmod 700 "$RUNNER_TEMP/a7lte-askpass"
+          export GIT_ASKPASS="$RUNNER_TEMP/a7lte-askpass"
+          export GIT_TERMINAL_PROMPT=0
+          trap 'rm -f "$RUNNER_TEMP/a7lte-askpass"' EXIT
+          cd "$ANDROID_TREE"
+          python3 "$PORT_ROOT/tooling/repo" sync -c -j8 --force-sync \
+            --no-clone-bundle --no-tags 2>&1 | \
+            tee "$GITHUB_WORKSPACE/logs/repo-sync.log"
+          python3 "$PORT_ROOT/tooling/repo" manifest -r \
+            -o "$GITHUB_WORKSPACE/logs/manifest-resolved.xml"
+
+      - name: Integrar arvore nativa e blobs locais
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 "$PORT_ROOT/scripts/apply-overlay.py" --tree "$ANDROID_TREE"
+          [[ -d "$PORT_ROOT/dispositivo/blobs" ]] || {
+            echo 'Pasta dispositivo/blobs ausente no repositorio publicado.'
+            exit 1
+          }
+          mkdir -p "$ANDROID_TREE/vendor/samsung/a7lte"
+          rsync -a "$PORT_ROOT/dispositivo/blobs/" \
+            "$ANDROID_TREE/vendor/samsung/a7lte/"
+          # Os patches de isolamento diagnostico nao sao aplicados.
+          df -h / | tee "$GITHUB_WORKSPACE/logs/disk-before-build.txt"
+
+      - name: Compilar ROM e tentar bootimage em caso de erro
+        shell: bash
+        run: |
+          set -o pipefail
+          cd "$ANDROID_TREE"
+          export ALLOW_MISSING_DEPENDENCIES=true
+          source build/envsetup.sh
+          set +e
+          brunch a7lte 2>&1 | tee "$GITHUB_WORKSPACE/logs/brunch.log"
+          build_rc=${PIPESTATUS[0]}
+          echo "brunch_exit_code=$build_rc" | \
+            tee "$GITHUB_WORKSPACE/logs/build-result.txt"
+          if ((build_rc != 0)); then
+            export TARGET_PRODUCT=lineage_a7lte
+            export TARGET_BUILD_VARIANT=userdebug
+            mka bootimage 2>&1 | tee "$GITHUB_WORKSPACE/logs/bootimage.log"
+            boot_rc=${PIPESTATUS[0]}
+            echo "bootimage_exit_code=$boot_rc" | \
+              tee -a "$GITHUB_WORKSPACE/logs/build-result.txt"
+          fi
+          tail -n 50 "$GITHUB_WORKSPACE/logs/brunch.log" \
+            > "$GITHUB_WORKSPACE/logs/brunch-last-50.log"
+          exit "$build_rc"
+
+      - name: Gerar checksums dos artefatos realmente produzidos
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, os
+          from pathlib import Path
+          root = Path(os.environ['ANDROID_TREE']) / 'out/target/product/a7lte'
+          rows = []
+          for p in sorted(root.glob('*')):
+              if p.is_file() and (p.suffix == '.zip' or p.name == 'boot.img'):
+                  h = hashlib.sha256()
+                  with p.open('rb') as f:
+                      for b in iter(lambda: f.read(1024 * 1024), b''):
+                          h.update(b)
+                  rows.append(h.hexdigest() + '  ' + p.name)
+          output = Path(os.environ['GITHUB_WORKSPACE']) / 'logs'
+          output.mkdir(parents=True, exist_ok=True)
+          (output / 'SHA256SUMS').write_text('\n'.join(rows) + '\n')
+          PY
+
+      - name: Upload ZIP ou boot.img e logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a7lte-${{ github.run_number }}
+          path: |
+            ${{ github.workspace }}/lineage/out/target/product/a7lte/*.zip
+            ${{ github.workspace }}/lineage/out/target/product/a7lte/boot.img
+            ${{ github.workspace }}/logs/
+          if-no-files-found: warn
+          retention-days: 14
+          compression-level: 1

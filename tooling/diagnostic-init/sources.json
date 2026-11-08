@@ -1,0 +1,19 @@
+[
+  {
+    "repository": "LineageOS/android_frameworks_av",
+    "revision": "f8fdbc7e1ec01a384ff39834be89b158c763f22b",
+    "path": "media/audioserver/audioserver.rc",
+    "sha256": "704ec7c285dd7281dcfded9b281a82755efe028c98110cad140a54b004b9bfff"
+  },
+  {
+    "repository": "LineageOS/android_frameworks_av",
+    "revision": "f8fdbc7e1ec01a384ff39834be89b158c763f22b",
+    "path": "camera/cameraserver/cameraserver.rc",
+    "sha256": "d815c248c165636d01a4a690ab67529e5ceb4ddce57c59e51a911d1b50fec4cc"
+  },
+  {
+    "repository": "LineageOS/android_hardware_ril",
+    "revision": "cac775876fa1a79d5f84a3ee0280e71e67679d4d",
+    "path": "rild/*.rc"
+  }
+]

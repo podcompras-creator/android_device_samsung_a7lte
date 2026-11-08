@@ -1,0 +1,66 @@
+{
+  "architecture": "x86_64",
+  "host": "Debian GNU/Linux 13 (glibc 2.41)",
+  "scope": "Stock image conversion only; extracted Debian packages, not system installation",
+  "packages": [
+    {
+      "file": "android-libbase_10.0.0+r36-7_amd64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/a/android-platform-system-core/android-libbase_10.0.0+r36-7_amd64.deb",
+      "sha256": "91f861b468bdbc455dd5f156eca76883ce7270bd448fd18af06865b7df4ab370",
+      "bytes": 41472
+    },
+    {
+      "file": "android-liblog_10.0.0+r36-7_amd64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/a/android-platform-system-core/android-liblog_10.0.0+r36-7_amd64.deb",
+      "sha256": "211979e0c2e3152b0663476204cb9aaaf7c8705ddfa0ac3b658c614f4c2f85d2",
+      "bytes": 44380
+    },
+    {
+      "file": "android-libsparse_10.0.0+r36-7_amd64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/a/android-platform-system-core/android-libsparse_10.0.0+r36-7_amd64.deb",
+      "sha256": "7ad748d28f76bdc25afc79441d22fa47290da72aeb879c7980d51bbdff6e5dbf",
+      "bytes": 28288
+    },
+    {
+      "file": "android-sdk-libsparse-utils_10.0.0+r36-7_amd64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/a/android-platform-system-core/android-sdk-libsparse-utils_10.0.0+r36-7_amd64.deb",
+      "sha256": "71df744a803df557e2a99c4eb07cdf80cd97344682c4930b8226330091a26b53",
+      "bytes": 18876
+    },
+    {
+      "file": "e2fsprogs_1.47.2-3+b12_amd64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.47.2-3+b12_amd64.deb",
+      "sha256": "e9e638eb3e22b5f14d01ce0b28aa512a5a22fcc0e70d1c733444579b67ea236b",
+      "bytes": 591288
+    },
+    {
+      "file": "libext2fs2t64_1.47.2-3+b12_amd64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/e/e2fsprogs/libext2fs2t64_1.47.2-3+b12_amd64.deb",
+      "sha256": "9f5783fa48239e42260d41846fbc6c8b19c233251063524456096195660eaa09",
+      "bytes": 212664
+    },
+    {
+      "file": "libss2_1.47.2-3+b12_amd64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/e/e2fsprogs/libss2_1.47.2-3+b12_amd64.deb",
+      "sha256": "c5d38d71984c1bf774c1254238636e605fc4e0dc24d853f709921eb740327f4a",
+      "bytes": 29724
+    },
+    {
+      "file": "lz4_1.10.0-4_amd64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/l/lz4/lz4_1.10.0-4_amd64.deb",
+      "sha256": "46462967f67af3084e2f051b3c7d1e797ac4d7a829b2d9b6259e2fc1f33b5063",
+      "bytes": 51724
+    }
+  ],
+  "system_runtime_libraries": [
+    "glibc",
+    "libstdc++6",
+    "libgcc_s1",
+    "zlib1g",
+    "libcom-err2",
+    "libuuid1",
+    "libblkid1",
+    "liblz4-1",
+    "libxxhash0"
+  ]
+}

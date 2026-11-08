@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "model": "SM-A700FD",
+  "firmware": "A700FDXXS1CSB1",
+  "essential_files": [
+    "system/vendor/lib/hw/camera.msm8916.so",
+    "system/lib/hw/camera.vendor.msm8916.so",
+    "system/lib/hw/sensors.msm8916.so",
+    "system/lib/hw/sensors.vendor.msm8916.so",
+    "system/lib/libsec-ril.so",
+    "system/lib/libsec-ril-dsds.so",
+    "system/vendor/bin/hw/rild",
+    "system/lib/hw/gps.msm8916.so",
+    "system/vendor/lib/libQSEEComAPI.so",
+    "system/bin/qseecomd"
+  ],
+  "injected_shims": {
+    "system/lib/hw/camera.vendor.msm8916.so": [
+      "libcamera_shim.so"
+    ],
+    "system/lib/libsec-ril.so": [
+      "libshim_secril.so"
+    ],
+    "system/lib/libsec-ril-dsds.so": [
+      "libshim_secril.so"
+    ],
+    "system/vendor/lib/libizat_core.so": [
+      "libshim_gps.so"
+    ],
+    "system/lib/libmmjpeg_interface.so": [
+      "libboringssl-compat.so"
+    ],
+    "system/vendor/lib/libqomx_jpegenc.so": [
+      "libboringssl-compat.so"
+    ]
+  },
+  "source_owned_stock_sources_to_skip": {
+    "bin/rild": "Pie HIDL rild is source-built in system/vendor/bin/hw/rild",
+    "lib/hw/audio.primary.msm8916.so": "CAF audio.primary.msm8916 is source-built",
+    "lib/hw/gps.default.so": "GPS HAL gps.msm8916 is source-built",
+    "lib/libloc_eng.so": "Common source module libloc_eng owns this interface",
+    "lib/libloc_core.so": "Common source module libloc_core owns this interface",
+    "lib/libgps.utils.so": "Common source module libgps.utils owns this interface",
+    "lib/libril.so": "Pie HIDL libril is source-built; do not replace with historical stock libril",
+    "lib/libcommon_time_client.so": "AOSP common_time module owns this platform library"
+  },
+  "limitations": "Conservative static audit only: Android linker namespaces, dlopen services, HAL semantics and device behavior need separate validation. Verify essential paths against module install paths at each source revision.",
+  "essential_alternative_groups": [
+    [
+      "system/lib/hw/keystore.msm8916.so",
+      "system/vendor/lib/hw/keystore.msm8916.so"
+    ]
+  ]
+}

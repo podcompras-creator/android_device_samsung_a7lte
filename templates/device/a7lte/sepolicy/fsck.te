@@ -1,0 +1,3 @@
+# A7 fstab requests ext4 check on /efs. Match the fsck permissions for the
+# standard checked ext4 partitions without exposing EFS to generic domains.
+allow fsck efs_block_device:blk_file rw_file_perms;

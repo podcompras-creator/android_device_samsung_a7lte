@@ -1,0 +1,8 @@
+# Diagnostic bring-up: primary services are disabled in their authoritative
+# frameworks/av and hardware/ril-caf .rc sources by diagnostic-services patches.
+# The secondary Qualcomm RIL service in init.qcom.rc remains disabled too.
+service dump_logcat /system/bin/logcat -b all -f /cache/boot_logcat.txt
+    class core
+    user root
+    group root system log
+    oneshot

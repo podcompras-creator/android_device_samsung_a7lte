@@ -1,0 +1,9 @@
+{
+  "format": 1,
+  "sources": [
+    {"path":"mkbootimg","repository":"https://github.com/LineageOS/android_system_core","revision":"976019d07ad1c007043b78450857f428a1440f06","upstream_path":"mkbootimg/mkbootimg","sha256":"d24c23efe4ff143eb9daf3f20857f4101d09c6dc367a2ab890e988ff9183f6d6"},
+    {"path":"include/bootimg/bootimg.h","repository":"https://github.com/LineageOS/android_system_core","revision":"976019d07ad1c007043b78450857f428a1440f06","upstream_path":"mkbootimg/include/bootimg/bootimg.h","sha256":"ea871cb7086101c6b0215ec8465258e93adee49ac1522897b154df1ee955b146"},
+    {"path":"samsung-mkbootimg.mk","repository":"https://github.com/LineageOS/android_hardware_samsung","revision":"871d3f4777603ff6c33a021fc38c9b2265c54f83","upstream_path":"mkbootimg.mk","sha256":"ec5a2b6554327517eb7405c7f18d3fb621478c94939db0a8ed5036f308b3b234"},
+    {"path":"dtbtool.c","repository":"https://github.com/LineageOS/android_system_tools_dtbtool","revision":"a2b9e476be722a49ef7a056a0548072cb6babb75","upstream_path":"dtbtool.c","sha256":"e4f5c27664e063512fa4f43c581e084651d2df3d35bd9be5492b8b9b952c7927"}
+  ]
+}

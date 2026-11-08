@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/zacharee/SamloaderKotlin",
+  "revision": "ed73a034d3b27d84c68b2c21622a9de6618455de",
+  "source_files": [
+    "common/src/commonMain/kotlin/tk/zwander/common/tools/CryptUtils.kt",
+    "common/src/commonMain/kotlin/tk/zwander/common/tools/FusClient.kt",
+    "common/src/commonMain/kotlin/tk/zwander/common/tools/FusClientLegacy.kt",
+    "common/src/commonMain/kotlin/tk/zwander/common/tools/Request.kt",
+    "common/src/commonMain/composeResources/files/auth_param.dat"
+  ],
+  "license": "MIT",
+  "files": {
+    "auth_param.dat": "6f969176bbe3eca193b51509313ca45d32366cf1825a907f04fde5b64d3f35b4",
+    "LICENSE.txt": "778075b8a5fb9c5bc6ea65da17ad6adb0b5c69bbebf52a965d285487dafcd316"
+  }
+}

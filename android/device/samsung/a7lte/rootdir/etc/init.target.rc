@@ -1,0 +1,4 @@
+# SM-A700FD: common init imports this file.
+on init
+    mkdir /efs 0771 radio system
+    mkdir /persist 0771 system system

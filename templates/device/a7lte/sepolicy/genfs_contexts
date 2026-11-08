@@ -1,0 +1,4 @@
+# Samsung nodes implemented by this kernel; label real targets, not class symlinks.
+genfscon proc /simslot_count u:object_r:proc_a7lte_simslot:s0
+genfscon sysfs /devices/virtual/sensors u:object_r:sysfs_sensors:s0
+genfscon sysfs /devices/virtual/mdnie/mdnie u:object_r:sysfs_graphics:s0

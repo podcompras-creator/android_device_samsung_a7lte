@@ -1,0 +1,2 @@
+# Native Samsung /proc/simslot_count interface used by libinit_msm8916.
+type proc_a7lte_simslot, fs_type, proc_type;

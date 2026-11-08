@@ -1,0 +1,16 @@
+--- a/media/audioserver/audioserver.rc
++++ b/media/audioserver/audioserver.rc
+@@ -1,4 +1,5 @@
+ service audioserver /system/bin/audioserver
++    disabled
+     class core
+     user audioserver
+     # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
+--- a/camera/cameraserver/cameraserver.rc
++++ b/camera/cameraserver/cameraserver.rc
+@@ -1,4 +1,5 @@
+ service cameraserver /system/bin/cameraserver
++    disabled
+     class main
+     user cameraserver
+     group audio camera input drmrpc

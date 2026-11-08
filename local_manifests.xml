@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest>
+  <remote name="Galaxy-MSM8916" fetch="https://github.com" review="review.msm8916.com" revision="lineage-16.0" />
+  <project path="device/samsung/msm8916-common" name="Galaxy-MSM8916/android_device_samsung_msm8916-common" groups="device" remote="Galaxy-MSM8916" revision="7f8723dc42663bf09d085d9c19ecaa2b28617241" />
+  <project path="device/samsung/qcom-common" name="LineageOS/android_device_samsung_qcom-common" groups="device" remote="github" revision="c0a82ba720247bd8f3a7b6e9022815c273024461" />
+  <project path="hardware/samsung" name="LineageOS/android_hardware_samsung" revision="871d3f4777603ff6c33a021fc38c9b2265c54f83" />
+  <project path="kernel/samsung/msm8916" name="Galaxy-MSM8916/android_kernel_samsung_msm8916" remote="Galaxy-MSM8916" revision="fef3eaa9d80910ac968222331ba006adaa1d7051" />
+  <remove-project name="LineageOS/android_hardware_qcom_audio" path="hardware/qcom/audio-caf/msm8916" />
+  <project path="hardware/qcom/audio-caf/msm8916" name="Galaxy-MSM8916/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" revision="3f798fd1d81644193ba447973e4c7c662e160fef" />
+  <project path="external/sony/boringssl-compat" name="LineageOS/android_external_sony_boringssl-compat" remote="github" revision="a6bd2c1296d9a27db4406805b9e6cc9e06a83229" />
+  <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" revision="68e6176074cc4f46b98d71fa12394e2b92f3c144" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-7.2" name="Galaxy-MSM8916/android-prebuilts-gcc-linux-x86-arm-arm-eabi-7.2" remote="github" revision="d58a37f27e52a61455837243c19c916ef17c29c6" />
+  <extend-project name="LineageOS/android_device_qcom_sepolicy-legacy" path="device/qcom/sepolicy-legacy" revision="2f39c9ead32ba51feb98ae51d1b9ce18b130dd58" />
+  <extend-project name="LineageOS/android_system_sepolicy" path="system/sepolicy" revision="04e2cd1b1ffdd8f9f0f8452abf2572e3465a5cc6" />
+  <extend-project name="LineageOS/android_device_lineage_sepolicy" path="device/lineage/sepolicy" revision="78e62408cbdcdbed151571ee285e79727c8e15d7" />
+  <extend-project name="LineageOS/android_frameworks_av" path="frameworks/av" revision="f8fdbc7e1ec01a384ff39834be89b158c763f22b" />
+  <extend-project name="LineageOS/android_hardware_ril" path="hardware/ril" revision="cac775876fa1a79d5f84a3ee0280e71e67679d4d" />
+  <remote name="a7lte-port" fetch="https://github.com" />
+  <!--Rendered to the actual published repository and commit by ci/render-manifest.py. The repo contains android/device/samsung/a7lte; apply-overlay.py installs it.-->
+  <project path=".a7lte-port" name="__PORT_REPOSITORY__" remote="a7lte-port" revision="__PORT_REVISION__" clone-depth="1" />
+</manifest>

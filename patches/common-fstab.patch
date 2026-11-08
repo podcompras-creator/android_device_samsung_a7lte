@@ -1,0 +1,13 @@
+diff --git a/sources/common/rootdir/Android.mk b/android/device/samsung/msm8916-common/rootdir/Android.mk
+index f450411..cf4b458 100644
+--- a/sources/common/rootdir/Android.mk
++++ b/android/device/samsung/msm8916-common/rootdir/Android.mk
+@@ -6,7 +6,7 @@ include $(CLEAR_VARS)
+ LOCAL_MODULE       := fstab.qcom
+ LOCAL_MODULE_TAGS  := optional eng
+ LOCAL_MODULE_CLASS := ETC
+-LOCAL_SRC_FILES    := etc/$(LOCAL_MODULE)
++LOCAL_SRC_FILES    := ../../a7lte/rootdir/etc/fstab.qcom
+ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+ include $(BUILD_PREBUILT)
+ 

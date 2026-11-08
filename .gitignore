@@ -1,0 +1,15 @@
+/sources/*/
+/sources/dtbtool.c
+/out/
+/host/
+/host-packages/
+/stock-extracted/
+/scripts/__pycache__/
+/artifacts/*.tar.gz
+/verification/
+/tooling/git-repo/
+/tests/__pycache__/
+/tooling/__pycache__/
+
+__pycache__/
+*.pyc

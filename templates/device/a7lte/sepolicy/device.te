@@ -1,0 +1,3 @@
+# Samsung A7 EFS partition. Distinct from Qualcomm modemst1/modemst2.
+# Partition name/path comes from the A7 device fstab; no numeric partition assumed.
+type efs_block_device, dev_type;

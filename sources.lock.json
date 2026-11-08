@@ -1,0 +1,57 @@
+[
+  {
+    "path": "sources/a7lte",
+    "remote": "https://github.com/MSM8939-Samsung/android_device_samsung_a7lte",
+    "revision": "9eb09347442d570683e7a8eaf1a88c68ef8f513c"
+  },
+  {
+    "path": "sources/common",
+    "remote": "https://github.com/Galaxy-MSM8916/android_device_samsung_msm8916-common",
+    "revision": "7f8723dc42663bf09d085d9c19ecaa2b28617241"
+  },
+  {
+    "path": "sources/kernel",
+    "remote": "https://github.com/Galaxy-MSM8916/android_kernel_samsung_msm8916",
+    "revision": "fef3eaa9d80910ac968222331ba006adaa1d7051"
+  },
+  {
+    "path": "sources/kernel-a7-original",
+    "remote": "https://github.com/MSM8939-Samsung/android_kernel_samsung_a7lte",
+    "revision": "59bf78ae21559924511bcd77b44ba286a3af08ce"
+  },
+  {
+    "path": "sources/toolchain",
+    "remote": "https://github.com/Galaxy-MSM8916/android-prebuilts-gcc-linux-x86-arm-arm-eabi-7.2",
+    "revision": "d58a37f27e52a61455837243c19c916ef17c29c6"
+  },
+  {
+    "path": "sources/a7lte-reference",
+    "remote": "https://github.com/heico460/android_device_samsung_a7lte",
+    "revision": "c06ce38a92795f3722ddea8281f748302d499b01"
+  },
+  {
+    "path": "sources/sepolicy-legacy",
+    "remote": "https://github.com/LineageOS/android_device_qcom_sepolicy-legacy",
+    "revision": "2f39c9ead32ba51feb98ae51d1b9ce18b130dd58"
+  },
+  {
+    "path": "sources/platform-sepolicy",
+    "remote": "https://github.com/LineageOS/android_system_sepolicy",
+    "revision": "04e2cd1b1ffdd8f9f0f8452abf2572e3465a5cc6"
+  },
+  {
+    "path": "sources/lineage-sepolicy",
+    "remote": "https://github.com/LineageOS/android_device_lineage_sepolicy",
+    "revision": "78e62408cbdcdbed151571ee285e79727c8e15d7"
+  },
+  {
+    "path": "sources/frameworks-av",
+    "remote": "https://github.com/LineageOS/android_frameworks_av",
+    "revision": "f8fdbc7e1ec01a384ff39834be89b158c763f22b"
+  },
+  {
+    "path": "sources/ril",
+    "remote": "https://github.com/LineageOS/android_hardware_ril",
+    "revision": "cac775876fa1a79d5f84a3ee0280e71e67679d4d"
+  }
+]

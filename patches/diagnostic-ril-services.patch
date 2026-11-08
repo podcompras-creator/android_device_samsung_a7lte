@@ -1,0 +1,16 @@
+--- a/rild/rild.rc
++++ b/rild/rild.rc
+@@ -1,4 +1,5 @@
+ service vendor.ril-daemon /vendor/bin/hw/rild
++    disabled
+     class main
+     user radio
+     group radio cache inet misc audio log readproc wakelock
+--- a/rild/rild.legacy.rc
++++ b/rild/rild.legacy.rc
+@@ -1,4 +1,5 @@
+ service ril-daemon /vendor/bin/hw/rild
++    disabled
+     class main
+     user radio
+     group radio cache inet misc audio log readproc wakelock

@@ -1,0 +1,2 @@
+# vendor_load_properties reads the native Samsung SIM-count proc node.
+allow init proc_a7lte_simslot:file r_file_perms;

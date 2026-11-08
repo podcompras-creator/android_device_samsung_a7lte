@@ -1,0 +1,377 @@
+diff --git a/common/diag.te b/common/diag.te
+index ecd792f..2149a8f 100644
+--- a/common/diag.te
++++ b/common/diag.te
+@@ -23,7 +23,7 @@ userdebug_or_eng(`
+   }:dir create_dir_perms;
+ 
+   allow diag port:tcp_socket name_connect;
+-  allow diag self:capability { setuid net_raw sys_admin setgid dac_override };
++  allow diag self:capability { setuid net_raw sys_admin setgid  };
+   allow diag self:capability2 syslog;
+   allow diag self:tcp_socket { create connect setopt};
+   wakelock_use(diag)
+diff --git a/common/domain.te b/common/domain.te
+index 08fc7cb..240a8c3 100644
+--- a/common/domain.te
++++ b/common/domain.te
+@@ -1,11 +1,11 @@
+-r_dir_file(domain, sysfs_socinfo);
+-r_dir_file(domain, sysfs_esoc);
+-r_dir_file(domain, sysfs_ssr);
++r_dir_file({ domain -isolated_app }, sysfs_socinfo);
++r_dir_file({ domain -isolated_app }, sysfs_esoc);
++r_dir_file({ domain -isolated_app }, sysfs_ssr);
+ 
+ dontaudit domain kernel:system module_request;
+ 
+ # Allow all domains read access to sysfs_thermal
+-r_dir_file(domain, sysfs_thermal);
++r_dir_file({ domain -isolated_app }, sysfs_thermal);
+ 
+ # Allow domain to read /vendor -> /system/vendor
+ allow domain system_file:lnk_file getattr;
+@@ -21,7 +21,7 @@ allow domain hal_graphics_composer:fd use;
+ ')
+ dontaudit domain persist_dpm_prop:file r_file_perms;
+ 
+-allow domain sysfs_kgsl_gpuclk:file r_file_perms;
++allow { domain -isolated_app } sysfs_kgsl_gpuclk:file r_file_perms;
+ allow domain  sysfs_kgsl_gpuclk:lnk_file r_file_perms;
+ allow domain qti_debugfs:dir search;
+ allow domain kgsl_debugfs:dir search;
+diff --git a/common/file.te b/common/file.te
+index ce30801..4a8f96b 100644
+--- a/common/file.te
++++ b/common/file.te
+@@ -143,9 +143,9 @@ type location_app_data_file, file_type, data_file_type;
+ #File types required by mdm-helper
+ type sysfs_esoc, sysfs_type, fs_type;
+ type sysfs_ssr,  sysfs_type, fs_type;
+-type sysfs_ssr_toggle,  sysfs_type, file_type;
++type sysfs_ssr_toggle, fs_type, sysfs_type;
+ type sysfs_hsic, sysfs_type, fs_type;
+-type sysfs_hsic_host_rdy, sysfs_type, file_type;
++type sysfs_hsic_host_rdy, fs_type, sysfs_type;
+ 
+ # Files accessed by qcom-system-daemon
+ type sysfs_socinfo, fs_type, sysfs_type;
+@@ -186,7 +186,7 @@ type mmi_socket, file_type;
+ # hbtp config file
+ type hbtp_cfg_file, file_type;
+ type hbtp_log_file, file_type, data_file_type;
+-type hbtp_kernel_sysfs, file_type, sysfs_type;
++type hbtp_kernel_sysfs, fs_type, sysfs_type;
+ 
+ #Define the files written during the operation of usf
+ type usf_data_file, file_type, data_file_type;
+diff --git a/common/hal_iop_default.te b/common/hal_iop_default.te
+index 4176a82..7928c34 100644
+--- a/common/hal_iop_default.te
++++ b/common/hal_iop_default.te
+@@ -61,7 +61,4 @@ allow hal_iop_default dalvikcache_data_file:file r_file_perms ;
+ allow hal_iop_default system_data_file:dir r_dir_perms;
+ allow hal_iop_default system_data_file:file r_file_perms ;
+ 
+-allow hal_iop_default self:capability {
+-      dac_override  # for database operations
+-      dac_read_search # For database operations
+-};
++# Removed empty DAC-bypass capability grant.
+diff --git a/common/hal_perf_default.te b/common/hal_perf_default.te
+index 1a2234c..22fface 100644
+--- a/common/hal_perf_default.te
++++ b/common/hal_perf_default.te
+@@ -39,9 +39,9 @@ binder_call(hal_perf_client, hal_perf_server)
+ add_hwservice(hal_perf_server, hal_perf_hwservice)
+ allow hal_perf_client hal_perf_hwservice:hwservice_manager find;
+ 
+-allow hal_perf cgroup:file r_file_perms;
++allow hal_perf_default cgroup:file r_file_perms;
+ allow hal_perf_default proc:file rw_file_perms;
+-allow hal_perf device_latency:chr_file rw_file_perms;
++allow hal_perf_default device_latency:chr_file rw_file_perms;
+ allow hal_perf_default mpctl_data_file:dir rw_dir_perms;
+ allow hal_perf_default mpctl_data_file:file create_file_perms;
+ allow hal_perf_default lm_data_file:dir rw_dir_perms;
+@@ -52,20 +52,21 @@ allow hal_perf_default sysfs_lib:file w_file_perms;
+ set_prop(hal_perf_default, freq_prop)
+ 
+ #Access to /proc/meminfo
+-allow hal_perf proc_meminfo:file r_file_perms;
++allow hal_perf_default proc_meminfo:file r_file_perms;
+ 
+ #Access to /proc/pid of other apps
+-r_dir_file(hal_perf, appdomain);
++# Server-only proc access; hal_perf also contains non-Treble application clients.
++r_dir_file(hal_perf_default, appdomain);
+ dontaudit hal_perf domain:dir r_dir_perms;
+-allow hal_perf appdomain:process sigkill;
+-allow hal_perf_default self:capability {dac_override sys_resource kill};
++allow hal_perf_default appdomain:process sigkill;
++allow hal_perf_default self:capability { sys_resource kill};
+ 
+ #Acess to kgsl memory /sys/class/kgsl/kgsl/proc/<pid>/kernel &
+ #Acess to ion  memory /sys/class/kgsl/kgsl/proc/<pid>/ion
+-allow hal_perf sysfs_kgsl_proc:dir r_dir_perms;
+-allow hal_perf sysfs_kgsl_proc:file r_file_perms;
++allow hal_perf_default sysfs_kgsl_proc:dir r_dir_perms;
++allow hal_perf_default sysfs_kgsl_proc:file r_file_perms;
+ 
+-allow hal_perf {
++allow hal_perf_default {
+     sysfs_devices_system_cpu
+     sysfs_mpdecision
+     cpuctl_device
+@@ -83,7 +84,7 @@ allow hal_perf {
+     sysfs_process_reclaim
+ }:dir r_dir_perms;
+ 
+-allow hal_perf {
++allow hal_perf_default {
+     sysfs_devices_system_cpu
+     sysfs_mpdecision
+     cpuctl_device
+@@ -100,7 +101,7 @@ allow hal_perf {
+     sysfs_process_reclaim
+ }:file rw_file_perms;
+ 
+-allow hal_perf {
++allow hal_perf_default {
+     sysfs_devfreq
+     sysfs_mmc_host
+     sysfs_scsi_host
+diff --git a/common/init.te b/common/init.te
+index 7d334c0..a414eb3 100644
+--- a/common/init.te
++++ b/common/init.te
+@@ -58,4 +58,4 @@ allow init {
+ allow init rawdump_block_device:blk_file setattr;
+ 
+ #cpu.rt_period_us and _runtime_us need this
+-allow init cgroup:file create;
++# cgroup control files already exist; creating files is forbidden.
+diff --git a/common/init_shell.te b/common/init_shell.te
+index 45d0627..efa6f82 100644
+--- a/common/init_shell.te
++++ b/common/init_shell.te
+@@ -50,8 +50,8 @@ allow qti_init_shell self:capability {
+     chown
+     fowner
+     fsetid
+-    dac_override
+-    dac_read_search
++
++
+     sys_admin
+ };
+ 
+@@ -259,7 +259,7 @@ set_prop(qti_init_shell, mmi_prop);
+ allow qti_init_shell proc_meminfo:file r_file_perms;
+ 
+ allow qti_init_shell sysfs_msm_power:file rw_file_perms;
+-allow qti_init_shell  sysfs_devices_system_cpu:dir w_file_perms;
++allow qti_init_shell sysfs_devices_system_cpu:dir r_dir_perms;
+ allow qti_init_shell  sysfs_devices_system_cpu:file rw_file_perms;
+ 
+ allow qti_init_shell sysfs_usb_mtp_device:dir r_dir_perms;
+@@ -267,4 +267,4 @@ allow qti_init_shell sysfs_usb_mtp_device:file rw_file_perms;
+ 
+ # For IO Cgroups
+ allow qti_init_shell cgroup:dir { mounton create_dir_perms };
+-allow qti_init_shell cgroup:file { create_file_perms };
++allow qti_init_shell cgroup:file rw_file_perms;
+diff --git a/common/mmi.te b/common/mmi.te
+index 9cc2021..a9d9bc9 100644
+--- a/common/mmi.te
++++ b/common/mmi.te
+@@ -9,7 +9,7 @@ init_daemon_domain(mmi)
+ allow mmi self:socket create_socket_perms_no_ioctl;
+ allow mmi self:{ netlink_socket netlink_generic_socket } create_socket_perms_no_ioctl;
+ allow mmi self:udp_socket create_socket_perms_no_ioctl;
+-allow mmi self:capability { sys_nice dac_override setuid setgid fowner chown fsetid kill net_admin sys_module net_raw};
++allow mmi self:capability { sys_nice  setuid setgid fowner chown fsetid kill net_admin sys_module net_raw};
+ allow mmi self:capability2 wake_alarm;
+ 
+ #For various devices
+diff --git a/common/mpdecision.te b/common/mpdecision.te
+index 26ec07e..f3b8efa 100644
+--- a/common/mpdecision.te
++++ b/common/mpdecision.te
+@@ -27,7 +27,7 @@ allow mpdecision sysfs_thermal:file write;
+ 
+ #policies for mpctl
+ #mpctl socket
+-allow mpdecision self:capability { net_admin chown dac_override fsetid sys_nice };
++allow mpdecision self:capability { net_admin chown  fsetid sys_nice };
+ allow mpdecision mpctl_socket:dir rw_dir_perms;
+ allow mpdecision mpctl_socket:sock_file create_file_perms;
+ 
+diff --git a/common/msm_irqbalanced.te b/common/msm_irqbalanced.te
+index 4fed683..660abda 100644
+--- a/common/msm_irqbalanced.te
++++ b/common/msm_irqbalanced.te
+@@ -5,7 +5,7 @@ init_daemon_domain(msm_irqbalanced)
+ 
+ allow msm_irqbalanced cgroup:dir { create add_name };
+ allow msm_irqbalanced { proc sysfs_devices_system_cpu }:file w_file_perms;
+-allow msm_irqbalanced self:capability { setuid setgid dac_override };
++allow msm_irqbalanced self:capability { setuid setgid  };
+ r_dir_file(msm_irqbalanced, sysfs_rqstats);
+ 
+ # access smp_affinity
+diff --git a/common/port-bridge.te b/common/port-bridge.te
+index 5273dcc..721fc22 100644
+--- a/common/port-bridge.te
++++ b/common/port-bridge.te
+@@ -12,7 +12,7 @@ userdebug_or_eng(`
+ allow port-bridge port-bridge:netlink_kobject_uevent_socket { create bind read };
+ 
+ # Allow process capabilities
+-allow port-bridge port-bridge:capability dac_override;
++# Rely on explicit init/ueventd DAC permissions; no bypass capability.
+ 
+ allow port-bridge {
+     # Allow operations on mhi transport
+diff --git a/common/qcomsysd.te b/common/qcomsysd.te
+index 6439106..829f5fb 100644
+--- a/common/qcomsysd.te
++++ b/common/qcomsysd.te
+@@ -18,7 +18,7 @@ allow qcomsysd {
+ r_dir_file(qcomsysd, sysfs_socinfo)
+ allow qcomsysd sysfs_socinfo:file w_file_perms;
+ 
+-allow qcomsysd self:capability { dac_override sys_boot };
++allow qcomsysd self:capability {  sys_boot };
+ use_per_mgr(qcomsysd);
+ #allow qcomsysd access boot mode switch
+ set_prop(qcomsysd, boot_mode_prop)
+diff --git a/common/qlogd.te b/common/qlogd.te
+index 157ab48..0850d05 100644
+--- a/common/qlogd.te
++++ b/common/qlogd.te
+@@ -12,8 +12,8 @@ allow qlogd smem_log_device:chr_file rw_file_perms;
+ allow qlogd self:capability {
+     setuid
+     setgid
+-    dac_override
+-    dac_read_search
++
++
+     sys_admin
+     net_raw
+     net_admin
+diff --git a/common/qmuxd.te b/common/qmuxd.te
+index 0913075..9f52f65 100644
+--- a/common/qmuxd.te
++++ b/common/qmuxd.te
+@@ -37,7 +37,7 @@ allow qmuxd {
+     sysfs_hsic_modem_wait
+ }:file w_file_perms;
+ 
+-allow qmuxd self:capability { setuid setgid setpcap dac_override };
++allow qmuxd self:capability { setuid setgid setpcap  };
+ 
+ #Allow qmuxd to have the CAP_BLOCK_SUSPEND capability
+ wakelock_use(qmuxd)
+diff --git a/common/rfs_access.te b/common/rfs_access.te
+index 46b224d..ae0dbd2 100644
+--- a/common/rfs_access.te
++++ b/common/rfs_access.te
+@@ -64,11 +64,11 @@ allow rfs_access self:capability {
+ # The below permissions are required to recursively update the folder ownership
+ # to the new values in the OEM range.
+ 
+-allow rfs_access self:capability { dac_read_search chown dac_override };
++allow rfs_access self:capability {  chown  };
+ 
+ #For access to the kmsg device
+ allow rfs_access kmsg_device:chr_file w_file_perms;
+ 
+ #Prevent other domains from accessing RFS data files.
+-neverallow { domain -rfs_access -kernel -recovery -init userdebug_or_eng(`-su') -qti_init_shell } rfs_file:dir create_dir_perms;
+-neverallow { domain -rfs_access -kernel -recovery -init userdebug_or_eng(`-su') -qti_init_shell } rfs_file:file create_file_perms;
++neverallow { domain -rfs_access -kernel -recovery -init -vendor_init userdebug_or_eng(`-su') -qti_init_shell } rfs_file:dir create_dir_perms;
++neverallow { domain -rfs_access -kernel -recovery -init -vendor_init userdebug_or_eng(`-su') -qti_init_shell } rfs_file:file create_file_perms;
+diff --git a/common/sensors.te b/common/sensors.te
+index 7cce138..5485562 100644
+--- a/common/sensors.te
++++ b/common/sensors.te
+@@ -12,8 +12,8 @@ allow sensors self:capability {
+     # Chown /data/misc/sensors/debug/ to nobody
+     chown
+     # Access /data/misc/sensors/debug and /data/system/sensors/settings
+-    dac_override
+-    dac_read_search
++
++
+     net_bind_service
+ };
+ 
+diff --git a/common/thermal-engine.te b/common/thermal-engine.te
+index ed97a3f..9d68062 100644
+--- a/common/thermal-engine.te
++++ b/common/thermal-engine.te
+@@ -12,8 +12,8 @@ allow thermal-engine sysfs_devices_system_cpu:file rw_file_perms;
+ allow thermal-engine { thermal_device smem_log_device }:chr_file rw_file_perms;
+ 
+ allow thermal-engine self:capability {
+-    dac_read_search
+-    dac_override
++
++
+     fsetid
+     sys_boot
+ };
+diff --git a/common/touchfusion.te b/common/touchfusion.te
+index eb34e3e..2666818 100644
+--- a/common/touchfusion.te
++++ b/common/touchfusion.te
+@@ -45,5 +45,5 @@ allow touchfusion graphics_device:chr_file rw_file_perms;
+ allow touchfusion self:capability { setgid setuid };
+ 
+ userdebug_or_eng(`
+-allow touchfusion self:capability { sys_nice net_admin dac_override dac_read_search };
++allow touchfusion self:capability { sys_nice net_admin   };
+ ')
+diff --git a/common/usb_uicc_daemon.te b/common/usb_uicc_daemon.te
+index 1942ee2..791b0e5 100644
+--- a/common/usb_uicc_daemon.te
++++ b/common/usb_uicc_daemon.te
+@@ -8,5 +8,5 @@ init_daemon_domain(usb_uicc_daemon)
+ allow usb_uicc_daemon self:socket create_socket_perms_no_ioctl;
+ allow usb_uicc_daemon usb_uicc_device:chr_file rw_file_perms;
+ allow usb_uicc_daemon sysfs_usb_uicc:file rw_file_perms;
+-allow usb_uicc_daemon sysfs_usb_uicc:dir rw_dir_perms;
++allow usb_uicc_daemon sysfs_usb_uicc:dir r_dir_perms;
+ set_prop(usb_uicc_daemon, uicc_prop)
+diff --git a/private/dataservice_app.te b/private/dataservice_app.te
+index d4cfe3e..edfaa99 100644
+--- a/private/dataservice_app.te
++++ b/private/dataservice_app.te
+@@ -51,7 +51,7 @@ allow dataservice_app dpmd_data_file:file create_file_perms;
+ dontaudit dataservice_app domain:dir r_dir_perms;
+ 
+ #allow dpmservice to get running time for apps
+-r_dir_file(dataservice_app, appdomain)
++# No cross-app /proc access: Pie app isolation applies to this app too.
+ 
+ allow dataservice_app self:socket create_socket_perms;
+ allowxperm dataservice_app self:socket ioctl msm_sock_ipc_ioctls_system;
+diff --git a/private/qti-testscripts.te b/private/qti-testscripts.te
+index 529ab96..0835703 100644
+--- a/private/qti-testscripts.te
++++ b/private/qti-testscripts.te
+@@ -74,9 +74,9 @@ userdebug_or_eng(`
+   #under one common file.
+ 
+   # All domains can read proc enrty of qti-testscripts
+-  r_dir_file(domain, qti-testscripts)
+-  r_dir_file(qti-testscripts, domain)
+-  
++  # A7 does not grant manufacturing debug access across process boundaries.
++  # Cross-domain /proc reads violate Pie app isolation.
++
+ # allow adbd qti-testscripts:process dyntransition;
+   #allow { domain -mediaextractor -mediacodec } qti-testscripts:unix_stream_socket connectto;
+   allow domain qti-testscripts:fd use;

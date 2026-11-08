@@ -1,0 +1,103 @@
+--- a/include/init_msm8916.h
++++ b/include/init_msm8916.h
+@@ -44,6 +44,7 @@
+ #include "util.h"
+ 
+ void init_target_properties();
++void property_override(char const prop[], char const value[]);
+ 
+ void set_dsds_properties();
+ void set_gsm_properties();
+--- a/init/init_msm8916.cpp
++++ b/init/init_msm8916.cpp
+@@ -154,8 +154,8 @@
+ 
+ void set_target_properties(const char *device, const char *model)
+ {
+-	property_override_dual("ro.product.device", "ro.product.vendor.model", device);
+-	property_override_dual("ro.product.model", "ro.product.vendor.device", model);
++	property_override_dual("ro.product.device", "ro.product.vendor.device", device);
++	property_override_dual("ro.product.model", "ro.product.vendor.model", model);
+ 
+ 	android::init::property_set("ro.ril.telephony.mqanelements", "6");
+ 
+--- a/msm8916.mk
++++ b/msm8916.mk
+@@ -38,7 +38,6 @@
+     android.hardware.audio@2.0-impl \
+     android.hardware.audio@2.0-service \
+     android.hardware.audio.effect@2.0-impl \
+-    android.hardware.audio.effect@2.0-service \
+     android.hardware.broadcastradio@1.0-impl \
+     android.hardware.soundtrigger@2.0-impl \
+     audio.a2dp.default \
+@@ -158,7 +157,7 @@
+     libtinyxml \
+     libtinyxml2 \
+     memtrack.msm8916 \
+-    vendor.lineage.livedisplay@1.0-service-legacymm
++    vendor.lineage.livedisplay@2.0-service-legacymm
+ 
+ # DRM
+ PRODUCT_PACKAGES += \
+@@ -224,10 +223,11 @@
+     $(LOCAL_PATH)/manifest.xml
+ 
+ # Keylayout
+-PRODUCT_COPY_FILES += \
+-    $(LOCAL_PATH)/keylayout/sec_touchkey.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sec_touchkey.kl \
++MSM8916_KEYLAYOUT_PATH := $(if $(TARGET_DEVICE_KEYLAYOUT_PATH),$(TARGET_DEVICE_KEYLAYOUT_PATH),$(LOCAL_PATH)/keylayout)
++PRODUCT_COPY_FILES += \
++    $(MSM8916_KEYLAYOUT_PATH)/sec_touchkey.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sec_touchkey.kl \
+     $(LOCAL_PATH)/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sec_touchscreen.kl \
+-    $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl
++    $(MSM8916_KEYLAYOUT_PATH)/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl
+ 
+ # Keymaster
+ PRODUCT_PACKAGES += \
+@@ -329,7 +329,6 @@
+     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
+     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
+     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
+     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
+     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml \
+@@ -452,8 +451,11 @@
+     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+     $(LOCAL_PATH)/configs/wifi/WCNSS_cfg.dat:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+-    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
++    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
++ifneq ($(TARGET_HAS_CUSTOM_WLAN_NV),true)
++PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
++endif
+ 
+ # WiDi
+ PRODUCT_PACKAGES += \
+--- a/rootdir/Android.mk
++++ b/rootdir/Android.mk
+@@ -6,7 +6,11 @@
+ LOCAL_MODULE       := fstab.qcom
+ LOCAL_MODULE_TAGS  := optional eng
+ LOCAL_MODULE_CLASS := ETC
++ifneq ($(TARGET_DEVICE_FSTAB),)
++LOCAL_SRC_FILES    := ../../../../$(TARGET_DEVICE_FSTAB)
++else
+ LOCAL_SRC_FILES    := etc/$(LOCAL_MODULE)
++endif
+ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+ include $(BUILD_PREBUILT)
+ 
+@@ -135,6 +139,10 @@
+ LOCAL_MODULE       := twrp.fstab
+ LOCAL_MODULE_TAGS  := optional eng
+ LOCAL_MODULE_CLASS := ETC
++ifneq ($(TARGET_DEVICE_TWRP_FSTAB),)
++LOCAL_SRC_FILES    := ../../../../$(TARGET_DEVICE_TWRP_FSTAB)
++else
+ LOCAL_SRC_FILES    := ../recovery/$(LOCAL_MODULE)
++endif
+ LOCAL_MODULE_PATH  := $(TARGET_RECOVERY_ROOT_OUT)/etc
+ include $(BUILD_PREBUILT)
