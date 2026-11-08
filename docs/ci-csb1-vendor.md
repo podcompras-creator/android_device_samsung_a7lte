@@ -93,3 +93,9 @@ de caminhos e da aquisição: escape pelo diretório pai do vendor, contagens do
 inventário combinado, exigência de CRC do AP e preservação de relatório bem
 sucedido com hash exato do `build.prop`. Os quatro últimos estão registrados em
 `logs/ci-vendor-followup-tests.log`; os testes antigos do projeto não foram repetidos.
+
+O workflow salva imediatamente o vendor adquirido no cache privado do Actions,
+independentemente de sucesso posterior do Android. O cache é invalidado por
+alterações no extrator, gerador e contratos de fonte. Ao restaurar, makefiles,
+plano, inventário e cada blob selecionado são conferidos por SHA-256. Isso evita
+baixar o mesmo firmware após uma falha posterior; não verifica ABI nem hardware.

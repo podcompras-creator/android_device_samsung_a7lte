@@ -1,0 +1,31 @@
+Receiving AP payload boot.img: 11895056 bytes
+Receiving AP payload recovery.img: 13490448 bytes
+Receiving AP payload system.img.ext4: 2290376572 bytes
+AP streamed: 128 MiB uncompressed
+AP streamed: 256 MiB uncompressed
+AP streamed: 384 MiB uncompressed
+AP streamed: 512 MiB uncompressed
+AP streamed: 640 MiB uncompressed
+AP streamed: 768 MiB uncompressed
+AP streamed: 896 MiB uncompressed
+AP streamed: 1024 MiB uncompressed
+AP streamed: 1152 MiB uncompressed
+AP streamed: 1280 MiB uncompressed
+AP streamed: 1408 MiB uncompressed
+AP streamed: 1536 MiB uncompressed
+AP streamed: 1664 MiB uncompressed
+AP streamed: 1792 MiB uncompressed
+AP streamed: 1920 MiB uncompressed
+AP streamed: 2048 MiB uncompressed
+AP streamed: 2176 MiB uncompressed
+AP streamed: 2304 MiB uncompressed
+AP streamed: 2432 MiB uncompressed
+AP streamed: 2560 MiB uncompressed
+AP streamed: 2688 MiB uncompressed
+AP streamed: 2816 MiB uncompressed
+AP streamed: 2944 MiB uncompressed
+AP streamed: 3072 MiB uncompressed
+AP streamed: 3200 MiB uncompressed
+AP streamed: 3328 MiB uncompressed
+AP streamed: 3456 MiB uncompressed
+CSB1 acquisition failed: conflicting property: dalvik.vm.heapsize

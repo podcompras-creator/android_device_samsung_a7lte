@@ -197,7 +197,9 @@ def materialize_system(payload, stage, report, raw_limit=MAX_SYSTEM_BYTES):
     # No -w, mount, sudo or execution of firmware binaries.
     run_logged(['debugfs', '-R', 'rdump / ' + quoted, str(raw)], stage.parent / 'debugfs-rdump.log')
     extractor = module('csb1_blob_properties', 'scripts/extract-stock.py')
-    properties, digest = extractor.properties(extracted.resolve())
+    overrides = []
+    properties, digest = extractor.properties(extracted.resolve(), duplicate_report=overrides)
+    report['non_identity_property_overrides'] = overrides
     report['system_identity'] = {'model': properties['ro.product.model'],
                                   'manufacturer': properties['ro.product.manufacturer'],
                                   'pda': properties.get('ro.build.PDA'),

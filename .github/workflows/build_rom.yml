@@ -70,7 +70,15 @@ jobs:
           git config --global user.name 'a7lte Actions builder'
           git config --global user.email 'a7lte-builder@users.noreply.github.com'
 
+      - name: Restaurar vendor CSB1 ja adquirido
+        id: vendor_cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.ANDROID_TREE }}/vendor/samsung/a7lte
+          key: csb1-vendor-v1-${{ hashFiles('port/ci/prepare-csb1-vendor.py', 'port/scripts/extract-stock.py', 'port/scripts/generate-vendor.py', 'port/scripts/native-contracts.json') }}
+
       - name: Preparar vendor CSB1 real para o build
+        if: steps.vendor_cache.outputs.cache-hit != 'true'
         shell: bash
         timeout-minutes: 120
         run: |
@@ -98,6 +106,24 @@ jobs:
             rm -rf "$GITHUB_WORKSPACE/csb1-source/system" "$GITHUB_WORKSPACE/vendor-staging"
           fi
           df -h / | tee "$GITHUB_WORKSPACE/logs/disk-after-vendor.txt"
+
+      - name: Conferir integridade do vendor para cache
+        id: vendor_integrity
+        shell: bash
+        run: |
+          if [[ -f "$ANDROID_TREE/vendor/samsung/a7lte/vendor-audit.json" ]]; then
+            python3 "$PORT_ROOT/ci/verify-csb1-vendor-cache.py" --vendor "$ANDROID_TREE/vendor/samsung/a7lte"
+            echo 'eligible=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'eligible=false' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Preservar vendor adquirido mesmo se a compilacao posterior falhar
+        if: steps.vendor_cache.outputs.cache-hit != 'true' && steps.vendor_integrity.outputs.eligible == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ env.ANDROID_TREE }}/vendor/samsung/a7lte
+          key: ${{ steps.vendor_cache.outputs.cache-primary-key }}
 
       - name: repo init e manifesto local
         shell: bash

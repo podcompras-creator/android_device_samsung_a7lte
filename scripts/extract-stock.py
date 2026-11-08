@@ -36,7 +36,14 @@ def inside(path, root):
     return resolved
 
 
-def properties(root):
+IDENTITY_PROPERTIES = {
+    'ro.product.model', 'ro.product.manufacturer', 'ro.product.device',
+    'ro.build.PDA', 'ro.build.version.incremental', 'ro.build.fingerprint',
+    'ro.build.description', 'ro.csc.sales_code', 'ro.csc.country_code',
+}
+
+
+def properties(root, duplicate_report=None):
     prop = inside(root / 'build.prop', root)
     values = {}
     for line in prop.read_text(encoding='utf-8').splitlines():
@@ -46,7 +53,12 @@ def properties(root):
         key, value = line.split('=', 1)
         key, value = key.strip(), value.strip()
         if key in values and values[key] != value:
-            raise ValueError(f'conflicting property: {key}')
+            if key in IDENTITY_PROPERTIES:
+                raise ValueError(f'conflicting identity property: {key}')
+            # Android init's property-file parser permits later definitions to
+            # replace ordinary settings. Samsung stock build.prop uses this.
+            if duplicate_report is not None:
+                duplicate_report.append({'key': key, 'previous': values[key], 'selected': value})
         values[key] = value
     if values.get('ro.product.model') != MODEL:
         raise ValueError(f'ro.product.model must be {MODEL}')

@@ -1,0 +1,2187 @@
+{
+  "success": false,
+  "started_utc": "2026-11-08T19:08:22.143797+00:00",
+  "model": "SM-A700FD",
+  "region": "ZTO",
+  "network_limit_bytes": 3221225472,
+  "whole_encrypted_zip_crc_verified": false,
+  "scope": "Complete AP ZIP entry CRC + complete SYSTEM conversion; not whole firmware signature validation",
+  "initial_free_bytes": 116976099328,
+  "metadata": {
+    "fields": {
+      "CmdID": "1",
+      "BINARY_CRC": "1404645705",
+      "SN_TYPE": "",
+      "BINARY_SIZE": "1890413",
+      "BINARY_BYTE_SIZE": "1935783696",
+      "BINARY_NAME": "SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "BINARY_LOCAL_CODE": "ZTO",
+      "BINARY_BUYER_CODE": "XX",
+      "BINARY_MODEL_NAME": "SM-A700FD",
+      "DEVICE_MODEL_TYPE": "9",
+      "MODEL_PATH": "/neofus/9/",
+      "BINARY_MODEL_DISPLAYNAME": "GALAXY A7 (SM-A700FD)",
+      "BINARY_SW_VERSION": "A700FDXXS1CSB1/A700FDZTO1CSB1/A700FDXXU1CPF1/A700FDXXS1CSB1",
+      "BINARY_SW_DISPLAYVERSION": "A700FDXXS1CSB1/A700FDZTO1CSB1/A700FDXXU1CPF1/A700FDXXS1CSB1",
+      "BINARY_TYPE": "0",
+      "DEVICE_PLATFORM": "Android",
+      "DEVICE_BOOT_FILE": "BL_A700FDXXS1CSB1_CL9442021_QB22009706_REV03_user_low_ship_MULTI_CERT.tar.md5",
+      "DEVICE_PDA_CODE1_FILE": "AP_A700FDXXS1CSB1_CL9442021_QB22009706_REV03_user_low_ship_MULTI_CERT.tar.md5",
+      "DEVICE_CSC_CODE2_FILE": "",
+      "DEVICE_PHONE_FONT_FILE": "CP_A700FDXXU1CPF1_CL8261119_QB9814973_REV03_user_low_ship_MULTI_CERT.tar.md5",
+      "DEVICE_CONTENTS_DATA_FILE": "",
+      "DEVICE_LANGUAGE_FILE": "",
+      "DEVICE_BINARY_FOLDER": "",
+      "DEVICE_AMSS_FILE": "",
+      "DEVICE_RSRC1_FILE": "",
+      "DEVICE_RSRC2_FILE": "",
+      "DEVICE_CSC_FILE": "CSC_ZTO_A700FDZTO1CSB1_CL9442021_QB22268351_REV03_user_low_ship_MULTI_CERT.tar.md5",
+      "DEVICE_X_FS_FILE": "",
+      "DEVICE_APPS_FILE": "",
+      "DEVICE_SHPAPP_FILE": "",
+      "DEVICE_FOTA_FILE": "",
+      "DEVICE_PFS_FILE": "",
+      "DEVICE_PFS_SIZE": "",
+      "DEVICE_BSY_FILE": "",
+      "DEVICE_CDS_FILE": "",
+      "DEVICE_UIIMAGE_FILE": "",
+      "DEVICE_PSIFLASH_FILE": "",
+      "DEVICE_INI_FILE": "",
+      "DEVICE_VIA_BOOT_FILE": "",
+      "DEVICE_VIA_CODE_FILE": "",
+      "DEVICE_PIT_FILE": "",
+      "DEVICE_BOOT_ADDRESS": "",
+      "DEVICE_CODE1_ADDRESS": "",
+      "DEVICE_CODE2_ADDRESS": "",
+      "DEVICE_FONT_ADDRESS": "",
+      "DEVICE_DATA_ADDRESS": "",
+      "BNR_SUPPORT": "0",
+      "ANNOUNCE": "",
+      "ANNOUNCE_FLAG": "0",
+      "LOGIC_OPTION_HOME": "1",
+      "LOGIC_VALUE_HOME": "hywsty5j5w64g8l6",
+      "LOGIC_OPTION_FACTORY": "1",
+      "LOGIC_VALUE_FACTORY": "jzbgglwt24nd036f",
+      "SHARING_BINARY": "0",
+      "DEVICE_CSC_HOME_FILE": "",
+      "USER_DATA_BINARY": "0",
+      "DEVICE_USER_DATA_FILE": "",
+      "BINARY_REGION_CODE": ""
+    },
+    "results": {
+      "CmdRef": "2",
+      "Status": "S00",
+      "BINARY_SW_VERSION": "A700FDXXS1CSB1/A700FDZTO1CSB1/A700FDXXU1CPF1/A700FDXXS1CSB1"
+    }
+  },
+  "requested_version": "A700FDXXS1CSB1/A700FDZTO1CSB1/A700FDXXU1CPF1/A700FDXXS1CSB1",
+  "initialization": {
+    "fields": {},
+    "results": {
+      "CmdRef": "2",
+      "Status": "S00"
+    }
+  },
+  "range_chunk_bytes": 8388608,
+  "ap_archive": {
+    "bytes": 3674562751,
+    "sha256": "b168153f64b57de779e4227c595a208b042eaf278a9d371ff7e93c3404ca2b87",
+    "zip_entry_fully_consumed": true,
+    "zip_entry_crc_verified": true,
+    "tar_md5": {
+      "state": "matched",
+      "value": "16acea8260493261488b76c8335991c1",
+      "signature_verified": false
+    },
+    "zip_member": "AP_A700FDXXS1CSB1_CL9442021_QB22009706_REV03_user_low_ship_MULTI_CERT.tar.md5",
+    "expected_crc32": "2348e5ec",
+    "members": [
+      {
+        "name": "boot.img",
+        "bytes": 11895056
+      },
+      {
+        "name": "recovery.img",
+        "bytes": 13490448
+      },
+      {
+        "name": "system.img.ext4",
+        "bytes": 2290376572
+      },
+      {
+        "name": "persist.img.ext4",
+        "bytes": 4350076
+      },
+      {
+        "name": "userdata.img.ext4",
+        "bytes": 1354440584
+      }
+    ]
+  },
+  "selected_payloads": {
+    "boot.img": {
+      "path": "boot.img",
+      "bytes": 11895056,
+      "sha256": "01e1ff5ad1d1530cb922ae884f6796794e3dadae620341107fd5ebc993e27e12"
+    },
+    "recovery.img": {
+      "path": "recovery.img",
+      "bytes": 13490448,
+      "sha256": "ff6668d81c6dd5b29762858609f68bca83afe2d8eef26ad0b75f83d19df5f82c"
+    },
+    "system": {
+      "path": "system.img.ext4",
+      "bytes": 2290376572,
+      "sha256": "7b4b4164d0dfb966ba20f0d55cf7378c0e3a7ab06b3b3ebcb2ac8837a467dc98"
+    }
+  },
+  "sparse": {
+    "logical_bytes": 2631925760,
+    "block_size": 4096,
+    "total_blocks": 642560,
+    "total_chunks": 3400
+  },
+  "raw_system": {
+    "bytes": 2631925760,
+    "sha256": "cb509915c213120d9b30aff9e3c854614dcbe7a1f0c5e9afc5e5d04567453386"
+  },
+  "error": "conflicting property: dalvik.vm.heapsize",
+  "http_events": [
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "01-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "02-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "03-NF_SmartDownloadBinaryInitForMass.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "04-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "05-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "06-NF_SmartDownloadBinaryInitForMass.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "07-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "08-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "09-NF_SmartDownloadBinaryInitForMass.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "10-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "11-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "12-NF_SmartDownloadBinaryInitForMass.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "13-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "14-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "15-NF_SmartDownloadBinaryInitForMass.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "16-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "17-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "18-NF_SmartDownloadBinaryInitForMass.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "19-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "20-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "21-NF_SmartDownloadBinaryInitForMass.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "22-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "23-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "24-NF_SmartDownloadBinaryInitForMass.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "25-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "26-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "27-NF_SmartDownloadBinaryInitForMass.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "28-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "29-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "30-NF_SmartDownloadBinaryInitForMass.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadGenerateNonce.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "4d37663518b938309bf3d3ae6c4d42cd6172703d76fd67215b7c49443f929344",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "31-NF_SmartDownloadGenerateNonce.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInform.do",
+      "http_status": 200,
+      "body_bytes": 3909,
+      "sha256": "99786bfcdd0bb032dfdd1118b2902724308adaed556292d9942ea5817cd77950",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "32-NF_SmartDownloadBinaryInform.do.xml"
+    },
+    {
+      "endpoint": "https://neofussvr.sslcs.cdngc.net/NF_SmartDownloadBinaryInitForMass.do",
+      "http_status": 200,
+      "body_bytes": 228,
+      "sha256": "1b73b89917f9b81b11b901395b296e025402b3ba041aaf5c53bb5f82459df9cb",
+      "nonce_header_length": 16,
+      "nonce_seed_bytes": 16,
+      "response_file": "33-NF_SmartDownloadBinaryInitForMass.do.xml"
+    }
+  ],
+  "network_bytes": 1818343184,
+  "range_transfers": [
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1929379840-1935783695/1935783696",
+      "encrypted_bytes": 6403856,
+      "encrypted_sha256": "dd1f309231e38dec73417237e6707a552acf748ca475f11751bbae2434b25539",
+      "decrypted_sha256": "52b7d7ab1459241b69470aae314a6d1cb0c639318a4d88476a2d79c2c6d0ef22"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 0-8388607/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a0b005c8942ad20c47c753d963d3d0d6e3e4f09b5b27012ef67f10e31063ff30",
+      "decrypted_sha256": "24581df3f4244dbd491c5b4793642a6dd1224ea729d90a635b1488bc85e5e7a9"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 8388608-16777215/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "f42f86f1aca7a11e540e53b90034ffbe6ce36ae0903d256706842905d5081d9d",
+      "decrypted_sha256": "38ff5ebcf0a6ab37d28d380fb76495c3de851680e461f50cfc1789bf7ecf763d"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 16777216-25165823/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "e27903e299cfa8f5e7eb5760d0095b022494c0c7b6e8ca4c71a2d7fcd301d8d3",
+      "decrypted_sha256": "20815dc83fc5511a9a7d83d1dc0a6b13ca5fe72b8a48d65259f30a5febb40a13"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 25165824-33554431/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3c29ce1d8289f5dc09bc3e3555f8fec95936018424b0094a933e795a1e6cace2",
+      "decrypted_sha256": "1d49e4e956b3ce8da09839f9a1c5ea66e8ee51588076def5e8592d9bfba6b913"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 33554432-41943039/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "c0e66aca7f5398180ab28caf580d0b5d060e9111bbfc7bdf89438f36b2ad45a3",
+      "decrypted_sha256": "bd89d0b98edb9d93aa5f162252c0fde5db591020c42082f2aa5c0a96906d58da"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 41943040-50331647/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "6cbf81a97099f1de2bdf712428df71cd4a314b4c968c66969bd7b0a32e0c4557",
+      "decrypted_sha256": "61c10b786e0c6072b7183112e0dfa68ae3dc595a0a0c62740cd1e39410f4bfca"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 50331648-58720255/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "5d5e2c9363dfe2a0181713bc32fb9d4e77633ac32a5ef879472921985bf242bd",
+      "decrypted_sha256": "d11cc43fefeac0c6f8c38c84f0f1c03929c4645ea36cca257acbe64588e0e12c"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 58720256-67108863/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1a025f712a424c05ac74f01d73706406ede9adabcc64c6faab49104bc9908da0",
+      "decrypted_sha256": "d328e1eea5ffb5a4a521cfdd6258a0991f1b473a59f8705bdd34be6b267f6648"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 67108864-75497471/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "42c2fc3f23747695376958cb131b4d9328c141e6c17712f01bbc9f910c2c86ef",
+      "decrypted_sha256": "3fea5716e77e93433ece1b0cf616c3e7a8367827bdc465c66b10ccaec95ef554"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 75497472-83886079/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ed3cbad0413f0b4aef9b992d5198cb0677dd41049ef67553fdb84a4851b1d5d4",
+      "decrypted_sha256": "7785ac6ef25c9da6e61c643f48c93411788360da1149129d0212a4101b581147"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 83886080-92274687/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "4436df6a17abb858c76e025b3970ef078c3fb77129ee183d1c52e6ef30a383a7",
+      "decrypted_sha256": "bcd5cf5219b2146240045bb76e37ccbf90efc91ea7ae7ca1e8ce6d5e182dbe1c"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 92274688-100663295/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "cde814acbe86f913e2fef8812e3f755c3f2163e706f53be77b46022a94926cce",
+      "decrypted_sha256": "45da66cced2678720d45ff66048e52666fc82270236c7ffc18bf929f10c5431b"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 100663296-109051903/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3a310a40c2d2214b5caf704b6823478d531ba6727db2746c0880aa8566a5ff66",
+      "decrypted_sha256": "3f6643fdc5709ccf8f9582068f016de1feb35f2876ed08ae240fdd545ac74c9c"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 109051904-117440511/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "24ffda662f820333df25d37fd5c132da8f4614654ff3c0f721b35de0c84f5a1f",
+      "decrypted_sha256": "f90c34c3cd926a0c2b6d8ae2f33885bbcf664d3290f59854c3e10f2a6eb28ef9"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 117440512-125829119/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "95107413e522a2ec6bad7e1762aa84cdf35ffb19fdcc27b584bbe1c9dc6fe67c",
+      "decrypted_sha256": "de0e6423197b7cd107a2fb5309c86acc623fecb917edfb0db426399c094e3fae"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 125829120-134217727/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "174cb7cc7df569001ecf0fe80756fa1c5defa7efddae87dd9d7e6e57b1393130",
+      "decrypted_sha256": "05f9235c0d3ce3f438c1b1c43cdb3ffd0b4638d82b8ef7a5cc1bec8d6178d5e7"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 134217728-142606335/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "dd1ff9e7c1e487ebd5ce545f324fc0efd8cac7a949766cf847eeb00a5e561815",
+      "decrypted_sha256": "e947e4479d1ce12b5e7a2159bbe8066a9dac0fb3582a1b30991f243977c4db84"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 142606336-150994943/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "6e04bd37c7163ca43d6417e85793f7a45ec632e03cdb09f09afd79ae7ebf1a23",
+      "decrypted_sha256": "edbd72c01543edf2af17cc71a13ccd7fa23ff384dc49652a6d79b21a8fa59d8d"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 150994944-159383551/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "97a34e864160e2e346f87ae13356fc7cdf1a790cde33a87da60eab03e7bfb242",
+      "decrypted_sha256": "0fd2f340eaccea30ba639f92a13f08ebbbfba9ba79b93841a7d0a411d07c2bf4"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 159383552-167772159/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "4909ae1cea87e7922d86cf8dca8111c4aad8301d1adde96b25ce4bbcf307b0b1",
+      "decrypted_sha256": "b4f9621dfa05601936f3558504ef1c3706526e7c233c0aca52ec375967cca2ef"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 167772160-176160767/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "197914224244f3e5c1653b39baca9ecbf120f8c74515c5fb86f8ee78697dfdd9",
+      "decrypted_sha256": "95b63c995b34146679879331c8885335ce4565dd32f26ff7b5f61c590978ec91"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 176160768-184549375/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "7749498398bcabe8b30dc3b124fe0262062f830f6f9c8c2a0492cec29f2e8883",
+      "decrypted_sha256": "0a302be7e9fba3e24de87bfe83998601864b4d3746700df35d04815c97b5f6cc"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 184549376-192937983/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "505176ed1ff0fc6939360a5a9fc15dead2d988cab43820387468685270ed16c6",
+      "decrypted_sha256": "7e882cef0e827314a2f4eccc10071c86ae6e4530816c57baeec25c4f0976a2f1"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 192937984-201326591/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "4343c65285490865c47123fd5a58781931fc822de939f46cfe343ac58b470036",
+      "decrypted_sha256": "8cd5972b95741973edf92a2af8c34bf51ed7c78f2043cee125066b538c816091"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 201326592-209715199/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "bb7f3af3ee708f7b398e58e353cd42b7702139609bed7eaad2be8f332467d0ef",
+      "decrypted_sha256": "401693300eb46771da9f4c28c813661f34dd8b5cfb0627d2f2810df32d9a3985"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 209715200-218103807/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ee90f668c2692623b79b8a8c69788779b7f3b4d6335df7b32f30701a34e857c2",
+      "decrypted_sha256": "2d65afed99197f42730c1f4bcd27dc3ca7c0babe973d472b0d3759e568d1ef5e"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 218103808-226492415/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "b5f33001ed53b770fc04ef26253d33b1b8b5ab16dd53959a6c62aecbaa331de1",
+      "decrypted_sha256": "41466cd7529f1758dd35a4fd7a64d40ffe5fd49dbe3ec48f5cb9352f1091055e"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 226492416-234881023/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "b71d2b8adc1a6d01048f4b30a945ab1726dedb61534772e8898dd6de6debbb7b",
+      "decrypted_sha256": "1417410d940acf986da7c9a2df52bc31493e7081cce2345ef0e7d4c6d0e99391"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 234881024-243269631/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "e8691fd806fc3a624cade79cd965887eca919a775a1730687347a3171a78881c",
+      "decrypted_sha256": "0be214cfe2733ff78dadfe51057de3a96d4754e9d6b9cc7f31f745d464eec2e2"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 243269632-251658239/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1659552a055af8a287a9c28c8e4a49aab7a44fda2d6387025877f960ac3966b7",
+      "decrypted_sha256": "c39503aa8dd953d1b8e8fe2fa3afaee0c34f2342d45409c7a89cdd2e1323549e"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 251658240-260046847/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "01109b2264e0797bd702017d292e4fded4662889a678ef5b482e74e43b417c24",
+      "decrypted_sha256": "6d3c69ac60bc9a5b52211a35d1ec5edd43dc46c588e34600b5cb041468fc5b83"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 260046848-268435455/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "dc63e7d286d4b034ba30c53141af2936666853d5cf10ad5295792024ef507dc1",
+      "decrypted_sha256": "193ef0cf3996c7ea406b02a0dc9ca8d1026ff6ce80fc51e6abacb3ce052c04e0"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 268435456-276824063/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "95725f49ed2c769381c064f07209e14bb0640130fe1e959e1f8191c69fbedb94",
+      "decrypted_sha256": "a3f88b00c60420526f1f5d3ede91369b34ba36b029da89b94535fca8ca70aa5d"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 276824064-285212671/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ffbe3b22ae988e77418eba2049da312b003a9672976a9ebe148ad4bc620b3146",
+      "decrypted_sha256": "db1ab67fc4871ddfca102bacd83fcde6bd20cfb706b9e37a7293ac1a27ac8d7b"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 285212672-293601279/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3347809af67b48345f7bdbb0bc60811d6a9541c4c59b744557509e0eb9dee2d4",
+      "decrypted_sha256": "03bca338334bc5b7a812c7904a07928a8f8174f66218fa9627345789b78b687e"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 293601280-301989887/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "f0c5475d097bc9b02508848157040a99b60a02bdf719bcfbb6a24d0444c1448c",
+      "decrypted_sha256": "234455876a0fc830cb7a2ac3f76b116a27fdcb0af8e8085db8f42b1349c6f386"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 301989888-310378495/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "66eaed1d062f9c9ce7f7dc9a45f96fe15d7591bdb1e98263345185efc95ac9dd",
+      "decrypted_sha256": "1425a44698431249b1b7fd3bb4d12e63759117375ba2ed98c5f988874a0b7f52"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 310378496-318767103/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3044235447c64de79a1e8e427003ae4e6683da76054a9ab67e18df24b9428526",
+      "decrypted_sha256": "8d28ab42a6837c79b342d510d7c3466ae659023679fe3eafb4c4b134fc1ed8e4"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 318767104-327155711/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "c256f268497f45f4a0bcbf22f3eba6397d78eaf01903a8836fe79192b5bac279",
+      "decrypted_sha256": "f8c8d87e6fdaea230b998bb8b275198e04fd7b0fb5b5dd41811394bb99c2753d"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 327155712-335544319/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "8ab17111a887c8db434b462f664304b8732f3f1efbeccc7e9b0f37586ef576f2",
+      "decrypted_sha256": "39832a0eaa1a17f84de470d44b35c25d3131ff60d93577a1b2d96fb5a87d987e"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 335544320-343932927/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "94be3e8c777ea5b0e1b2a5c4b84653b3f9bffe4b13cb96e982573e42035e0796",
+      "decrypted_sha256": "4c503946b180fc3c09b27e813134a5c4f56194ed6d5e286629e86d906cab02ef"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 343932928-352321535/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "53af32e353ea05810a08a3e2a4a98f03ff6a041edd68668e163e882b6fe48c39",
+      "decrypted_sha256": "33268d684baf0c840f81e001f425da309bf789d4599cb8b48103a2b67cc60349"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 352321536-360710143/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1f3dcec9e73c7223c86f3c2d97613472ebd29908ba95561b197634fbcd1d85e8",
+      "decrypted_sha256": "ebb2af921b543e4b064ea73eb25e7d61e6bbc01d1aefc44f3ba13413203f4138"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 360710144-369098751/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "53c67a330a504cde9a03f294bf5130b70865bf4866c40cba8c06056106af3dbc",
+      "decrypted_sha256": "8ea1d236dd1ba0d3fda83ede3c1a7f5c4c1afc9c6a2543e1e8d999c629460b80"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 369098752-377487359/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "92d9d7c2fa26a3012412cccef70f92fc73365c7dfa3bc597a908082bb3a3b442",
+      "decrypted_sha256": "b69f70b277689d310df0bac57728a35c715b7ca6190abb93d9b93ea38c0d1eb8"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 377487360-385875967/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "6b2ca40ac400e9dc2bfb2c62b2171b35bec258cbdf5948ccfa17a59615d75901",
+      "decrypted_sha256": "a8cb63cea3fd7d3041d469ba569544291dfe3d63a0d065c09ce4fcccdb5fca93"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 385875968-394264575/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "22896a66c2f26d1718429457c1ffbfb65fa44762a42fee8a0e02ab2a7b12d0ca",
+      "decrypted_sha256": "cdb5b724f105e0c49bbff3d7f4db0ed4badc73e9fa73476ba9215fe0b173cb7b"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 394264576-402653183/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "dfdb8df01ff0768a3ef707b829d27124924e176f0115790f8f61e50de0f2674b",
+      "decrypted_sha256": "d992794dd576d2518ccc40a6b8129345b14040aba046b458fcfb179486937d82"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 402653184-411041791/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "68df481cf02735492c8247480c8df429e22552b9f11a203896a7c8f066063e98",
+      "decrypted_sha256": "9601740d67c913e51d870d0d5c8451724a5b8eb7f896fef92204b3ebae301334"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 411041792-419430399/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "f4275e0988a959bb58f6e61e58fc9eb496b919f4c7e87902b3becc2f1c8e3bdd",
+      "decrypted_sha256": "8c7b5667506fb6acb7b4cc467e4e62272a231ba1042ef67840a9272fe8f78999"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 419430400-427819007/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "b2dfb2ac95ec39800dd9800282a5d12a3b0565fcef3c05d0b89b0a697b6ed45b",
+      "decrypted_sha256": "1f8c00fccb9367c60d1913a206492e067349e3952e123eaa9dc2fc5c95e4cbe6"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 427819008-436207615/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "656b3203fdfcea2b7082d90e7e3700c378c96d983343cb5e01af7c212649986a",
+      "decrypted_sha256": "6689da14bfe21132c066bc7f61c4972172fbf6243a396df53f7312fe71707ba7"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 436207616-444596223/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1459fe9e96528f294a363eba3d3613824f25c217a15c19dc0384541d7c3f1c3b",
+      "decrypted_sha256": "64d7985042bb8b79012850695ea282749617f6b369b1d846bf8788702fd97513"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 444596224-452984831/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "b43cb523202fa9b0fd15a8b5583c308f2c446a28ecc01957d6669247e3ba62bd",
+      "decrypted_sha256": "7a1e2004d6ecb13857d28e28d64654c2a0c606bea4d0e3145320d188db6591e0"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 452984832-461373439/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a9be0df24b6b2955b04dce6c9fda9cdbe8b0415193e9cd71b3c3f1b54c8d5d9b",
+      "decrypted_sha256": "9aae9554d1f08b4009d4f90f57cdaf42784c7c392dd1f17a2fe506819d667ac1"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 461373440-469762047/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1111474099f5bf9d92d443ff945fa6ba4dc3b7e9b4fca394128a41e5991902b6",
+      "decrypted_sha256": "acbedccc9e0f71d25f00821d983593fe0208167e43a70be94baaf4d6ac8cc1a9"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 469762048-478150655/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "b70382b301ca73406c16513865052282c9f953a557d72e74ebeca6620ef8ab32",
+      "decrypted_sha256": "2c75700b99c8d0aaa4a9ab257feb1866f6984d965d805596b5b1df364e8c0a9d"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 478150656-486539263/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "b2e9481b17b1f814a3f627df229344b223a150d76d81b9d4f9932c26db786543",
+      "decrypted_sha256": "242771fb5ac51b4e2d16b1e298296933cd62752c0cd7a1d825d3fd21a77568e9"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 486539264-494927871/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "f0b397e57f0d9e95dde3f6380f400a4ac63e5e4cd68a8753eaa18e93d2a0f49f",
+      "decrypted_sha256": "0a226bfd0c10e8509d9eb5d11ef8a1817b8c4b83a4c081b64900a50d823a5662"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 494927872-503316479/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "9afb22a57faca073f2a6da6f67e1dd77ff8b0c9d671cc80689a386169f42c572",
+      "decrypted_sha256": "eb9bed859442060ea9303deaa7593467a371aa0c64a730f32c9ebc13d8a88316"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 503316480-511705087/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "6511fc646e632d13f98424d76f2afc40581a49df0b4893f2283f3b75d8b54169",
+      "decrypted_sha256": "eb42e9b6a227ef32b7884489820263e14dbede8842d3a8e81cc59cbffacb581e"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 511705088-520093695/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "17b54c8e3eb58c84608d475ce1949d1d27c3011e87cf0722b6aaf04dc0c19645",
+      "decrypted_sha256": "c92629a1410dee0ff11b0d2312ab349262093edfc35bb59ca4de32d92469af91"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 520093696-528482303/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "dc1cce35db9bb556cc5acecb741acfdedce1abd4c87d9d1924ce42d135f9a105",
+      "decrypted_sha256": "0126e0b7a2ac35bdfb85c82ca5f77ce7e59b80edb1a3c6239f86bd1f99322c3c"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 528482304-536870911/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a224898a204c543fb7367a7333e2ca45618fb8da7b6562f7babec8b6e634fa0d",
+      "decrypted_sha256": "0612127f93529480cec755fcfe036ea7494a0e6436bde4a82e1bfc8df331916a"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 536870912-545259519/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "71230561bf5d6fb44773d0d7f95cc0d6d83c78be5650c3e1af7b92874815e09b",
+      "decrypted_sha256": "a595f3e65081b8d7b4b7da4894be100187e1e4516abe497d1a08d4b30c8c5d1a"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 545259520-553648127/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a6b659132d84d3d0af6664cf1018afd1ec637e4b810a2c23383b758bfda3c4e3",
+      "decrypted_sha256": "06a46d8ea433cc988e2dc3896f78a761647520de8d488e3c1300ae79baa9d2ff"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 553648128-562036735/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "77945f9cb9c6fa6493ef477945260ecbbe4f51d00115f3bfda4597da019a05be",
+      "decrypted_sha256": "2dbf71d41730d42667a17b424364e2d9a25d2a30f702b583ef77a5b2cda39c88"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 562036736-570425343/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "07863996ca21e5464f8cfd9e2958e6b869b2536c85227510c56cac05900f2df1",
+      "decrypted_sha256": "fdc05b45ee5b3af1e2e8fc89fac1366d923b2bca7ce5f24c047279e753fbb151"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 570425344-578813951/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "d8d6fa410ab6ca696f2d20559391b5d1674660b89efedeca6ff98a243b3089cb",
+      "decrypted_sha256": "bb937ec068cc266d6bae25d130590d507d0cb9a4b1e89ec1f696af97bdb85deb"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 578813952-587202559/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3c16607d5f1c9fb6f668566cc09b64f444f9c3ccb8ee3ef1dc17d9ddb473fa1b",
+      "decrypted_sha256": "b3ac41fb145146ca2f79fedd9e8fd2a31480d841fd498bfe592244d6ad707377"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 587202560-595591167/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "8050c193500c5bf1504e4974f519a053f60f6a4f052bbdb74a6906c381909994",
+      "decrypted_sha256": "47f0c79f6bb8a89567cfd7c298195c452244fdc2c3fbc34a834847fb7c5e7528"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 595591168-603979775/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "34e231dfdae28d57901d1148e661426031141831105456a4abf29bb67e41b2bd",
+      "decrypted_sha256": "47d46b743208f3b2da2aab23fce563227bbe73428b895f0fa4744f805d180189"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 603979776-612368383/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "8c82a49eea1e3f8b524cf0c89592a7de9d5d510ab414a6fba7b897d8c15ff793",
+      "decrypted_sha256": "233b191f708c04ebdc0b45155c289536c161f96b68077c8aac70a3883d688318"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 612368384-620756991/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "29e2bc05925d2889b9eb223b74900ed381060291481a2ad277c8ea039f9b86b2",
+      "decrypted_sha256": "86b7cd9d4ee60c688f550e55a0f37aafe0e806cd2eed7d4203c87960b80cbb62"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 620756992-629145599/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "927f8c96047a5a62b34406ebd640f8f96212093b12e29d11ed8fec0dd5c199bf",
+      "decrypted_sha256": "3e1069a4fefb2190b1517c56ebbff1062cdc9d49f2beaf28b1d4459e5252192c"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 629145600-637534207/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "9290e6d00d97a8ac65bd18ad28a3513374f3f95f89f2abcea6627700ff7ab697",
+      "decrypted_sha256": "492db9cfa07c19685f7369d792ac0974f39f90e0db42fb4001bbb2515532b2b4"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 637534208-645922815/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a5a730444ce9210938240deb81e3c6027d5b000b009bff77236ab6254e612169",
+      "decrypted_sha256": "16cb44f0167d2ba052de9070120eee3d6165abfdb25d4852562b3eda5e8d0bc0"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 645922816-654311423/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a3560cfe0a62f8b6ae92ed81f0bc0fc35ad8fd28913a0fd5d2cdc46c8742358c",
+      "decrypted_sha256": "7c8c958086b5036ae6c15a5aac2eccff0f772a9e5792c5fec6ef4ed361055a8e"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 654311424-662700031/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "2bd3db3b35f17f58ea628d60178f77f8798a974210710a12e9e9a574a688832f",
+      "decrypted_sha256": "bd4fa309585d927e4fa8f4d6982ac5d17107c5aa5e6959eea1ca2a90041553a3"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 662700032-671088639/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "d2551f94ecaf87948b404c7606884fc148d2cf87668b638cd99c0851a218fa3b",
+      "decrypted_sha256": "8ca31901083229ffe2c6f1ccf34739336f797405f882ff00c0fbfea8452df46e"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 671088640-679477247/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3080a2ad79206ddf6716eb9e70950665ad680f67fd2bcc0c0451f6a40d564030",
+      "decrypted_sha256": "852e6b898057f910948bac43ce213bb2af91a4d27dfc3e3a3faec9c17500439c"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 679477248-687865855/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "234a043b898c547dc1b43cc28040c3de5a93faff6001146c249c6b7b8b6fff6a",
+      "decrypted_sha256": "63363aa585a0a509d8e1213336d53ea1c0f49f6c886e5241cdb9a7ca7ab4a69f"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 687865856-696254463/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "42e521c559cb049f290aa3ba32447fcabf1425ea8274ae1e36d8e3dc4662d1ea",
+      "decrypted_sha256": "e61b734d1cf3553b1194fb1e26159f2f834bb19208a276f3b8d619e8ca5e7cf9"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 696254464-704643071/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3ff3ba241c47d566cf62598064b732f91185f500ea6b7e7fedad469616c76135",
+      "decrypted_sha256": "95c130095a035bbe6eb791896fa5a81695edbe05c0a1c4478d48d5c3fbd8a86d"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 704643072-713031679/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "375b2c83175b1bcfffe703f48bd5f44222c4ffda512f30697083b683dbad3621",
+      "decrypted_sha256": "aafece2a2d2c95784f6d1192e33e12665a6e5a7da819d54414731a64e44c4342"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 713031680-721420287/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ee4185126982d2671ebf51d60f5eb74bd3ce3ae62d55d304dac6b65e95ae67b3",
+      "decrypted_sha256": "b0661d538efbf2df162ca4b25643cfe95bbc6527d4e74cc52d5f17cc72c1fd39"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 721420288-729808895/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "4d0600d5b990b804a08103ab88be365afe4c25bc53e831e5073efcd8409560a3",
+      "decrypted_sha256": "af3fb9fda4375b33c1a19727d1f6057abb2e8d6c13b8395df6871ae98cda7d85"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 729808896-738197503/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "330816e52b543af1544fff65e0abc2b44c933de9a8d703f94abc6bc961ba44da",
+      "decrypted_sha256": "c70d1c4f372ede857f93e02af3a22b251bcce59a618f0f09fe58bd6e9d30b63a"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 738197504-746586111/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a5f9b5726bceb145c0836a595cf821590dcad32d52d82eb0691c9a7b8f5d3d67",
+      "decrypted_sha256": "d2537daaa228f7210e4cd4f56d3b7e011edfa4ebacfed36a923be7efd8462425"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 746586112-754974719/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "abcdd09d352b667105ca4ec29f97a33b471a1796dd1cc99c362a625236860685",
+      "decrypted_sha256": "e916748ca6e62ee0b4d5a7558966a15ff3caaf9a5b71356206ee607a54e58926"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 754974720-763363327/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "32b6d7f8d3cc4eb2d104d802cf6677108e4125093ef602cbc62e57e8db35fe3d",
+      "decrypted_sha256": "b595c092cb78eed7d56d2bace76a4d78e5e03974096a60d6d04e87668a511fbf"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 763363328-771751935/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "123a30a42ba27a72dbe2f16c1e3d501bbe8d40bc10ce50278a64a3c81a23b662",
+      "decrypted_sha256": "8290f9444a38f83db111d19bfffaa1fe46df6267f3c4b852603476fa813997c1"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 771751936-780140543/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "2c8e59ec71639b7508ad5f9224cae96d590bfbce72aa8d56a1a2a32f72eed0d0",
+      "decrypted_sha256": "79694214fd608fbc8490214896569ca9bf47041f6bd9c5ac204aa3376f14a970"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 780140544-788529151/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "d2c12594d6fc898b3c9cc395793bf96c334418fa470f27e1fa3772972c9851fe",
+      "decrypted_sha256": "c877c81f5990ecb9eb513ec8b8ac5becbcfbe3aeed582679799bec558b230787"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 788529152-796917759/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "15a0bbd9bf527442ce9e9c3a172806641d55f3ab42c6082fe48d5f17f4ccb8c9",
+      "decrypted_sha256": "948f4fed4ad9e5c62d3779b4715dfe6b17322059e0c53ea78ad8d39f7c58861b"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 796917760-805306367/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "cf5e65baad401e0f0833be96b090c8b74213200aa0dc4d75176b921d59d9cfa7",
+      "decrypted_sha256": "f08a7101bdbc7a34931d3170668287030a698c83d2829ad6ae4daa53908326a0"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 805306368-813694975/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "672cd07ee692f93e534632dca3567c227d7b1019f65c98bc2adf19a38be94226",
+      "decrypted_sha256": "67610ac94b2928971113ce119a177536a8c60f074e53f283c63ed25af8e12d41"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 813694976-822083583/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "59e21a8b8c855d8e454df389fc15f481dca7780b3dfe1622ca914380ce476041",
+      "decrypted_sha256": "10259fabea11e10ec87b1752c7df6cccebebd775457e21af0e36a61134991fb7"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 822083584-830472191/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "64155d96364b61a7311a9564b8e806c0a71319c8264f17b20316f72cf22997c7",
+      "decrypted_sha256": "190ec43c49d3448bfdc335ee03a5b9344faf2e39ff1b4541c6c911c33994f448"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 830472192-838860799/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "6e6252413902aa9b97143fe417c957a473864505831eb226ab09b4d79c93a6e8",
+      "decrypted_sha256": "d968c6c37baa9124908919a85984ed26b3ebe87690ebda9a5961c708b7a8f898"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 838860800-847249407/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3a9b7b864a0fb7dfdaa80ec083dccc5ec88a921e5a6a08dbbc0575fb2273d129",
+      "decrypted_sha256": "8214db5fb1a9fbf372ff0bcac5b19c6fc7da14bfca6d8c93307733f6e45638e3"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 847249408-855638015/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1efb8b3015e44f91a9c85d74279a0806d1d5bd76f6e49b991af3e992aaf2c9b1",
+      "decrypted_sha256": "5a878f741c73a087c1efcfa47101327decb461602208789e2025930bcc7c7277"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 855638016-864026623/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a405be7fde9d28b6c4e193f40890711d84f8ef907351a081c53f593c6a42ab29",
+      "decrypted_sha256": "cefc5dd56daf7013bd706df4002b491b80bc87e0702e9636e012ae272aa06143"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 864026624-872415231/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "139b29442c1683f8152ac9b541fc80f74110037e2a073db8a43312eadee46e6c",
+      "decrypted_sha256": "4197a8e2e2de3f06efcfc229715df7f6c2e9067ad112b323bda3fc2f0ee6afd0"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 872415232-880803839/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a84cb63177c889548df44bda4573a9d4f7a7b6ee46a07c286cc60d06ece994f5",
+      "decrypted_sha256": "2d28ad67b23cdff79f498c6918432a81b98c7c524fe69e63c1e0220b49897e78"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 880803840-889192447/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "66b423f74713473b75927b65c7fcfdab28f2aff07326e61eb0b32705d1df0b6a",
+      "decrypted_sha256": "a1ba760ad8885830fb68f85464e97a16f4cbb1260803c9c07981abf3da71959a"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 889192448-897581055/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "718d23bef7cc45886c4e6f8674f09cb984650a22080e0634a4aed15da3a9a097",
+      "decrypted_sha256": "3053b3ad2579246e5ea011595fd2955c6436b0dd00a41d3d44358d3860c06012"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 897581056-905969663/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "2b1caf6b4111e334532fc339289053ae9494333c2e1c4c1e2b56613c94c0d3c5",
+      "decrypted_sha256": "b724ba67d8cab81e8dcbf0968192871877561725ee4b57519278d2d8ff5f59d1"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 905969664-914358271/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "8cfaa54ff39d0fd2a4a3d6d5dcbeb076c9045e43d9c3466b44b36699957c88d3",
+      "decrypted_sha256": "4c25b3e342cf640150a6eced13ebad262ecff1595c84b12d4647ee7b820cfabc"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 914358272-922746879/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "6526b2a88df5d66f9ef10b808d779f2b6feaa6741f0ec715bb165bdcf31b8a59",
+      "decrypted_sha256": "ea57769a0538f7e005bb463fee1e3103ebcf20d1d030894649853b858740dff5"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 922746880-931135487/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "79bf048fa3286cdce88378bb3359079369c2695d54daa37d62303670c50aa0bd",
+      "decrypted_sha256": "5d23e48a9d940d1115f9dd70d310fd8a15646900367fe6ba3b4ac831adbcb3c0"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 931135488-939524095/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "22fad0f2ae0f8cd697b6a48df824a2ab7b8382d74683ff38519abc96426812de",
+      "decrypted_sha256": "fa32702f2e63a204a5fdd60dc5e2deffef10d661f346ec54cfe80da3b8d4e9cd"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 939524096-947912703/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "484d679de3487a897b61f7ec2044796682f718456813c910ea2319f1ba20acfe",
+      "decrypted_sha256": "50d5ece0285751e341581b1e5f3959848ec52108a2b31be50b435fc6cf6c87d2"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 947912704-956301311/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "4994bd8dc65a7a2e65b8af21e472cbe6f61830f55cb0c610ff88499798f84a27",
+      "decrypted_sha256": "f8352b57f2c1222d7fa68f09e9eaee9ea04874cd3b42a30a956dfe6eaa1388b2"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 956301312-964689919/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "5faa44c55b8502eea5398d27cf48b67e339fbd08bb6ec7e1757c28f5525d06e7",
+      "decrypted_sha256": "a8a450fb875d6352a00969b7045018701cddf531a388d1955d2cfd960532919a"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 964689920-973078527/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "2bd8559d23e69a0cf71637fbaaba74fec2997b4c522b676b0162c4a46606e3c0",
+      "decrypted_sha256": "08f48c0453e6d20e8d3503c96fdaaae7cc800edf45e62d6a1732eb6bd383b30b"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 973078528-981467135/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "246b61138d041986261b87b0ff1ae6510b1ce2c0fc5ddfc02b13c92512d56b0f",
+      "decrypted_sha256": "84c6fc4281ca8bdaa487ac643cbb81d74c33ae4b523d57b21fb75a08dad94fbb"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 981467136-989855743/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "e27dd6dd516b0cb76d815f51e4996fce2b538093e534bd4962b0221f9c5b30d1",
+      "decrypted_sha256": "2655301b05eb881eefdc16e8cacfc1128e6dc33bed6fd1d51b495464dd217a12"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 989855744-998244351/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "06d87f0cae966ccb4179a8972b3efc314915fbafcdf43a2e7f40368514ea33aa",
+      "decrypted_sha256": "3861b2d7c9fec005d236571c3edbd4d0d4e6e95b7dfbf0f7a13e0479eef3a763"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 998244352-1006632959/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "814082d8197c6ac649de81bf2fcd5a8a6c93fe570ae68a1c0d1e387cd7499084",
+      "decrypted_sha256": "98ba98486be39b37b6170cd7100cc6b266304ecf0850a17a8d049a426f45c1e3"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1006632960-1015021567/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "d7b3c5fba2db8936a25c18160202ab5328724e3e78a087f0cd36810f4b63f38d",
+      "decrypted_sha256": "79fd58d1293ba5561266b3aa246fa0bcfc34cab65bed60d5033459fc85c5f1b2"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1015021568-1023410175/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "c6ac5b79bbdacf2a9d24a4554903d7b0d60a1073d47cb90a40fe418599bdbb71",
+      "decrypted_sha256": "e836c58e7bafc21346772f4c8d40fb0560e5edc43bb8e1029ea0b019d419c4bb"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1023410176-1031798783/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "0d01f4741aa522e39d10be0d187cf8457b7f7fa86052b3230a127a07f2a751f0",
+      "decrypted_sha256": "ff12c63f0c5eea9f4ce6d49a4fbc662258ec593ee8e6db560e3f2dc759c87a7e"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1031798784-1040187391/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "06aad658b6c5b142cff65141dfd6de9705ae3714a2d2ce37ea12305ff2780381",
+      "decrypted_sha256": "b937fe4aa732e5f0605abc537425035fec12e5173bb3d378f86565ee29529507"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1040187392-1048575999/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "82b1ccecebb4dec7c6a48642c412f5bbb1b555b273dea53c6f193cfa6b24d1d9",
+      "decrypted_sha256": "162c8a044a7ed60e03a34e51797190336895c2c36e262bfc796d18c8e944f8e8"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1048576000-1056964607/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "df0369c24888ff1dffa14b15f50eb29cbdcf9f7485f32f28190edde7ae6499dc",
+      "decrypted_sha256": "37f4433398863d1a005a57bd9caab598decef8f049d1685d53da82a807f36fdc"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1056964608-1065353215/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "5de5b7037ce21ea06b09e7acf29142f3d843db9af227fe2b92a9f6d2d93142b8",
+      "decrypted_sha256": "6db69ed143a082b5ef704fbef07a5480a46038430f0287e27f6a3e093954734a"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1065353216-1073741823/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "59186bedfec2ed66554f1680ad93f16df091c4b0ffda125bcf6fa6ce0035aa3a",
+      "decrypted_sha256": "e91b65b11e4f2bb73b5aea422505e5c75ed91593e4a0273942eb600b64122a64"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1073741824-1082130431/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "4454992ed6368728505a3b29a581e6fb602918fa05df1a749bf423ff35e2a00f",
+      "decrypted_sha256": "76397e7af3c4cc5f476f32ad7615de3757f3c79d56ba99929947673bc5aeec83"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1082130432-1090519039/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ce53462e46278bb9d979e860ac771f0c44214bbdff3b7007e95f482a5ddc432b",
+      "decrypted_sha256": "4967cee7a105a491a6f4a2f83b74a566266f7dc2730585fcc21410c0254cb1ab"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1090519040-1098907647/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "69dcbfcf956cca8b6edc5a7cfbc1724fc6b3f702fe4c05bc8641bbdc33c5d659",
+      "decrypted_sha256": "a1c832a74819822e48ee4ed20a5aaa676583276f12ad9c6f3c7db0a40e33d494"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1098907648-1107296255/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "46f93af8d8b1427554d5b4f45e994da165d93870a20de5e81262c4a33ea445f6",
+      "decrypted_sha256": "ef3b60e6399b8ddd3208af816a5baf2e6056a753c9252fdb2553bd6b0cfa8fa1"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1107296256-1115684863/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "59952118dde901dcd93b3a2cb8c9fd7c3f0eb55ba652def4024831b76ed6c1ee",
+      "decrypted_sha256": "60807c394382348c1eb91b315d9f1811b4e91e49471d4dcb475b952381b108db"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1115684864-1124073471/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3440f62ff1eb478d94cdd377d14362f1799ff84f162e3d056c99586ee00e273a",
+      "decrypted_sha256": "b2b45e496c2ab0bcb3edb592965f848b494a69a7a66cff641828c325b1fc1224"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1124073472-1132462079/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "fafc6e4bbf8b9a86450d090def4164a497dcaff7cda3b2df11978510391e6b2f",
+      "decrypted_sha256": "f37f4c31b567c0539fbbdd5e428490136f92d47d0811099cd7bd801e6f5d6f95"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1132462080-1140850687/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1286525bc9ac97eee50e610a0a13318272e9a45ca70d4f380059cd7338be9ad2",
+      "decrypted_sha256": "1a58cd6986b1708171c470d164560f6463868798b1a6148569f842c3f315dba4"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1140850688-1149239295/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "eaf66e075e738dae39d7540b3a2d2c75f9d62b6a6234538317de523d13df6d4c",
+      "decrypted_sha256": "e71f21032097d1726adbde9a61490b01cf61b9d297bc4f7e2633f2cf575342e7"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1149239296-1157627903/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3cee7bd8765b42ff09c7610499c4b11ad7d4aee749883a3da286fab0417c5673",
+      "decrypted_sha256": "b40f2eb57a4203b7a33b538a062bfe0e6cfb7bade1c5005ad7e764451101909d"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1157627904-1166016511/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "93ad91bfbde686187cbbb5deb8be08be27a09d7427cc678b02bad9b0fc1c9447",
+      "decrypted_sha256": "64ecd7b631686a4984bea6c2270f775a648b600594819f8575071db4aeeef6a6"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1166016512-1174405119/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1c31bec877f80648d2c737b701239611056e52f805f52dda0bfa90b276bf943c",
+      "decrypted_sha256": "aa20c218c6fc8adc2309ee2ff95db8f6ebf9e365c98eebdd21ab4676d08cc6cb"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1174405120-1182793727/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "807c2c3556675803fe7a63f2127ac5c99938f140c9249559764a25d736be7d8f",
+      "decrypted_sha256": "93c7b76bdf035ef3975b98f5b348348f5e26bbb37e36e3c07b433c128dd75557"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1182793728-1191182335/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "78e4d7f373ad07c38d21125442aeea86a06a4abd658e872f5c5c8266d6e767c6",
+      "decrypted_sha256": "723586d89bd8b9c200ebb5f9bf329539ed51ab1ca7add08cc36053dc74ca7179"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1191182336-1199570943/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "d0998cf17e1c5540f803a6cc3449088438de0f6522733fa50d7bf81955711b08",
+      "decrypted_sha256": "a55689a89f4dee5c754cbca05f36b67708a65c04f2bb48dd488d95b23a529861"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1199570944-1207959551/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "676b8cba7acbe52af6eecf60be96a12f786afbe519ddd2f05915768acd3e3792",
+      "decrypted_sha256": "26992dd04f6c6d32d9044fe1fd666937e89ad1c2c47d7e911eed55c349b109a0"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1207959552-1216348159/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "58748898f22eefbddb0e77f758ca720d8920ef1fb8b4abfbe3337c5a02cfe1c8",
+      "decrypted_sha256": "5448c5fbdffc8f62f4ff530b437e74f5dbec65c77b139279e086262b80070b87"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1216348160-1224736767/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "42ef5d0e92c6f54e83584df363791b2b493607f56fac74447813386edbf467a8",
+      "decrypted_sha256": "c242dd6ffcd463db40c2f327b507ff307aef638c05ed0caba81001d9a0d18e60"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1224736768-1233125375/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ce49bb6c6003ba0d89bee7511cd6a474673a412dc705c38f61132381b02c88b9",
+      "decrypted_sha256": "e9ecdf031b1af5f540a2dfe3a3aa9c26e733e01bf7f648d5243b65d19849df5d"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1233125376-1241513983/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "faef56982571e526500e272e245314f9380bf0677c43d666877cebed197bbbef",
+      "decrypted_sha256": "b4f54a1d5c9d2bce43a3f7d7d1f680d056913242063e34151b1d2690ce565b2a"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1241513984-1249902591/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "36f9e7c617f8df188f7cd7b9d5f7bba0490ac942cf0b77d996191fb3aa8d1088",
+      "decrypted_sha256": "ee202d9c3211f4da95372b6b83ba8eabbe91ce8ca8628a747ceb04a2fb90ff7d"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1249902592-1258291199/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "593de69ebd85e719bf2ded0aed741d8ab095967d7fa58c6236606c63c501bfae",
+      "decrypted_sha256": "8f2d636d4753233269be06fa4236c9e75af6508ec490f1b79eaa24f0b588aeeb"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1258291200-1266679807/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1c15389e238fc43d37e076a99211d760ae7fd610697035f2aaab221d9249686a",
+      "decrypted_sha256": "105a078a1fa5aeceef9f2136cf6d3fdbab0f682d71b674966860a9f0fef023ff"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1266679808-1275068415/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "9be8065a62db681ea376558aa8080b9d22f81f54b74729aa851920cf03b024d8",
+      "decrypted_sha256": "d215c2b2759960629772673273bdf1ead3459fc3e096e2b96e94a1d39a658d12"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1275068416-1283457023/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ebd86943663735bc057b6f8c01b00f8fd7a8ade830c1b7b4ec774b47531d7327",
+      "decrypted_sha256": "6a9ae59e1f8196e20f409fe832800f61c96e269ab21fbd8aeb5d7d324a5a67ac"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1283457024-1291845631/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "eb2e17cc2249a188840a96610f3cbef3bbfacbef3624a05d3ee2c143f1975bbb",
+      "decrypted_sha256": "d67830cf2c5f2bcdbdc0ba0566dc28bd82bc815aad62f19f0cd055bac0c3f06f"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1291845632-1300234239/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "29e11d50acbdc1f86642886769a4b53c22143fabee64c58ecbcf89295daf1afa",
+      "decrypted_sha256": "1118e2aaa754c4beaad75682e5adc7fae311990d45057978264d8c8139bb14a3"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1300234240-1308622847/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "d119cd974a8b1488b729202a7a3197cde734679d3ec6a16a63f2841ade5b4d59",
+      "decrypted_sha256": "e46b779b9f482197e2af21529be43434a7d4b363be49477f948a738edcfd6431"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1308622848-1317011455/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "b4abf71bf9c74d170288d5e28bf6b60904a615ac28f6dc57a79a766b84bbb09a",
+      "decrypted_sha256": "48094ebaed501b4881360060eb94959ca0a0e0699259a6209492e306df2bc5fe"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1317011456-1325400063/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "28003d0e6fca14d788789c1c3c680b4f67bc79a8b2ba2a0d4eb7ae605452df34",
+      "decrypted_sha256": "cbb3ce5b17bae460f71cd0d1a5dafd7ca894ac0503e7055c59f46c724692233c"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1325400064-1333788671/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "70e8fa23cd3d453904abeff5ead81adefdec7f2b7e950df0b62d7c0e41d93d27",
+      "decrypted_sha256": "eb4cc5742b6aa6e34951d39ed5ad96b978fc524157cd4d3fa43ec1fd05ec1808"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1333788672-1342177279/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "4428e75f4594b74942ee59bb86cbc5e36543269cc7a925aaa4c680b78897416b",
+      "decrypted_sha256": "6a86b270692e4590f44a8a829215781c303536c34bddbdaa3abdb461ba8f9589"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1342177280-1350565887/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "5726ab1da877632147e19a0836025df6df667de952f56d24551a310fc13550b4",
+      "decrypted_sha256": "22c45cf765305cd625e1eecfa23ef9757e9b7be3f22ff9b6737b153da50925c8"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1350565888-1358954495/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "247fd56c54d2d4104106265e7ceb4f2a47786fa5436e43ed3b18ace4fb215e00",
+      "decrypted_sha256": "14af7236c6b33b47494e68cf32ce1394f16f514e8f43ec5f5a5be1cfc0bf5c89"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1358954496-1367343103/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "280fe2b6c6749806cd8a6e4b634a776ca78b8964e0a9ea36f70b5d630d89e116",
+      "decrypted_sha256": "421e5d74c76f588e8d1576a0797114a83c4d7fa7af76314bc1d007942ffbd55b"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1367343104-1375731711/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "8c93f00afecc478242bc239beb203256a6ee24286657a7c186b5a9137300cbea",
+      "decrypted_sha256": "2d4529d227858683317aab21cf8c855ecebcedc479eb259af531ee1b421e8c42"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1375731712-1384120319/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "08e924fe38687ea607ada992c7022d78297661e5141b638765fd3000f8f8d936",
+      "decrypted_sha256": "0253fb4ab2e3e10ad1fa0f48c46079a6e39177b4da513ddb0e8d91b513a0d866"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1384120320-1392508927/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "9eb95237879bd2fd748c7fa085f9b08f4b880d072181ac9e270854a047bcf898",
+      "decrypted_sha256": "1ae8b397aae72107be2fed50f408e7e2fca8a97c5422ccb7bcb0f95f756f55f6"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1392508928-1400897535/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "eda25f39beb08e419a17f7d8feb03fe0ebc3558b25ea3c2daa0ecba3763b3b10",
+      "decrypted_sha256": "6fd80416860e334f1a4a710a22742b80f1a46c17ffc563100c09e2c99a36647e"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1400897536-1409286143/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "14b82247e523209cec72ff1de2cf0651c84de86e6aa9b54feada3ac739875ffd",
+      "decrypted_sha256": "bb69832de095c0258914c82bdd5df1d246f3da5d0700cc8980c8a764aea669d4"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1409286144-1417674751/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "7ca7865b3620f0fb1cc8c9675c8d7b0474535b7a73379ca914af928c194598e0",
+      "decrypted_sha256": "f6de0d2f063eae66a86233b2f6c772179000d28c28101d82246c2d10483577b2"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1417674752-1426063359/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ce8032add47ebd8dddb9eecb1a10a6ac1798e493313d63c3c47442ff38707ebb",
+      "decrypted_sha256": "91eb3cd9acd5bab33c30a4668ba08cc3543f5eb3fa41b736094af27e41637f63"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1426063360-1434451967/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "f8cd783918c88f5b7bb83eaf942e381a244b7434c76a7f27a66fff2ecff12ff0",
+      "decrypted_sha256": "001f2259a91cd071f9f20f45b3cf0f42c04019017e618b8f92b918214178d1c7"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1434451968-1442840575/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "891974ea6eb0abbe345c33c6d0dea3cbf51180b6ee993ee4385ea8fb77da9974",
+      "decrypted_sha256": "63182f61f8bae767e1e989f2f561f6e221098bd2f59e841a129a8924fb2d9a59"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1442840576-1451229183/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "53d9c5ed21f5a86fe57b3e6747f7620eab7ab17d91df97820daf4d1feb4e819e",
+      "decrypted_sha256": "5c95990caf15caccafe49965ea74907ba12df31daf1fb794084d865c20c79b55"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1451229184-1459617791/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "6918e3d9f6812c36fbeed16284c01e1d30baedce5cb990d50cb9a4eea8838f98",
+      "decrypted_sha256": "7d2dc66eab59b0ecdc550276bfbe6681f1bec75f2ecd83c252171fa714d96698"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1459617792-1468006399/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "4c1fdbc304b14cf509647560595d0f2ceb0363215912ab185534e8c55d0df719",
+      "decrypted_sha256": "1e633b252b9a683111494f5fe9b358cfbf0fa8fda913999d1685f6a21cdbc2d6"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1468006400-1476395007/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "bcf6cbbed814d4c1c9fc509e0dd1368e56693b7620fd2ea11b159a4d2d643542",
+      "decrypted_sha256": "3b63acd6f08a088676006d712f1076ad9be715d3ca62c0c0445625fe9a37d3b0"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1476395008-1484783615/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "767da0eb2756048d70710b837c940df15cfdb06630c9f0d6a92ee08d8f9cc4b7",
+      "decrypted_sha256": "74076a3cbf327a97e813c8a2ba0b6a23fe24eeca45c034ada90b32c4a6aa4925"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1484783616-1493172223/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "0accbcbf2563a6ce0cfea62140ffe502eaafedd2eb232c3995ae66b2f41e4c9a",
+      "decrypted_sha256": "16e23bfed606a30c93e5e5df1d610851428bb011a7b58e73081b725b983d1ced"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1493172224-1501560831/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "7a1f46edd31c2fbbb244bf8f5872c0e270a9101974b7310b4e67547cb36c2bcd",
+      "decrypted_sha256": "05a1845bcb657179fb1bfd863720f82fba43df7158a7325ea8163747dec5f15a"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1501560832-1509949439/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "4c46993b84ef362ef6b43509c0c11747e73628ecc1c35e2360b862e6bf3fff13",
+      "decrypted_sha256": "1fccb28ffd955c1639cd16b533827c77580b5f76c33494f22362596c6a7f6f06"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1509949440-1518338047/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "7eb95e9069aa9bf56e295e6c6f4221f98cfa551adda841be81ec3df7b5ea4a24",
+      "decrypted_sha256": "348e2acf571294f2c88dd1886c74481aa04b8614f31dc62ad9572383411a72a9"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1518338048-1526726655/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ff26e2c4d8b315fddff11dd14daa3dd77fe052e499d36e714bfcebf63233acdd",
+      "decrypted_sha256": "39ee89165c4c440850af49cfb30399f3376b1f88e0cba0376050011c25c069a1"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1526726656-1535115263/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a72b3b73fcaf1c5a547399b270e82f89df0bb806be51b83d8befbce6e4d1c6a8",
+      "decrypted_sha256": "2f166b203861021ee886b19d51f07712fdbd5fb458cf4432570277a3336a8dbc"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1535115264-1543503871/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "2d61643a37f386986b9552b420111355462d847eceacb8fb0e7784b68e250d18",
+      "decrypted_sha256": "cb889d3f40d86961cffdbee67dc457d647a27df57011a9f327142a467550285f"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1543503872-1551892479/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3956174955d3c1bbdd56b69eaa269ba9e4838b23d2e9b081b2c941781e4f65bc",
+      "decrypted_sha256": "41c5fa4916d4107515b2f00c988cf1634bf57c296358f98809bfff2b19f62fe3"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1551892480-1560281087/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "63ab8984fa8df0afe5271a5857b50fdf2f4748a83192c9b3990090f6c5417dee",
+      "decrypted_sha256": "a98ff90abff45b52619c4bc0adffcc318f0e648ee39c7d13e74adaa850d7cb50"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1560281088-1568669695/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ab8186269188b5123407e211845c0af2e805ec62723ff2208acb8e837505d206",
+      "decrypted_sha256": "e65fa900b07baf915f7f5b256cce7848dba11820978a9d0436579f75cbc117f5"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1568669696-1577058303/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3934cd6fcab9686735c738ce6b00718067e299048d0ad6e9a36a2a9967ad36f4",
+      "decrypted_sha256": "4e0feb68b8f87a9fd3f7e7551fade401b7d2a186d8b3668843cc1a94b18ac043"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1577058304-1585446911/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ad46abcd8e2d64505fdb024de8f1920d2b7d3caf459ccf9bba3f030253fc8449",
+      "decrypted_sha256": "7b5ca9b87f37bfb747ad07360844b5e3248c9b56fccdb0b0971dedbe9e4d3ae6"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1585446912-1593835519/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "cde109c78768b501e94c942905bbd4e75365892fe428196a4b6aae9c884bd1cd",
+      "decrypted_sha256": "490ba04605cdb6b55c0e3488bc628a96c974657ec814ef041aec427cd6d791f4"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1593835520-1602224127/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "55313c0d3f084b14e6e0dfdca52e1eb9b87ddbb5eec9f3fccf2b2c3bece0773e",
+      "decrypted_sha256": "9f5cfb626d8c6e80313f1415a089cac9e7645542ae6eddd084b2640a59baec71"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1602224128-1610612735/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "471e545b718d6115ab557007d65c6558595feea452e4f4ff171476a2dd118ca7",
+      "decrypted_sha256": "4c52bfc25124a8b66b0305c6b28912a3c44e87297b640c9e24b080fa6085dfbb"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1610612736-1619001343/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3b2fbf8d979c834c73a24629f9a85c365f6f8e771b4b14959d4dd54cf78a637d",
+      "decrypted_sha256": "37d407fdbea915e9fbea063f2dd2341812513d70409250dcde8c047f409d39a6"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1619001344-1627389951/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "22b1edb9ed4ecd0bf07e3b4b0b8a0a65dbdca0f90c31fbf235f7ac387c0388e4",
+      "decrypted_sha256": "fafe49eb63cde9873f4379e11e4ca46da7f8d59bf6f1c8938b535334674f8ecd"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1627389952-1635778559/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "89daeef516c209671259bb5e51229eb4632d48908713709bd9850c6bb0b01a0c",
+      "decrypted_sha256": "be607c3e8430c04419a8f44bfbdcf9254359ea29b09c51da46501674d60d88ad"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1635778560-1644167167/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "a1fe96b509983034a83c3995a40b6b9f334827c08a222ec9100fad782ce34b87",
+      "decrypted_sha256": "74bb8154c0a5e18f9189d2de4952ece20869d923580f3b01ddcc905c30799db9"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1644167168-1652555775/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "c0cc736983142a06b837acffddb5f7c9ff680c1afc520affc95a0f607366b70e",
+      "decrypted_sha256": "b4af4e3d66c8aae7f97f8781e7f3b62d12fad5263755b60fa89fef04e1d6acf5"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1652555776-1660944383/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "97d4b0b41d2a1bf8f8a36e714e75d45f50bdbec7e9bc6d33e437e9e97c060ed9",
+      "decrypted_sha256": "6ae7c86f0499da3c9564f880bfd23f0877035e331b88df8558b03fb3f0ce0b9a"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1660944384-1669332991/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "c4ea60ca29ce4e3fb80979af65957e5ad6ebb882b577f71d9197b31ed358949e",
+      "decrypted_sha256": "8084271e6dcfc338739f6ab86295dfdf6d84aa3aba58fa3e9dd0548b7b4c34a7"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1669332992-1677721599/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "b7be24cd42fdc94d79a065aa86fed99316d081210e1563e612632429933f7c33",
+      "decrypted_sha256": "5a212d123f2f899f3cde80c07c748dc8991ec9f1b0579ecef62cd72044ee9adb"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1677721600-1686110207/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "8205f3bc91f19891d4f7c53a988aab9660da64d86fe1df268700d4bd7c0b2c3e",
+      "decrypted_sha256": "64306abf2f6274ba5a701f4cf5db18e3867d5215a137d236e87adf4505c70021"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1686110208-1694498815/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "7a4f4b3b4919c01f0c17971448d979a78a6f627352c91101935abe3f89477a51",
+      "decrypted_sha256": "1d7b6bedf378df8fc7699778150b0957d1a01e36826da1b6b21c5a5c74ad29a5"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1694498816-1702887423/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "bcbb8f9e50cb59d788aee55dc43dd9f8593bcf3800bd0946dfc0e744a09b0836",
+      "decrypted_sha256": "76d3169f5f0ceddce4d642918f31141e34f04f7fed9e8aaf72ac54bcebeb9823"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1702887424-1711276031/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "e0bfc424f4a93f461af7a037e216db5a1b34c63b9fba518f3b12f08f0907f27f",
+      "decrypted_sha256": "3eb35d9673450dcc368ec4c2064d1468d1b8c2143ce5b0030f8a790dd31170a4"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1711276032-1719664639/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "24dc43205c89f921e0f3ae7bb729f4785fd05fe26cbdbda4ab33b40164663b7f",
+      "decrypted_sha256": "26cb4a83d21a4d3a50c8ee1cfcfd7ebd5177f1a22b1a897ccb8d4096b7d1c34b"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1719664640-1728053247/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "6cb450a2ee190954afd785824c6a7e210a5b799779ca13e0aec2baf9035a88d1",
+      "decrypted_sha256": "0293b2fc04b90073d08094020bead3fac774bc4f4325ffb0591c85c5e24b9216"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1728053248-1736441855/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "153dc7f24fff0d6ff744cb24d5690e162c7ca874f6abf9735e0af93816017cb3",
+      "decrypted_sha256": "35b9140d87c08a98370e36f786506613d6cd81bfd0164bbda22150cb565ded28"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1736441856-1744830463/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "51dd12281f2419cde438a5c66f6dbc94eda30aa5bb03bc633897370d9eadb5fc",
+      "decrypted_sha256": "1b91b4803c3cb9d90539af6a12e083346bbe25798120e26a46fe29210a93c68c"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1744830464-1753219071/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "28b7c739ba1136ce03d29fe56a6ff32e37471ec5b2ca2a05dc98b3e9e63df2c5",
+      "decrypted_sha256": "36ca595d6bef015e4f6aa138b6bd9d3c66b2dd94e9a7efb3a2ad75b7f489b905"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1753219072-1761607679/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "6d66850304134c18c027e253bf4f7107ec52dd3d409467f87dfbe7efcc67fed2",
+      "decrypted_sha256": "3bae93b327bb337cd5aad04ac82f536afdfeecee8133977290528370a1294fa7"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1761607680-1769996287/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1ccbec0cd65860d9be28811db178b731c16bc9b62086f2a236e785d1a8003182",
+      "decrypted_sha256": "47c132f0fda30e28ac1b3677eaca170934114722868eb89f7d374a7ce69102f9"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1769996288-1778384895/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "1bd1724438e36a01daac76436ab23fe105c70b7105cf354cc503fd40433aba53",
+      "decrypted_sha256": "fe4310bd46d66cbca1c84f648631c87ae7802648ec3679265e2849fe24668a69"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1778384896-1786773503/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "3b10ed1d05b8be73f0538d5d1f7536af638e5b86d836b6ab53607219dbe1368f",
+      "decrypted_sha256": "bcd4ecb9d6ae4c18a5c0d59a4e01718853ee7fe910ebaa1ce5608c426847503a"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1786773504-1795162111/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "6e352d102880cce7f97e1ad931949583512f0d824b03d02b13968c0ddf604cbc",
+      "decrypted_sha256": "73707d5fa180e4f099da30bc64e6d52e50bf0f793861d6047eb32f7cb5fa86ac"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1795162112-1803550719/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "ec03de803737f45d2819b1132b0bed4fbcf7639643217cc46b971b27d24d3347",
+      "decrypted_sha256": "757fc5866e7d3a5e889735feb38631d1991fc1760ad5722873bac87fe8e05f86"
+    },
+    {
+      "url": "https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file=/neofus/9/SM-A700FD_1_20190319093540_yipiin0bmb_fac.zip.enc4",
+      "http_status": 206,
+      "content_range": "bytes 1803550720-1811939327/1935783696",
+      "encrypted_bytes": 8388608,
+      "encrypted_sha256": "9c03c8f20d865b864ed0c206c4e16e9e1307b3389814c05be95ecccb3d053374",
+      "decrypted_sha256": "d3489514bedd233e115aae4b13514db26460570b6174877aacda14f3a0aa9dc1"
+    }
+  ]
+}
