@@ -1,9 +1,10 @@
 {
   "device": "a7lte",
   "product": "lineage_a7lte",
-  "source_commit": "0190e542edcb43fce94b47f99c90a6305c3568a8",
-  "requested_at_utc": "2026-11-08 19:06:21 UTC",
+  "source_commit": "4b4dcb030083f52111b569402f50a5f2ae97bc8e",
+  "requested_at_utc": "2026-11-08 19:23:43 UTC",
   "requested_build": "brunch a7lte",
   "allow_missing_dependencies": true,
-  "retry_reason": "Uploaded progress archive has no vendor; acquire genuine CSB1 SYSTEM, clean iosssd and skip Darwin/emulator prebuilts"
+  "retry_reason": "Full official AP CRC and TAR MD5 passed; allow ordinary dalvik property overrides while preserving strict firmware identity",
+  "attempt": 3
 }
