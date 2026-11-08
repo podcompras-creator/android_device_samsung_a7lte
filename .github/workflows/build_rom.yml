@@ -125,6 +125,16 @@ jobs:
           path: ${{ env.ANDROID_TREE }}/vendor/samsung/a7lte
           key: ${{ steps.vendor_cache.outputs.cache-primary-key }}
 
+      - name: Preservar vendor e auditoria para verificacao ABI
+        if: steps.vendor_integrity.outputs.eligible == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: a7lte-csb1-vendor-${{ github.run_number }}
+          path: ${{ env.ANDROID_TREE }}/vendor/samsung/a7lte/
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 1
+
       - name: repo init e manifesto local
         shell: bash
         run: |
@@ -187,6 +197,12 @@ jobs:
         run: |
           set -o pipefail
           cd "$ANDROID_TREE"
+          # Android 9 invokes Python 2 scripts via /usr/bin/env python.
+          # Keep the override scoped to this step; acquisition uses python3.
+          mkdir -p "$RUNNER_TEMP/a7lte-python2-bin"
+          ln -s "$(command -v python2)" "$RUNNER_TEMP/a7lte-python2-bin/python"
+          export PATH="$RUNNER_TEMP/a7lte-python2-bin:$PATH"
+          python --version 2>&1 | tee "$GITHUB_WORKSPACE/logs/build-python.txt"
           export ALLOW_MISSING_DEPENDENCIES=true
           source build/envsetup.sh
           set +e

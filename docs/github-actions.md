@@ -14,11 +14,12 @@ nativa e os patches comuns. Os patches opcionais de isolamento foram retirados
 da integração ativa. As declarações de audioserver/cameraserver/ril permanecem
 normais. Nenhum serviço foi duplicado no init.
 
-Os blobs devem estar publicados em `dispositivo/blobs`, com a estrutura do vendor
-Samsung A7 (`Android.mk`, `a7lte-vendor.mk`, `BoardConfigVendor.mk`, `proprietary/`).
-O workflow copia o conteúdo para vendor/samsung/a7lte. Essa pasta não foi encontrada
-no checkout local desta sessão; o download parcial de SYSTEM também não extraiu
-blobs CSB1. Os15ELFs comunitários históricos são referências2016, não substitutos.
+Se houver `dispositivo/blobs`, ele precisa conter a estrutura vendor Samsung A7
+(`Android.mk`, `a7lte-vendor.mk`, `BoardConfigVendor.mk`, `proprietary/`). Caso
+contrário, o runner adquire o SYSTEM CSB1 oficial e gera o vendor com os arquivos
+reais encontrados. O arquivo `a7lte-progress.tar.gz` enviado no chat foi conferido:
+é o pacote de progresso anterior, sem bibliotecas `.so`, e não fornece esse vendor.
+Os15ELFs comunitários históricos são referências2016, não substitutos.
 Não são criadas bibliotecas ou arquivos vendor vazios para preencher faltas.
 
 `ALLOW_MISSING_DEPENDENCIES` não resolve símbolos incompatíveis, caminhos de
@@ -28,10 +29,13 @@ A limpeza é restrita a runner GitHub-hosted ubuntu22.04 descartável e não gar
 no workspace local não são apagados. A flag foi habilitada por decisão explícita
 do operador para tentativa de bring-up, sem implicar validação de ROM.
 
-Foi feita validação local de XML/YAML e sintaxe de todos os trechos Bash.
-O workflow não foi publicado/disparado nesta sessão. Resultados de compilação
-GitHub só existirão após um run real; os logs locais anteriores continuam em
-logs/immediate-build e não são apresentados como uma execução Actions.
+O workflow foi publicado em `podcompras-creator/android_device_samsung_a7lte` e
+executado no GitHub Actions. A segunda execução,42513339588, adquiriu o AP oficial
+com CRC ZIP e MD5 TAR válidos e converteu SYSTEM, mas parou em uma propriedade
+Dalvik duplicada. O parser foi corrigido para aceitar overrides comuns e ainda
+rejeitar conflitos de identidade. A execução42514831793 usa essa correção.
+Os resultados de cada execução ficam em `logs/build-launch`; uma etapa ainda
+pendente não é apresentada como compilação aprovada.
 
 Para disparo pela integração GitHub, um commit em ci/build-trigger.json no main
 inicia o mesmo workflow; workflow_dispatch também permanece disponível.
@@ -53,3 +57,10 @@ A limpeza inclui `/iossd`. O manifesto exclui somente o emulador e prebuilts
 Darwin que não são utilizados pelo build Linux A7. O sync mantém2GiB de reserva
 para o runner finalizar e enviar logs; se esse limiar for atingido, o erro é
 registrado como insuficiência de disco, sem chamar a interrupção de erro Ninja.
+
+O build expõe Python2 como `python` por um diretório temporário exclusivo da
+etapa, pois `build/make/tools/findleaves.py` do Android9 usa sintaxe Python2.
+Os scripts de aquisição continuam invocando `python3` explicitamente.
+O vendor íntegro gerado é preservado em cache e também em um artefato separado,
+`a7lte-csb1-vendor-N`, para auditoria dos bytes e metadados reais. Esse artefato
+nunca representa uma ROM instalável.
