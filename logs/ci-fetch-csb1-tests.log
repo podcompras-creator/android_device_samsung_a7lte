@@ -1,0 +1,15 @@
+Receiving AP payload boot.img: 4 bytes
+Receiving AP payload recovery.img: 8 bytes
+Receiving AP payload system.img.ext4: 16 bytes
+..Receiving AP payload boot.img: 4 bytes
+Receiving AP payload recovery.img: 8 bytes
+Receiving AP payload system.img.ext4: 16 bytes
+.Receiving AP payload boot.img: 1 bytes
+....Receiving AP payload boot.img: 4 bytes
+Receiving AP payload recovery.img: 8 bytes
+Receiving AP payload system.img.ext4: 16 bytes
+.
+----------------------------------------------------------------------
+Ran 8 tests in 0.233s
+
+OK

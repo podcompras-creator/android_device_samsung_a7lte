@@ -16,6 +16,14 @@
   <extend-project name="LineageOS/android_frameworks_av" path="frameworks/av" revision="f8fdbc7e1ec01a384ff39834be89b158c763f22b" />
   <extend-project name="LineageOS/android_hardware_ril" path="hardware/ril" revision="cac775876fa1a79d5f84a3ee0280e71e67679d4d" />
   <remote name="a7lte-port" fetch="https://github.com" />
-  <!--Rendered to the actual published repository and commit by ci/render-manifest.py. The repo contains android/device/samsung/a7lte; apply-overlay.py installs it.-->
   <project path=".a7lte-port" name="__PORT_REPOSITORY__" remote="a7lte-port" revision="__PORT_REVISION__" clone-depth="1" />
+  <remove-project name="platform/prebuilts/android-emulator" path="prebuilts/android-emulator" />
+  <remove-project name="platform/prebuilts/clang/host/darwin-x86" path="prebuilts/clang/host/darwin-x86" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/gdb/darwin-x86" path="prebuilts/gdb/darwin-x86" />
+  <remove-project name="platform/prebuilts/go/darwin-x86" path="prebuilts/go/darwin-x86" />
+  <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" path="prebuilts/python/darwin-x86/2.7.5" />
 </manifest>

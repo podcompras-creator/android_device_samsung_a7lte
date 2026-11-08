@@ -116,3 +116,17 @@ not an ABI/runtime validation.
 source hashes and limitations. Stock SYSTEM still needs recovery and ELF
 dependency checking. Runtime remains untested. No kernel or Android build
 was started for these final comparisons.
+
+## Candidate vendor/source collisions
+
+A final read-only scan of the selected platform sources found that
+`hardware/samsung` defines `libsecril-client` whenever `BOARD_VENDOR=samsung`;
+the native common board sets that vendor. A vendor prebuilt with the same
+module/output must therefore be omitted from the candidate adapter. This
+collision decision does not establish source library ABI compatibility.
+`libaudio-ril` has no definition in the selected source scan and remains a
+proprietary candidate requiring ELF validation. Common `Android.mk` already
+owns the five mapped `vendor/firmware/keymaster/keymaster.*` outputs as links
+to the firmware partition, so the adapter must omit copies to those outputs.
+Exact source hashes and scope are recorded in
+`logs/phase3-hal-source-collisions.json`. No build was run for this check.

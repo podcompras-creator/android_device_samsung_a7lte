@@ -22,7 +22,10 @@ def init_body(fields,nonce):
 
 
 class RangedZIP(io.RawIOBase):
-    def __init__(self,client,fields,budget):
+    def __init__(self,client,fields,budget,chunk_size=1024**2):
+        if not isinstance(chunk_size,int) or not 1024**2 <= chunk_size <= 16*1024**2 or chunk_size%16:
+            raise ValueError('Range chunk size must be a 16-byte multiple between1 and16MiB')
+        self.chunk_size=chunk_size
         self.client=client;self.fields=fields;self.pos=0;self.length=int(fields['BINARY_BYTE_SIZE']);self.budget=budget;self.used=0;self.cache=collections.OrderedDict();self.events=[]
         self.url='https://cloud-neofussvr.samsungmobile.com/NF_SmartDownloadBinaryForMass.do?file='+urllib.parse.quote(fields['MODEL_PATH']+fields['BINARY_NAME'])
         logic=fields['LOGIC_VALUE_FACTORY' if '_fac.' in fields['BINARY_NAME'] else 'LOGIC_VALUE_HOME']
@@ -37,7 +40,7 @@ class RangedZIP(io.RawIOBase):
     def _chunk(self,index):
         if index in self.cache:
             self.cache.move_to_end(index);return self.cache[index]
-        start=index*1024**2;end=min(start+1024**2,self.length)-1;expected=end-start+1
+        start=index*self.chunk_size;end=min(start+self.chunk_size,self.length)-1;expected=end-start+1
         if self.used+expected>self.budget:raise ValueError('FUS range transfer budget reached')
         c=self.client
         for attempt in range(2):
@@ -74,7 +77,7 @@ class RangedZIP(io.RawIOBase):
         if n>4*1024**2:raise ValueError('Unexpected large random read')
         out=[]
         while n:
-            data=self._chunk(self.pos//1024**2);within=self.pos%1024**2;part=data[within:within+n]
+            data=self._chunk(self.pos//self.chunk_size);within=self.pos%self.chunk_size;part=data[within:within+n]
             if not part:raise ValueError('Short range read')
             out.append(part);self.pos+=len(part);n-=len(part)
         return b''.join(out)

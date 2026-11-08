@@ -3,7 +3,7 @@ set -euo pipefail
 [[ ${GITHUB_ACTIONS:-} == true && ${RUNNER_ENVIRONMENT:-} == github-hosted ]] || { echo 'Cleanup is restricted to an ephemeral GitHub-hosted runner'; exit 2; }
 df -h /
 # Explicitly authorized cleanup of the disposable Actions image only.
-sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android /usr/local/share/boost /opt/hostedtoolcache/CodeQL
+sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android /usr/local/share/boost /opt/hostedtoolcache/CodeQL /iossd
 mapfile -t REMOVE < <(dpkg-query -W -f='${binary:Package}\n' | awk '/^(dotnet-|aspnetcore-|ghc|haskell-|azure-cli)/')
 if ((${#REMOVE[@]})); then sudo apt-get purge -y "${REMOVE[@]}"; fi
 sudo docker image prune --all --force || true

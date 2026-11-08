@@ -1,0 +1,44 @@
+{
+  "uploaded_file": "a7lte-progress.tar.gz",
+  "bytes": 17944645,
+  "sha256": "dffe95250e8684e3e08a4d3a5917bfa209a3b5f2af4d9798ffbb45468a44acdf",
+  "matches_preserved_initial_project_archive": true,
+  "regular_files": 262,
+  "uncompressed_file_bytes": 39440324,
+  "unsafe_archive_entries": [],
+  "vendor_tree_files": [],
+  "shared_library_files": [],
+  "elf_files": [
+    {
+      "path": "artifacts/vmlinux",
+      "class": 1,
+      "machine": 40,
+      "type": 2
+    }
+  ],
+  "calibration_files": [
+    "android/device/samsung/msm8916-common/configs/wifi/WCNSS_qcom_wlan_nv.bin",
+    "android/device/samsung/a7lte/audio/Tfa9895.cnt",
+    "android/device/samsung/a7lte/audio/acdb/Headset_cal.acdb",
+    "android/device/samsung/a7lte/audio/acdb/Speaker_cal.acdb",
+    "android/device/samsung/a7lte/audio/acdb/Bluetooth_cal.acdb",
+    "android/device/samsung/a7lte/audio/acdb/Global_cal.acdb",
+    "android/device/samsung/a7lte/audio/acdb/Hdmi_cal.acdb",
+    "android/device/samsung/a7lte/audio/acdb/Handset_cal.acdb",
+    "android/device/samsung/a7lte/audio/acdb/General_cal.acdb",
+    "android/device/samsung/a7lte/wifi/WCNSS_qcom_wlan_nv.bin"
+  ],
+  "build_artifacts": [
+    "artifacts/dt.img",
+    "artifacts/zImage",
+    "artifacts/vmlinux",
+    "artifacts/dtbs/msm8939-sec-a7-eur-r04.dtb",
+    "artifacts/dtbs/msm8939-sec-a7-eur-r01.dtb",
+    "artifacts/dtbs/msm8939-sec-a7-eur-r05.dtb",
+    "artifacts/dtbs/msm8939-sec-a7-eur-r06.dtb",
+    "artifacts/dtbs/msm8939-sec-a7-eur-r03.dtb"
+  ],
+  "contains_csb1_vendor_bundle": false,
+  "extracted": false,
+  "archive_scripts_executed": false
+}

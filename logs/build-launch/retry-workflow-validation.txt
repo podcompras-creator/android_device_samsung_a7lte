@@ -1,0 +1,1 @@
+PASS: updated workflow YAML and all bash snippets parsed; brunch remains unconditional with ALLOW_MISSING_DEPENDENCIES=true; no local ROM/kernel build. Targeted helper test logs are separate.

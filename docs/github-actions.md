@@ -35,3 +35,21 @@ logs/immediate-build e não são apresentados como uma execução Actions.
 
 Para disparo pela integração GitHub, um commit em ci/build-trigger.json no main
 inicia o mesmo workflow; workflow_dispatch também permanece disponível.
+
+## Aquisição oficial quando o pacote local não contém blobs
+
+A atualização do runner obtém SYSTEM diretamente do FUS Samsung para o CSB1
+exato quando `dispositivo/blobs` estiver ausente. Essa aquisição ocorre antes do
+sync da plataforma, valida o AP completo e a identidade de SYSTEM, gera o vendor
+com hashes e remove apenas intermediários grandes criados pelo próprio job.
+Não usa o pacote de progresso como se contivesse bibliotecas proprietárias.
+
+O modo forçado solicitado permanece: `ALLOW_MISSING_DEPENDENCIES=true`, serviços
+normais e brunch sem gate de ZIP. Arquivos ausentes no CSB1 são registrados como
+pendências explícitas, sem substituição por arquivos2016 ou de outro modelo.
+Compilar nesse modo não demonstra compatibilidade ABI nem boot no aparelho.
+
+A limpeza inclui `/iossd`. O manifesto exclui somente o emulador e prebuilts
+Darwin que não são utilizados pelo build Linux A7. O sync mantém2GiB de reserva
+para o runner finalizar e enviar logs; se esse limiar for atingido, o erro é
+registrado como insuficiência de disco, sem chamar a interrupção de erro Ninja.

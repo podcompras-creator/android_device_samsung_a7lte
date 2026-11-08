@@ -1,0 +1,15 @@
+test_actual_selected_bytes_hashes_and_wrappers (__main__.CIVendor.test_actual_selected_bytes_hashes_and_wrappers) ... ok
+test_existing_vendor_is_preserved (__main__.CIVendor.test_existing_vendor_is_preserved) ... ok
+test_external_directory_symlink_is_not_followed (__main__.CIVendor.test_external_directory_symlink_is_not_followed) ... ok
+test_external_file_symlink_is_recorded_not_followed (__main__.CIVendor.test_external_file_symlink_is_recorded_not_followed) ... ok
+test_failed_fetch_provenance_cannot_be_reused (__main__.CIVendor.test_failed_fetch_provenance_cannot_be_reused) ... ok
+test_force_records_missing_without_substitution (__main__.CIVendor.test_force_records_missing_without_substitution) ... ok
+test_optional_csc_external_link_does_not_abort_other_files (__main__.CIVendor.test_optional_csc_external_link_does_not_abort_other_files) ... ok
+test_source_module_and_firmware_link_destinations_skip (__main__.CIVendor.test_source_module_and_firmware_link_destinations_skip) ... ok
+test_strict_missing_stops_and_preserves_inventory (__main__.CIVendor.test_strict_missing_stops_and_preserves_inventory) ... ok
+test_wrong_identity_refused_before_vendor_generation (__main__.CIVendor.test_wrong_identity_refused_before_vendor_generation) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.134s
+
+OK

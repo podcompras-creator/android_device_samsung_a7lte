@@ -1,0 +1,13 @@
+{
+  "run_id": 42511295233,
+  "url": "https://github.com/podcompras-creator/android_device_samsung_a7lte/actions/runs/42511295233",
+  "conclusion": "failure",
+  "passed_steps": ["checkout", "runner cleanup", "Android9 dependency installation", "repo init"],
+  "last_active_step": "repo sync raso",
+  "ninja_invoked": false,
+  "rom_or_boot_produced": false,
+  "artifacts": [],
+  "job_logs_download": "GitHub redirected log retrieval to a missing storage blob (404 BlobNotFound)",
+  "root_cause": "not established from available logs",
+  "retry_changes": ["additional runner cleanup", "Linux-only prebuilt selection", "resource telemetry and disk reserve", "genuine CSB1 SYSTEM and vendor acquisition"]
+}

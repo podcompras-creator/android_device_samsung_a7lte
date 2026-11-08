@@ -1,0 +1,9 @@
+test_vendor_parent_symlink_is_rejected (__main__.CIVendor.test_vendor_parent_symlink_is_rejected) ... ok
+test_combined_inventory_counts_actual_missing_sources (__main__.CIVendor.test_combined_inventory_counts_actual_missing_sources) ... ok
+test_fetch_report_crc_is_required (__main__.CIVendor.test_fetch_report_crc_is_required) ... ok
+test_valid_fetch_report_is_preserved_with_exact_identity_hash (__main__.CIVendor.test_valid_fetch_report_is_preserved_with_exact_identity_hash) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.057s
+
+OK

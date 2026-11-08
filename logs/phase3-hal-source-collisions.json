@@ -1,0 +1,46 @@
+{
+  "scope": "Read-only source collision audit for candidate vendor adapter; no compiler or ELF ABI claim",
+  "hardware_samsung_revision": "871d3f4777603ff6c33a021fc38c9b2265c54f83",
+  "sources": [
+    {
+      "path": "verification/platform/hardware/samsung/Android.mk",
+      "sha256": "7381491dc09f017206d9a5a68e56ff426e3361860d2a4a3c6d4037f64163299c"
+    },
+    {
+      "path": "verification/platform/hardware/samsung/ril/Android.mk",
+      "sha256": "08ba9ae2d8da73d00d15851f0e88974a7fc38672f5d4303820ca46f18ef83f2f"
+    },
+    {
+      "path": "verification/platform/hardware/samsung/ril/libsecril-client/Android.mk",
+      "sha256": "1f05903f2245e2c6c0c41b7b72d9e961b899614beab3842a7d9e7731069cf6e8"
+    },
+    {
+      "path": "android/device/samsung/msm8916-common/BoardConfigCommon.mk",
+      "sha256": "d7a17d383484fd9546be5a6b010bbc0a54e665393b713b59882f7dc672553186"
+    },
+    {
+      "path": "android/device/samsung/msm8916-common/Android.mk",
+      "sha256": "fa563ae18e035f092dc58aebd2f830191a0de8d0c3d686238ecc0c88992b8f91"
+    }
+  ],
+  "findings": [
+    {
+      "stock": "lib/libsecril-client.so",
+      "source_module": "libsecril-client",
+      "collision": true,
+      "reason": "hardware/samsung Android.mk includes ril/Android.mk for BOARD_VENDOR=samsung; common sets samsung; ril unconditionally includes libsecril-client Android.mk for that vendor. Avoid prebuilt module/output collision. This does not prove source-client ABI compatibility with stock users."
+    },
+    {
+      "stock": "lib/libaudio-ril.so",
+      "source_module": null,
+      "collision": false,
+      "reason": "No source definition found by Android.mk/Android.bp scan of selected verification/platform sources; retain candidate subject to dependency audit. Partial source scan is not full graph proof."
+    },
+    {
+      "stock": "vendor/firmware/keymaste.{b00,b01,b02,b03,mdt}",
+      "installed": "vendor/firmware/keymaster/keymaster.{b00,b01,b02,b03,mdt}",
+      "collision": true,
+      "reason": "Common Android.mk already owns these installed destinations as links to /firmware/image/keymaste.<suffix>. Compare mapped installed path, not original basename."
+    }
+  ]
+}

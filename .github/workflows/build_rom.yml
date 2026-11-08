@@ -41,7 +41,7 @@ jobs:
           df -h /
           sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup \
             /usr/local/lib/android /usr/local/share/boost \
-            /opt/hostedtoolcache/CodeQL
+            /opt/hostedtoolcache/CodeQL /iossd
           mapfile -t packages < <(dpkg-query -W -f='${binary:Package}\n' | \
             awk '/^(dotnet-|aspnetcore-|ghc|haskell-|azure-cli)/')
           if ((${#packages[@]})); then
@@ -63,12 +63,41 @@ jobs:
             libncurses5-dev libtinfo5 libsdl1.2-dev libssl-dev libxml2 \
             libxml2-utils lzop pngcrush rsync schedtool squashfs-tools \
             xsltproc zip unzip zlib1g-dev python2 python3 openjdk-8-jdk \
-            libelf-dev m4 ca-certificates
+            libelf-dev m4 ca-certificates openssl e2fsprogs android-sdk-libsparse-utils
           sudo apt-get clean
           ccache -M "$CCACHE_MAXSIZE"
           mkdir -p "$ANDROID_TREE" "$GITHUB_WORKSPACE/logs"
           git config --global user.name 'a7lte Actions builder'
           git config --global user.email 'a7lte-builder@users.noreply.github.com'
+
+      - name: Preparar vendor CSB1 real para o build
+        shell: bash
+        timeout-minutes: 120
+        run: |
+          set -euo pipefail
+          mkdir -p "$ANDROID_TREE/vendor/samsung/a7lte"
+          if [[ -d "$PORT_ROOT/dispositivo/blobs" ]]; then
+            rsync -a "$PORT_ROOT/dispositivo/blobs/" "$ANDROID_TREE/vendor/samsung/a7lte/"
+          else
+            save_evidence() {
+              mkdir -p "$GITHUB_WORKSPACE/logs/stock-acquisition"
+              for file in "$GITHUB_WORKSPACE/csb1-source/fetch-result.json" \
+                "$GITHUB_WORKSPACE/vendor-staging/generation-audit.json"; do
+                if [[ -f "$file" ]]; then cp "$file" "$GITHUB_WORKSPACE/logs/stock-acquisition/"; fi
+              done
+            }
+            trap save_evidence EXIT
+            python3 "$PORT_ROOT/ci/fetch-csb1-system.py" --output "$GITHUB_WORKSPACE/csb1-source" \
+              2>&1 | tee "$GITHUB_WORKSPACE/logs/stock-acquisition.log"
+            python3 "$PORT_ROOT/ci/prepare-csb1-vendor.py" \
+              --system "$GITHUB_WORKSPACE/csb1-source/system" --tree "$ANDROID_TREE" \
+              --staging "$GITHUB_WORKSPACE/vendor-staging" --allow-missing-candidates \
+              2>&1 | tee "$GITHUB_WORKSPACE/logs/vendor-generation.log"
+            save_evidence
+            # Only newly downloaded CI scratch is removed after vendor generation.
+            rm -rf "$GITHUB_WORKSPACE/csb1-source/system" "$GITHUB_WORKSPACE/vendor-staging"
+          fi
+          df -h / | tee "$GITHUB_WORKSPACE/logs/disk-after-vendor.txt"
 
       - name: repo init e manifesto local
         shell: bash
@@ -113,9 +142,7 @@ jobs:
           export GIT_TERMINAL_PROMPT=0
           trap 'rm -f "$RUNNER_TEMP/a7lte-askpass"' EXIT
           cd "$ANDROID_TREE"
-          python3 "$PORT_ROOT/tooling/repo" sync -c -j8 --force-sync \
-            --no-clone-bundle --no-tags 2>&1 | \
-            tee "$GITHUB_WORKSPACE/logs/repo-sync.log"
+          bash "$PORT_ROOT/ci/sync-platform.sh"
           python3 "$PORT_ROOT/tooling/repo" manifest -r \
             -o "$GITHUB_WORKSPACE/logs/manifest-resolved.xml"
 
@@ -124,13 +151,8 @@ jobs:
         run: |
           set -euo pipefail
           python3 "$PORT_ROOT/scripts/apply-overlay.py" --tree "$ANDROID_TREE"
-          [[ -d "$PORT_ROOT/dispositivo/blobs" ]] || {
-            echo 'Pasta dispositivo/blobs ausente no repositorio publicado.'
-            exit 1
-          }
-          mkdir -p "$ANDROID_TREE/vendor/samsung/a7lte"
-          rsync -a "$PORT_ROOT/dispositivo/blobs/" \
-            "$ANDROID_TREE/vendor/samsung/a7lte/"
+          echo 'Vendor usa apenas o pacote fornecido ou bytes extraidos do CSB1 oficial.'
+          ls -l "$ANDROID_TREE/vendor/samsung/a7lte/a7lte-vendor.mk"
           # Os patches de isolamento diagnostico nao sao aplicados.
           df -h / | tee "$GITHUB_WORKSPACE/logs/disk-before-build.txt"
 
