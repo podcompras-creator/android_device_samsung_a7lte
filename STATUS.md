@@ -11,21 +11,26 @@ LineageOS16 foi sincronizada por completo no GitHub Actions. O runner observado
 possui16GiB de RAM; havia61GiB livres antes do build da execução42541519000.
 O disco local de aproximadamente8GiB não é usado para compilar o Android inteiro.
 
-A execução42543011567 parou na duplicação de librmnetctl, já corrigida.
-A execução42544239502 compilou66011das76036etapas e parou a86% nos testes
-nativos de classificação SELinux. O fallback bootimage concluiu com saída0 e
-produziu8902672bytes, mas a verificação local detectou offsets de ramdisk/tags
-incorretos. A imagem foi preservada sem modificações em
-artifacts/android-run6-unvalidated, identificada como não pronta para flash.
-Não há ROM ZIP gerada. Logs completos: logs/build-launch/actions-run6.
+A execução42639113395 (tentativa7) passou no target nativo sepolicy_tests e
+avançou até65196/74939etapas. Parou ao assinar WebView: o arquivo de entrada
+era um ponteiro Git LFS de texto, gerando zip END header not found. Não houve
+esgotamento de RAM ou disco:32GiB ainda livres no final. Não há ROM ZIP gerada.
+Logs: logs/build-launch/actions-run7, incluindo as últimas50linhas reais.
 
-As classificações SELinux foram corrigidas sem novos grants:32atributos mais
-dois contextos de firmware empacotado, preservando o tipo da partição montada.
-checkpolicy com neverallows e checkfc passaram; as assertivas upstream, com
-compatibilidade Python3documentada, reproduziram a falha anterior e passaram
-após a correção. O teste com as receitas reais do mkbootimg confirmou os offsets
-CSB1corretos para boot e recovery; a imagem antiga não foi editada para simular
-um novo build. As correções precisam agora da próxima execução nativa.
+O fallback bootimage terminou com saída0:8894480bytes,
+SHA256 f51ff79947cebf236d5eac3bde198b834eab1c71d391ceea16056a7b552d44f7.
+A verificação estrutural passou com os offsets CSB1corrigidos; o resultado
+global permanece PARTIAL, sem SYSTEM nem ROM e sem teste físico.
+O boot anterior da tentativa6 permanece preservado em
+artifacts/android-run6-unvalidated, com seus offsets incorretos documentados.
+
+A correção atual instala git-lfs e materializa os arquivos de entrada reais
+antes de compilar, verificando SHA256/tamanho do ponteiro versionado, CRC ZIP
+e JNI ELF32 ARM do WebView. O endpoint oficial respondeu com o objeto esperado
+de90257078bytes; a sonda verificou somente identidade e primeiros bytes.
+O download completo será conferido no runner. Dez testes direcionados passaram,
+incluindo hash errado, CRC, arquitetura, JNI, compressão incompatível e disco.
+Os46testes antigos não foram repetidos.
 
 ## Concluído nesta integração
 
@@ -57,8 +62,8 @@ um novo build. As correções precisam agora da próxima execução nativa.
 ## Pendências demonstradas
 
 - Android completo, imagens finais e empacotamento: dependem da próxima
-  execução; a falha real a86% e os offsets do boot foram corrigidos nas fontes,
-  sem declarar compilação integral bem-sucedida antes de executá-la.
+  execução com o APK WebView real. A tentativa7 confirmou as correções nativas
+  de política e offsets; a correção Git LFS ainda precisa passar no runner.
 - GPS: libloc_api_v02.so exige o objeto sec_gps_conf, ausente no fornecedor de
   fonte selecionado. O objeto existe no libgps.utils.so stock não instalado.
 - RIL: o protobuf nativo3.0 usa assinatura de construtor incompatível com a

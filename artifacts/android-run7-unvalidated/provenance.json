@@ -1,0 +1,10 @@
+{
+  "run_id": 42639113395,
+  "artifact_id": 13690894555,
+  "sha256": "f51ff79947cebf236d5eac3bde198b834eab1c71d391ceea16056a7b552d44f7",
+  "bytes": 8894480,
+  "static_boot_validation": "PASS",
+  "overall_validation": "PARTIAL_no_SYSTEM_no_ROM",
+  "hardware_tested": false,
+  "flash_ready": false
+}

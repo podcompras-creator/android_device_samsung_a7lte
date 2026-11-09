@@ -1,0 +1,3 @@
+required_policy_exit_code=0
+brunch_executed=true brunch_exit_code=1
+bootimage_exit_code=0

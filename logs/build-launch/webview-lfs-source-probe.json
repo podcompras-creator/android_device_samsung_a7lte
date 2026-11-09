@@ -1,0 +1,14 @@
+{
+  "operation": "official-Lineage-LFS-availability-probe",
+  "oid": "b7268786318f404bdad53eaaec889619ff30100b935541a9e393e32efed3cf11",
+  "expected_size": 90257078,
+  "full_crc_verified": false,
+  "full_sha256_verified": false,
+  "batch_http_status": 200,
+  "returned_oid_matches": true,
+  "returned_size_matches": true,
+  "download_host": "02e8220d630bcced078978aeedad418f.r2.cloudflarestorage.com",
+  "download_http_status": 206,
+  "zip_magic": "504b0304",
+  "zip_magic_matches": true
+}

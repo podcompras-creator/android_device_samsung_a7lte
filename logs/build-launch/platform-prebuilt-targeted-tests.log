@@ -1,0 +1,15 @@
+test_crc_failure_even_when_object_sha_matches (test_platform_prebuilts_new.PlatformPrebuilts.test_crc_failure_even_when_object_sha_matches) ... ok
+test_exact_materialization_hash_crc_and_arm32 (test_platform_prebuilts_new.PlatformPrebuilts.test_exact_materialization_hash_crc_and_arm32) ... ok
+test_insufficient_space_keeps_pointer_and_skips_download (test_platform_prebuilts_new.PlatformPrebuilts.test_insufficient_space_keeps_pointer_and_skips_download) ... ok
+test_java_unsupported_compression_rejected_early (test_platform_prebuilts_new.PlatformPrebuilts.test_java_unsupported_compression_rejected_early) ... ok
+test_missing_jni_rejected (test_platform_prebuilts_new.PlatformPrebuilts.test_missing_jni_rejected) ... ok
+test_non_lfs_source_change_is_not_silently_accepted (test_platform_prebuilts_new.PlatformPrebuilts.test_non_lfs_source_change_is_not_silently_accepted) ... ok
+test_nonselected_arch_and_staging_are_not_hydrated (test_platform_prebuilts_new.PlatformPrebuilts.test_nonselected_arch_and_staging_are_not_hydrated) ... ok
+test_text_pointer_fails_before_signing (test_platform_prebuilts_new.PlatformPrebuilts.test_text_pointer_fails_before_signing) ... ok
+test_wrong_download_hash_rejected (test_platform_prebuilts_new.PlatformPrebuilts.test_wrong_download_hash_rejected) ... ok
+test_wrong_native_architecture_rejected (test_platform_prebuilts_new.PlatformPrebuilts.test_wrong_native_architecture_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.324s
+
+OK

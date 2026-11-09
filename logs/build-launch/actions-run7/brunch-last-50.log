@@ -1,0 +1,50 @@
+[ 86% 65173/74939] Install: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/system/app/LineageBrownAccent/LineageBrownAccent.apk
+[ 86% 65174/74939] //frameworks/base/tools/sdkparcelables:sdkparcelables kotlinc [linux_glibc common]
+[ 86% 65175/74939] target Package: LineageCyanAccent (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/LineageCyanAccent_intermediates/package.apk)
+[ 86% 65176/74939] Install: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/system/app/LineageCyanAccent/LineageCyanAccent.apk
+[ 86% 65177/74939] target Package: LineageDarkTheme (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/LineageDarkTheme_intermediates/package.apk)
+[ 86% 65178/74939] Install: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/system/app/LineageDarkTheme/LineageDarkTheme.apk
+[ 86% 65179/74939] target Package: LineageGreenAccent (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/LineageGreenAccent_intermediates/package.apk)
+[ 86% 65180/74939] Install: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/system/app/LineageGreenAccent/LineageGreenAccent.apk
+[ 86% 65181/74939] target Package: LineageOrangeAccent (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/LineageOrangeAccent_intermediates/package.apk)
+[ 86% 65182/74939] Install: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/system/app/LineageOrangeAccent/LineageOrangeAccent.apk
+[ 86% 65183/74939] //external/protobuf:libprotobuf-java-full javac [linux_glibc common]
+[ 86% 65184/74939] //external/doclava:doclava javac [linux_glibc common]
+[ 86% 65185/74939] Copy: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/framework-res_intermediates/package.apk
+[ 86% 65186/74939] target Package: LineagePinkAccent (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/LineagePinkAccent_intermediates/package.apk)
+[ 86% 65187/74939] Install: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/system/app/LineagePinkAccent/LineagePinkAccent.apk
+[ 86% 65188/74939] target Prebuilt: CtsShimPrivPrebuilt (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/CtsShimPrivPrebuilt_intermediates/package.apk)
+[ 86% 65189/74939] Install: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/system/priv-app/CtsShimPrivPrebuilt/CtsShimPrivPrebuilt.apk
+[ 86% 65190/74939] target Package: LineageRedAccent (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/LineageRedAccent_intermediates/package.apk)
+[ 86% 65191/74939] Install: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/system/app/LineageRedAccent/LineageRedAccent.apk
+[ 86% 65192/74939] target Package: LineagePurpleAccent (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/LineagePurpleAccent_intermediates/package.apk)
+[ 86% 65193/74939] Install: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/system/app/LineagePurpleAccent/LineagePurpleAccent.apk
+[ 86% 65194/74939] target Package: LineageYellowAccent (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/LineageYellowAccent_intermediates/package.apk)
+[ 86% 65195/74939] Install: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/system/app/LineageYellowAccent/LineageYellowAccent.apk
+[ 86% 65196/74939] target Prebuilt: webview (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk)
+FAILED: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk 
+/bin/bash -c "(rm -f /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk ) && (cp \"external/chromium-webview/prebuilt/arm/webview.apk\" \"/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk\" ) && (if (zipinfo /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk lib/armeabi-v7a/libwebviewchromium.so 2>/dev/null | grep -v ' stor ' >/dev/null) ; then rm -rf /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/uncompressedlibs && mkdir /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/uncompressedlibs; unzip -q /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk lib/armeabi-v7a/libwebviewchromium.so -d /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/uncompressedlibs && zip -qd /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk 'lib/*.so' && ( cd /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/uncompressedlibs && find lib -type f | sort | zip -qD -X -0 ../package.apk -@ ) && rm -rf /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/uncompressedlibs; fi ) && (mv /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk.unsigned ) && (prebuilts/jdk/jdk9/linux-x86/bin/java -Djava.library.path=/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/host/linux-x86/lib64 -jar /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/host/linux-x86/framework/signapk.jar build/target/product/security/testkey.x509.pem build/target/product/security/testkey.pk8  /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk.unsigned /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk.signed ) && (mv /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk.signed /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/webview_intermediates/package.apk )"
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.zerror(ZipFile.java:1252)
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1153)
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1160)
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:997)
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:960)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:216)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:148)
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:324)
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:295)
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:275)
+	at com.android.signapk.SignApk.main(SignApk.java:1026)
+[ 87% 65197/74939] target Package: framework-res__auto_generated_rro (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/framework-res__auto_generated_rro_intermediates/package.apk)
+[ 87% 65198/74939] target Package: DisplayCutoutEmulationTallOverlay (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/DisplayCutoutEmulationTallOverlay_intermediates/package.apk)
+[ 87% 65199/74939] target Package: DisplayCutoutEmulationDoubleOverlay (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/DisplayCutoutEmulationDoubleOverlay_intermediates/package.apk)
+[ 87% 65200/74939] target Package: DisplayCutoutEmulationCornerOverlay (/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/APPS/DisplayCutoutEmulationCornerOverlay_intermediates/package.apk)
+[ 87% 65201/74939] //bionic/libc:common_libc versioner preprocess include [linux_glibc]
+warning: attempted to generate guard with empty availability: obsoleted = 23
+warning: attempted to generate guard with empty availability: obsoleted = 21
+ninja: build stopped: subcommand failed.
+16:31:06 ninja failed with: exit status 1
+
+#### failed to build some targets (01:21:03 (hh:mm:ss)) ####
+

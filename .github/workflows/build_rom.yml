@@ -61,7 +61,7 @@ jobs:
           sudo apt-get update
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
             bc bison build-essential ccache curl flex g++-multilib \
-            gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev \
+            gcc-multilib git git-lfs gnupg gperf imagemagick lib32ncurses5-dev \
             lib32readline-dev lib32z1-dev liblz4-tool libncurses5 \
             libncurses5-dev libtinfo5 libsdl1.2-dev libssl-dev libxml2 \
             libxml2-utils lzop pngcrush rsync schedtool squashfs-tools \
@@ -195,6 +195,15 @@ jobs:
           bash "$PORT_ROOT/ci/sync-platform.sh"
           python3 "$PORT_ROOT/tooling/repo" manifest -r \
             -o "$GITHUB_WORKSPACE/logs/manifest-resolved.xml"
+
+      - name: Materializar e conferir prebuilts antes de compilar
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 "$PORT_ROOT/ci/verify-platform-prebuilts.py" \
+            --tree "$ANDROID_TREE" --hydrate \
+            --output "$GITHUB_WORKSPACE/logs/platform-prebuilts.json" \
+            2>&1 | tee "$GITHUB_WORKSPACE/logs/platform-prebuilts.log"
 
       - name: Integrar arvore nativa e blobs locais
         shell: bash
