@@ -29,6 +29,7 @@ ADDITIONAL_SOURCE_MODULES = {
     'lib/libaudioroute.so': 'system/media/audio_route source module libaudioroute owns this platform library',
     'lib/libreference-ril.so': 'hardware/ril/reference-ril source module libreference-ril owns this platform library',
     'lib/libsecril-client.so': 'hardware/samsung@871d3f4777603ff6c33a021fc38c9b2265c54f83/ril/libsecril-client source module is included for BOARD_VENDOR=samsung',
+    'lib/librmnetctl.so': 'vendor/qcom/opensource/dataservices@c2c036451782b6193923be8d6311ae1a43fa4a73/rmnetctl/src/Android.mk builds librmnetctl; qcom_target.mk selects this source path',
 }
 FIRMWARE_SYMLINK_DESTINATIONS = {
     f'vendor/firmware/keymaster/keymaster.{ext}':

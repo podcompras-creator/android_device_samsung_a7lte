@@ -31,6 +31,8 @@ Saídas aceitas pelo adaptador de blobs:
 - `DIR/fetch-result.json`, com `success:true`, `metadata`, `ap_archive`,
   `selected_payloads`, `raw_system`, `system_identity` e ranges/hashes de origem;
 - `DIR/fus-metadata/`, logs de conversão e extração.
+- `DIR/system-file-catalog.json`, com caminhos, tipos, tamanhos regulares e
+  destinos de links do SYSTEM real; links externos não são seguidos no host.
 
 Qualquer falha escreve `success:false` e não publica `DIR/system`; dados de
 trabalho e logs ficam disponíveis para diagnóstico. A validação dos257 blobs,
@@ -41,5 +43,7 @@ Validação local desta mudança: **sete testes direcionados**, incluindo EOF/CR
 no footer, MD5 TAR incorreto, stream truncado, caminhos inseguros/duplicados,
 guarda de espaço antes da rede e conversão/rdump real de ext4 **sintético**.
 Nenhum SYSTEM stock completo foi baixado no ambiente local de~500MiB livres.
-O sucesso de obtenção stock completa depende da execução desse estágio no runner;
-o script registra a conclusão factual, sem presumir que ela ocorreu.
+Na execução42514831793, a aquisição completa e a geração vendor passaram no
+runner. A execução42541519000 restaurou esse vendor e o publicou como artefato.
+O catálogo de caminhos é uma adição posterior, que será registrado na próxima
+aquisição completa; seu teste local só usou metadados de filesystem sintético.

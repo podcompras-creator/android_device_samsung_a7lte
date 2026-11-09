@@ -14,6 +14,7 @@ import os
 from pathlib import Path, PurePosixPath
 import re
 import shutil
+import stat
 import struct
 import subprocess
 import sys
@@ -162,6 +163,31 @@ def run_logged(argv, logfile):
         subprocess.run(argv, check=True, stdout=log, stderr=subprocess.STDOUT)
 
 
+def catalog_system(system, output):
+    """Record real stock paths without following Android symlinks into the host."""
+    entries = []
+    for base, dirs, files in os.walk(system, followlinks=False):
+        dirs.sort()
+        for name in sorted(dirs + files):
+            path = Path(base) / name
+            mode = path.lstat().st_mode
+            entry = {'path': path.relative_to(system).as_posix()}
+            if stat.S_ISLNK(mode):
+                entry.update(kind='symlink', target=os.readlink(path))
+            elif stat.S_ISREG(mode):
+                entry.update(kind='file', bytes=path.stat().st_size)
+            elif stat.S_ISDIR(mode):
+                entry.update(kind='directory')
+            else:
+                entry.update(kind='special', mode=oct(mode))
+            entries.append(entry)
+            if len(entries) > 200000:
+                raise ValueError('SYSTEM catalog exceeds entry budget')
+    output.write_text(json.dumps({'scope': 'Actual extracted SYSTEM paths; symlinks are not followed',
+                                  'entries': entries}, indent=2, sort_keys=True) + '\n')
+    return {'path': output.name, 'entries': len(entries), 'sha256': sha256_file(output)}
+
+
 def materialize_system(payload, stage, report, raw_limit=MAX_SYSTEM_BYTES):
     raw = stage / 'system.raw.img'
     with payload.open('rb') as source:
@@ -257,6 +283,7 @@ def main():
         report['selected_payloads'] = selected
         system_payload = stage / selected['system']['path']
         extracted, raw = materialize_system(system_payload, stage, report)
+        report['system_file_catalog'] = catalog_system(extracted, output / 'system-file-catalog.json')
         # The conventional system path appears ONLY after AP integrity and identity pass.
         extracted.rename(output / 'system')
         for name in ('boot.img', 'recovery.img'):

@@ -20,7 +20,7 @@ TMP=$(mktemp /tmp/a7lte-update.XXXXXX.tar.gz)
 trap 'rm -f "$TMP"' EXIT
 mkdir -p "$(dirname "$OUTPUT")"
 tar -czf "$TMP" --exclude='*.tar.gz' --exclude='*.tar.gz.sha256' --exclude='__pycache__' --exclude='tooling/git-repo' \
-    README.md STATUS.md Containerfile local_manifests.xml .github ci sources.lock.json host-tools.lock.json scripts manifests patches templates tests android docs logs artifacts tooling sources/hal-audit sources/dtbtool.c sources/dtbtool.origin.json
+    README.md STATUS.md Containerfile local_manifests.xml .find-ignore .github ci sources.lock.json host-tools.lock.json scripts manifests patches templates tests android docs logs artifacts tooling sources/hal-audit sources/dtbtool.c sources/dtbtool.origin.json
 mv "$TMP" "$OUTPUT"
 sha256sum "$OUTPUT" > "$OUTPUT.sha256"
 echo "$OUTPUT"

@@ -1,0 +1,2 @@
+PASS: stock catalog records regular sizes and dangling/external symlinks without following host paths; digest matched
+Scope: synthetic filesystem metadata only; no additional firmware acquisition claimed

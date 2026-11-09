@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "artifact_id": 13642035280,
+  "workflow_run_id": 42541519000,
+  "firmware": "A700FDXXS1CSB1",
+  "vendor_integrity": "238selected-file hashes plus generated recipes verified against artifact manifest",
+  "observed_transitive_provider_gaps": [
+    {
+      "needed": "libOpenCL.so",
+      "confirmed_selected_consumers": [
+        {
+          "source": "lib/libmmcamera_cac2_lib_13M.so",
+          "destination": "lib/libmmcamera_cac2_lib_13M.so",
+          "sha256": "0ed0c58d6e9d116c6adb8dfbb680787393b6bedf4806f4c82f0c993367217591"
+        }
+      ],
+      "provider_in_artifact": false,
+      "proposed_stock_path": "vendor/lib/libOpenCL.so",
+      "path_existence_in_full_CSB1_not_yet_rechecked": true,
+      "source_provider_classification": "Qualcomm GPU proprietary candidate; common upstream proprietary-files lists this SONAME under vendor/lib, not a source module.",
+      "scope_limit": "Partial appropriate-source snapshot audit; final full build graph remains authoritative."
+    },
+    {
+      "needed": "libexifa.so",
+      "confirmed_selected_consumers": [
+        {
+          "source": "lib/libjpega.so",
+          "destination": "lib/libjpega.so",
+          "sha256": "d48dbc7e147eac1737bdb8d0e926046cc4a23ee6098fbb882458ab25f9e182f2"
+        }
+      ],
+      "provider_in_artifact": false,
+      "proposed_stock_path": "lib/libexifa.so",
+      "path_existence_in_full_CSB1_not_yet_rechecked": true,
+      "source_provider_classification": "Samsung camera/JPEG proprietary candidate; selected external/libexif source Android.bp defines libexif, not libexifa.",
+      "scope_limit": "Partial appropriate-source snapshot audit; final full build graph remains authoritative."
+    },
+    {
+      "needed": "libflp.so",
+      "confirmed_selected_consumers": [
+        {
+          "source": "vendor/lib/hw/flp.default.so",
+          "destination": "vendor/lib/hw/flp.default.so",
+          "sha256": "fc39ff8bbf1b4f2969b51190966783102b5397eca15fc567cd31ff3da9e914e7"
+        }
+      ],
+      "provider_in_artifact": false,
+      "proposed_stock_path": "vendor/lib/libflp.so",
+      "path_existence_in_full_CSB1_not_yet_rechecked": true,
+      "source_provider_classification": "Qualcomm location proprietary candidate; common upstream proprietary-files lists vendor/lib/libflp.so. GPS source references headers/libflp but defines no matching libflp module.",
+      "scope_limit": "Partial appropriate-source snapshot audit; final full build graph remains authoritative."
+    },
+    {
+      "needed": "libqmi_client_helper.so",
+      "confirmed_selected_consumers": [
+        {
+          "source": "bin/netmgrd",
+          "destination": "bin/netmgrd",
+          "sha256": "337c6a3df35285185ad5f1584698cc9beb0f3ca5916a268fcbf78e211772014d"
+        }
+      ],
+      "provider_in_artifact": false,
+      "proposed_stock_path": "vendor/lib/libqmi_client_helper.so",
+      "path_existence_in_full_CSB1_not_yet_rechecked": true,
+      "source_provider_classification": "Qualcomm QMI helper proprietary candidate; all fetched dataservices and data-ipa-cfg-mgr Android.mk files declare no matching module.",
+      "scope_limit": "Partial appropriate-source snapshot audit; final full build graph remains authoritative."
+    },
+    {
+      "needed": "lib_SA_GoogleFX_ver119k.so",
+      "confirmed_selected_consumers": [
+        {
+          "source": "lib/libaudiosa.so",
+          "destination": "lib/libaudiosa.so",
+          "sha256": "f125c39f7368fb0b696b608c236cb210842fc14ca02b7cb7e415ce19cb9b84aa"
+        }
+      ],
+      "provider_in_artifact": false,
+      "proposed_stock_path": "lib/lib_SA_GoogleFX_ver119k.so",
+      "path_existence_in_full_CSB1_not_yet_rechecked": true,
+      "source_provider_classification": "Samsung SoundAlive proprietary candidate; no matching source module in fetched Samsung/HAL snapshots.",
+      "scope_limit": "Partial appropriate-source snapshot audit; final full build graph remains authoritative."
+    },
+    {
+      "needed": "libsecaudioinfo.so",
+      "confirmed_selected_consumers": [
+        {
+          "source": "lib/libsamsungRecord.so",
+          "destination": "lib/libsamsungRecord.so",
+          "sha256": "0fb86080877a6c58901bbf01a86d12bfc0caab8b651762ef1921b0997f6cbc4c"
+        },
+        {
+          "source": "lib/libsamsungpowersound.so",
+          "destination": "lib/libsamsungpowersound.so",
+          "sha256": "7e62cb348883949dafdfc1a8454cabffd9a63e238df647b6a4261cdf3a1b19b1"
+        }
+      ],
+      "provider_in_artifact": false,
+      "proposed_stock_path": "lib/libsecaudioinfo.so",
+      "path_existence_in_full_CSB1_not_yet_rechecked": true,
+      "source_provider_classification": "Samsung recording/audio proprietary candidate; no matching source module in fetched Samsung/HAL snapshots.",
+      "scope_limit": "Partial appropriate-source snapshot audit; final full build graph remains authoritative."
+    }
+  ],
+  "confirmed_source_collision": {
+    "stock": "lib/librmnetctl.so",
+    "generated_vendor_module": "librmnetctl",
+    "source_repository": "LineageOS/android_vendor_qcom_opensource_dataservices",
+    "source_commit": "c2c036451782b6193923be8d6311ae1a43fa4a73",
+    "source_module_declaration": "rmnetctl/src/Android.mk:16",
+    "selection_proof": "qcom-common sets BOARD_USES_QCOM_HARDWARE=true; qcom_target.mk:29 defaults DATASERVICES to vendor/qcom/opensource/dataservices; no device override",
+    "proposed_action": "Skip stock librmnetctl in favor of source module; source ABI still unverified"
+  },
+  "source_evidence": [
+    {
+      "path": "verification/csb1-provider-source-audit/android_vendor_qcom_opensource_dataservices/Android.mk",
+      "sha256": "c7e7443627a3b11b8d79973fe2e4f889b0297fba981549d471aca00f59ecc8b9"
+    },
+    {
+      "path": "verification/csb1-provider-source-audit/android_vendor_qcom_opensource_dataservices/rmnetctl/src/Android.mk",
+      "sha256": "1514003c9c0fd5071b467940d9c6279f2996d5834aa463f9816dc168e23cde7d"
+    },
+    {
+      "path": "verification/platform/vendor/lineage/build/core/qcom_target.mk",
+      "sha256": "fba2c6f70225656c8a4d8ab7127f7828210c0fe2659ea0756b21a5f0d0fa493a"
+    },
+    {
+      "path": "verification/platform/device/samsung/qcom-common/BoardConfigCommon.mk",
+      "sha256": "0529ba5b4d47718f565e12bd913aa5860c0e5b9bc73be46266c4ef320c734a87"
+    },
+    {
+      "path": "verification/csb1-provider-source-audit/android_external_libexif/Android.bp",
+      "sha256": "084fc144779943a9e64f92b895d04e97f9b5f14d90245fa4d9466b04edf94428"
+    }
+  ],
+  "production_changes_authorized": [
+    "add6expectedproviderpaths; no new bytes installed",
+    "skip stock librmnetctl source collision"
+  ],
+  "device_tested": false,
+  "pie_abi_verified": false
+}

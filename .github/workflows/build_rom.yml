@@ -78,7 +78,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: ${{ env.ANDROID_TREE }}/vendor/samsung/a7lte
-          key: csb1-vendor-v1-${{ hashFiles('port/ci/prepare-csb1-vendor.py', 'port/scripts/extract-stock.py', 'port/scripts/generate-vendor.py', 'port/scripts/native-contracts.json') }}
+          key: csb1-vendor-v1-${{ hashFiles('port/ci/prepare-csb1-vendor.py', 'port/scripts/extract-stock.py', 'port/scripts/generate-vendor.py', 'port/scripts/native-contracts.json', 'port/android/device/samsung/a7lte/proprietary-files.txt') }}
 
       - name: Preparar vendor CSB1 real para o build
         if: steps.vendor_cache.outputs.cache-hit != 'true'
@@ -93,6 +93,7 @@ jobs:
             save_evidence() {
               mkdir -p "$GITHUB_WORKSPACE/logs/stock-acquisition"
               for file in "$GITHUB_WORKSPACE/csb1-source/fetch-result.json" \
+                "$GITHUB_WORKSPACE/csb1-source/system-file-catalog.json" \
                 "$GITHUB_WORKSPACE/vendor-staging/generation-audit.json"; do
                 if [[ -f "$file" ]]; then cp "$file" "$GITHUB_WORKSPACE/logs/stock-acquisition/"; fi
               done

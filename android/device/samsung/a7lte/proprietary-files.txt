@@ -1,4 +1,5 @@
 # Candidate list from MSM8939-Samsung A7 CM13 vendor; NOT verified CSB1/Pie blobs.
+# Six additional provider candidates below are required by actual CSB1 DT_NEEDED; availability is checked on next acquisition.
 # Paths relative to stock SYSTEM. source:destination preserves intentional relocation.
 # Do not append common replacement hashes: they identify other devices/firmware.
 bin/adsprpcd
@@ -45,6 +46,7 @@ lib/libAl_Awb.so
 lib/libAl_Awb_Sp.so
 lib/libSamsungPostProcessConvertor.so
 lib/libSamsungPreProcess.so
+lib/lib_SA_GoogleFX_ver119k.so
 lib/lib_DNSe_EP_ver216c.so
 lib/lib_DNSe_NRSS_ver226.so
 lib/lib_SamsungRec_V04013.so
@@ -89,6 +91,7 @@ lib/libcommon_time_client.so
 lib/libcordon.so
 lib/libdrmdecrypt.so
 lib/libfactoryutil.so
+lib/libexifa.so
 lib/libgps.utils.so
 lib/libhdcp2.so
 lib/libjpega.so
@@ -115,6 +118,7 @@ lib/libsamsungvad.so
 lib/libsec-ril-dsds.so
 lib/libsec-ril.so
 lib/libsecnativefeature.so
+lib/libsecaudioinfo.so
 lib/libsecril-client.so
 lib/libtfa9895.so
 lib/libtinyalsa.so
@@ -149,6 +153,7 @@ vendor/lib/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOpenCL.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libTimeService.so
@@ -183,6 +188,7 @@ vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libdsutils.so
 vendor/lib/libfastcvopt.so
+vendor/lib/libflp.so
 vendor/lib/libgeofence.so
 vendor/lib/libgsl.so
 vendor/lib/libidl.so
@@ -233,6 +239,7 @@ vendor/lib/libperipheral_client.so
 vendor/lib/libqcci_legacy.so
 vendor/lib/libqmi.so
 vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_client_helper.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so

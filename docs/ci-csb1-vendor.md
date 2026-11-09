@@ -27,7 +27,9 @@ para o staging; não é transformado em alegação de assinatura Samsung verific
 Sem relatório de aquisição, a auditoria registra explicitamente que só a
 identidade das propriedades foi conferida. A região CSC nunca é inferida do AP.
 
-A lista histórica de 257 candidatos é reconciliada com o SYSTEM real. Só bytes
+A lista histórica de257candidatos foi ampliada para263 após examinar o
+`DT_NEEDED` dos consumidores CSB1 reais. Os seis caminhos adicionais são
+candidatos a provedores que a próxima aquisição precisa confirmar. Só bytes
 regulares confinados nesse diretório são materializados em uma visão temporária
 por hardlink/cópia e fornecidos a `extract-stock.py`. Essa visão não contém
 arquivos de outros repositórios. A detecção de dependências nela não pode confirmar
@@ -54,6 +56,10 @@ contratos de fonte existentes e as seguintes decisões adicionais fundamentadas:
   plataforma. `libsecril-client` é definido pelo hardware Samsung selecionado,
   incluído com `BOARD_VENDOR=samsung`; não se instala uma segunda cópia stock.
   A compatibilidade ABI desses fornecedores ainda precisa do build real.
+- `librmnetctl` é fornecido pelo repositório Qualcomm dataservices selecionado,
+  commit `c2c036451782b6193923be8d6311ae1a43fa4a73`; sua segunda definição stock
+  é omitida. A regeneração local com o inventário e os bytes CSB1 reais passou,
+  mantendo237arquivos selecionados e os hashes dos demais componentes.
 - Os cinco destinos `vendor/firmware/keymaster/keymaster.*` pertencem aos links
   gerados pelo `msm8916-common/Android.mk` para `/firmware/image/keymaste.*`.
   Eles são omitidos como saídas geradas de fonte, sem substituir firmware montado.
@@ -94,8 +100,16 @@ inventário combinado, exigência de CRC do AP e preservação de relatório bem
 sucedido com hash exato do `build.prop`. Os quatro últimos estão registrados em
 `logs/ci-vendor-followup-tests.log`; os testes antigos do projeto não foram repetidos.
 
-O workflow salva imediatamente o vendor adquirido no cache privado do Actions,
+O workflow salva imediatamente o vendor adquirido no cache do Actions,
 independentemente de sucesso posterior do Android. O cache é invalidado por
-alterações no extrator, gerador e contratos de fonte. Ao restaurar, makefiles,
+alterações no extrator, gerador, contratos de fonte e lista de candidatos. Ao restaurar, makefiles,
 plano, inventário e cada blob selecionado são conferidos por SHA-256. Isso evita
 baixar o mesmo firmware após uma falha posterior; não verifica ABI nem hardware.
+
+O artefato `a7lte-csb1-vendor-4` da execução42541519000 foi baixado e conferido:
+238arquivos selecionados,250extraídos na aquisição original e nenhum essencial
+marcado ausente. A auditoria ELF identificou seis provedores adicionais:
+`libOpenCL`, `libexifa`, `libflp`, `libqmi_client_helper`,
+`lib_SA_GoogleFX_ver119k` e `libsecaudioinfo`. Os consumidores e seus hashes
+estão em `logs/csb1-vendor-real-dependency-audit.json`. A ausência de faltas
+na lista essencial original não comprova o fechamento dessas dependências.

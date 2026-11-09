@@ -1,0 +1,12 @@
+{
+  "artifact_id": 13642035280,
+  "workflow_run_id": 42541519000,
+  "artifact_name": "a7lte-csb1-vendor-4",
+  "repository": "podcompras-creator/android_device_samsung_a7lte",
+  "zip_bytes": 37260442,
+  "zip_sha256": "9c8bcdcb3c14ad3f56119c20a6830993fd9e53f485d696aee01577b0aa71aef3",
+  "unpacked_bytes": 75460908,
+  "members": 245,
+  "safe_extraction": true,
+  "stock_code_executed": false
+}
