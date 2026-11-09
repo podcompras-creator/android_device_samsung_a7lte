@@ -1,9 +1,9 @@
 {
   "device": "a7lte",
   "product": "lineage_a7lte",
-  "source_commit": "65bc100c59e2b0fcf05fb98d00487f4ae5841e60",
-  "requested_at_utc": "2026-11-09 14:53:27 UTC",
+  "source_commit": "85cd89dfc5d6e17a4ba24396bcc8ec86ba42c934",
+  "requested_at_utc": "2026-11-09 23:29:59 UTC",
   "requested_build": "brunch a7lte",
   "allow_missing_dependencies": true,
-  "reason": "Autonomous retry after actual run6 policy test failure at86percent; fix native path classifications and verified Samsung load offsets"
+  "reason": "Autonomous retry: materialize official Git LFS WebView and verify SHA256, size, CRC and ARM32 JNI before compilation"
 }
