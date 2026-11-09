@@ -1,0 +1,7 @@
+test_native_board_offsets_reach_boot_and_recovery_headers (__main__.BootOffsetPropagationTests.test_native_board_offsets_reach_boot_and_recovery_headers) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.119s
+
+OK
+PASS: native BoardConfig + selected core args + Samsung recipe propagate verified offsets to both temporary NONFLASHABLE headers

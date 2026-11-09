@@ -1,0 +1,13 @@
+$ python3 -m unittest discover -s tests -p test_built_artifacts_new.py -v
+test_block_ota_checks_metadata_crc_and_embedded_boot (test_built_artifacts_new.BuiltArtifactsNewTests.test_block_ota_checks_metadata_crc_and_embedded_boot) ... ok
+test_boot_rejects_geometry_trailer_and_payload_corruption (test_built_artifacts_new.BuiltArtifactsNewTests.test_boot_rejects_geometry_trailer_and_payload_corruption) ... ok
+test_ota_rejects_wrong_device_missing_payload_and_bad_crc (test_built_artifacts_new.BuiltArtifactsNewTests.test_ota_rejects_wrong_device_missing_payload_and_bad_crc) ... ok
+test_product_out_empty_partial_rom_and_mismatched_boot (test_built_artifacts_new.BuiltArtifactsNewTests.test_product_out_empty_partial_rom_and_mismatched_boot) ... ok
+test_tiny_samsung_boot_geometry_qcdt_and_sha1 (test_built_artifacts_new.BuiltArtifactsNewTests.test_tiny_samsung_boot_geometry_qcdt_and_sha1) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.010s
+
+OK
+
+[exit code: 0]

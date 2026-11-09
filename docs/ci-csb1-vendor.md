@@ -113,3 +113,16 @@ marcado ausente. A auditoria ELF identificou seis provedores adicionais:
 `lib_SA_GoogleFX_ver119k` e `libsecaudioinfo`. Os consumidores e seus hashes
 estão em `logs/csb1-vendor-real-dependency-audit.json`. A ausência de faltas
 na lista essencial original não comprova o fechamento dessas dependências.
+
+Na execução42544239502, os seis provedores foram encontrados no SYSTEM real,
+todos passaram na conferência SHA-256 e o vendor passou a243arquivos selecionados.
+Somente os dois candidatos RenderScript anteriores continuaram ausentes.
+A evidência por arquivo está em `logs/csb1-vendor-run6-providers.json`.
+
+Para analisar os conflitos GPS/protobuf, a geração também pode preservar os
+originais `lib/libgps.utils.so` e `lib/libprotobuf-cpp-full.so` em
+`stock-reference/`. Esses arquivos têm hashes e proveniência próprios e não
+recebem regras de módulo nem de instalação na imagem. O verificador do cache
+confere as referências presentes e registra ausências, mantendo compatibilidade
+com os caches produzidos antes dessa extensão. Oito testes novos dessa extensão
+passaram; a preservação dos originais será exercitada na aquisição seguinte.

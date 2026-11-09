@@ -1,0 +1,3 @@
+COMMAND: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 /workspace/a7lte-work/out/legacy-file-attributes/py3/sepolicy_tests.py -l /workspace/a7lte-work/out/legacy-file-attributes/libsepolwrap.so -f /workspace/a7lte-work/out/legacy-file-attributes/file_contexts -p /workspace/a7lte-work/out/legacy-file-attributes/sepolicy
+
+EXIT: 0

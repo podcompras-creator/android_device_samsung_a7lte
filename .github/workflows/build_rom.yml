@@ -22,7 +22,7 @@ jobs:
       PORT_ROOT: ${{ github.workspace }}/port
       USE_CCACHE: '1'
       CCACHE_DIR: ${{ github.workspace }}/ccache
-      CCACHE_MAXSIZE: 2G
+      CCACHE_MAXSIZE: 8G
       ALLOW_MISSING_DEPENDENCIES: 'true'
       # BoardConfigLineage.mk exports kernel flags to Soong only for a Lineage build.
       # Keep this set in the parent shell too, including the bootimage fallback.
@@ -72,6 +72,16 @@ jobs:
           mkdir -p "$ANDROID_TREE" "$GITHUB_WORKSPACE/logs"
           git config --global user.name 'a7lte Actions builder'
           git config --global user.email 'a7lte-builder@users.noreply.github.com'
+
+      - name: Restaurar cache de compilacao
+        id: compile_cache
+        continue-on-error: true
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.CCACHE_DIR }}
+          key: a7lte-pie-arm32-ccache-v1-${{ hashFiles('port/sources.lock.json', 'port/host-tools.lock.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            a7lte-pie-arm32-ccache-v1-${{ hashFiles('port/sources.lock.json', 'port/host-tools.lock.json') }}-
 
       - name: Restaurar vendor CSB1 ja adquirido
         id: vendor_cache
@@ -226,12 +236,44 @@ jobs:
           export PATH="$RUNNER_TEMP/a7lte-python2-bin:$PATH"
           python --version 2>&1 | tee "$GITHUB_WORKSPACE/logs/build-python.txt"
           export ALLOW_MISSING_DEPENDENCIES=true
+          # The selected Pie exporter reduced -j$$(nproc) to bare -j in run 5.
+          # Use the supported numeric override so kernel make remains bounded.
+          export TARGET_KERNEL_ADDITIONAL_FLAGS="${TARGET_KERNEL_ADDITIONAL_FLAGS:-} -j$(nproc)"
+          printf 'TARGET_KERNEL_ADDITIONAL_FLAGS=%s\n' "$TARGET_KERNEL_ADDITIONAL_FLAGS" | \
+            tee "$GITHUB_WORKSPACE/logs/build-concurrency.txt"
+          watch_build_resources() {
+            while true; do
+              date -u +%FT%TZ
+              df -h "$ANDROID_TREE"
+              free -m
+              sleep 15
+            done
+          }
+          watch_build_resources > "$GITHUB_WORKSPACE/logs/build-resources.log" 2>&1 &
+          a7lte_resource_pid=$!
+          trap 'kill "$a7lte_resource_pid" 2>/dev/null || true' EXIT
           source build/envsetup.sh
           set +e
-          brunch a7lte 2>&1 | tee "$GITHUB_WORKSPACE/logs/brunch.log"
-          build_rc=${PIPESTATUS[0]}
-          echo "brunch_exit_code=$build_rc" | \
-            tee "$GITHUB_WORKSPACE/logs/build-result.txt"
+          # This is already a required native build target. Build it first so a
+          # policy error is found before compiling the rest of Android again.
+          lunch lineage_a7lte-userdebug > >(tee "$GITHUB_WORKSPACE/logs/lunch.log") 2>&1
+          policy_rc=$?
+          if ((policy_rc == 0)); then
+            mka sepolicy_tests 2>&1 | tee "$GITHUB_WORKSPACE/logs/sepolicy-tests.log"
+            policy_rc=${PIPESTATUS[0]}
+          fi
+          echo "required_policy_exit_code=$policy_rc" | tee "$GITHUB_WORKSPACE/logs/build-result.txt"
+          if ((policy_rc == 0)); then
+            brunch a7lte 2>&1 | tee "$GITHUB_WORKSPACE/logs/brunch.log"
+            build_rc=${PIPESTATUS[0]}
+            echo "brunch_executed=true brunch_exit_code=$build_rc" | \
+              tee -a "$GITHUB_WORKSPACE/logs/build-result.txt"
+          else
+            build_rc=$policy_rc
+            echo 'brunch_executed=false; required native policy target failed first.' | \
+              tee "$GITHUB_WORKSPACE/logs/brunch.log" | \
+              tee -a "$GITHUB_WORKSPACE/logs/build-result.txt"
+          fi
           if ((build_rc != 0)); then
             export TARGET_PRODUCT=lineage_a7lte
             export TARGET_BUILD_VARIANT=userdebug
@@ -247,6 +289,26 @@ jobs:
               > "$GITHUB_WORKSPACE/logs/bootimage-last-50.log"
           fi
           exit "$build_rc"
+
+      - name: Conferir progresso do cache de compilacao
+        id: compile_cache_status
+        if: always() && steps.compile_cache.outcome == 'success'
+        shell: bash
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/logs" "$CCACHE_DIR"
+          ccache -s | tee "$GITHUB_WORKSPACE/logs/ccache-stats.txt"
+          cache_kib=$(du -sk "$CCACHE_DIR" | awk '{print $1}')
+          if ((cache_kib >= 1024)); then
+            echo 'eligible=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Preservar objetos em cache mesmo apos falha
+        if: always() && steps.compile_cache_status.outputs.eligible == 'true'
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ env.CCACHE_DIR }}
+          key: ${{ steps.compile_cache.outputs.cache-primary-key }}
 
       - name: Gerar checksums dos artefatos realmente produzidos
         if: always()
@@ -276,6 +338,16 @@ jobs:
                   json.dumps(kernel_vars, indent=2, sort_keys=True) + '\n')
           PY
 
+      - name: Validar empacotamento dos artefatos produzidos
+        if: always()
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 "$PORT_ROOT/ci/validate-built-artifacts.py" \
+            --product-out "$ANDROID_TREE/out/target/product/a7lte" \
+            --output "$GITHUB_WORKSPACE/logs/artifact-validation.json" \
+            2>&1 | tee "$GITHUB_WORKSPACE/logs/artifact-validation.log"
+
       - name: Upload ZIP ou boot.img e logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -288,3 +360,13 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
           compression-level: 1
+
+      - name: Upload independente dos logs para acompanhamento automatico
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a7lte-logs-${{ github.run_number }}
+          path: ${{ github.workspace }}/logs/
+          if-no-files-found: warn
+          retention-days: 14
+          compression-level: 6

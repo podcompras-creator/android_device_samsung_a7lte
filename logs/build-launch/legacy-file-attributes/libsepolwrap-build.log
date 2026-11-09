@@ -1,0 +1,27 @@
+g++ -O2 -shared -fPIC -std=c++11 -Ihost/usr/include -Isources/platform-sepolicy/tests/include out/legacy-file-attributes/sepol_wrap.cpp host/usr/lib/x86_64-linux-gnu/libsepol.a -o out/legacy-file-attributes/libsepolwrap.so
+out/legacy-file-attributes/sepol_wrap.cpp: In function ‘void* load_policy(const char*)’:
+out/legacy-file-attributes/sepol_wrap.cpp:215:10: error: ‘unique_ptr’ is not a member of ‘std’
+  215 |     std::unique_ptr<void, decltype(unmap)> map(
+      |          ^~~~~~~~~~
+out/legacy-file-attributes/sepol_wrap.cpp:17:1: note: ‘std::unique_ptr’ is defined in header ‘<memory>’; this is probably fixable by adding ‘#include <memory>’
+   16 | #include <sepol_wrap.h>
+  +++ |+#include <memory>
+   17 | 
+out/legacy-file-attributes/sepol_wrap.cpp:215:21: error: expected primary-expression before ‘void’
+  215 |     std::unique_ptr<void, decltype(unmap)> map(
+      |                     ^~~~
+out/legacy-file-attributes/sepol_wrap.cpp:217:10: error: ‘map’ was not declared in this scope; did you mean ‘mmap’?
+  217 |     if (!map) {
+      |          ^~~
+      |          mmap
+out/legacy-file-attributes/sepol_wrap.cpp:227:35: error: ‘map’ was not declared in this scope; did you mean ‘mmap’?
+  227 |     pf.data = static_cast<char *>(map.get());
+      |                                   ^~~
+      |                                   mmap
+
+exit=1
+
+Retry with explicit standard memory include:
+g++ -O2 -shared -fPIC -std=c++11 -include memory -Ihost/usr/include -Isources/platform-sepolicy/tests/include out/legacy-file-attributes/sepol_wrap.cpp host/usr/lib/x86_64-linux-gnu/libsepol.a -o out/legacy-file-attributes/libsepolwrap.so
+
+exit=0

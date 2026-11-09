@@ -375,3 +375,15 @@ index 529ab96..0835703 100644
  # allow adbd qti-testscripts:process dyntransition;
    #allow { domain -mediaextractor -mediacodec } qti-testscripts:unix_stream_socket connectto;
    allow domain qti-testscripts:fd use;
+diff --git a/common/file_contexts b/common/file_contexts
+index 76d20e8..1354ee4 100644
+--- a/common/file_contexts
++++ b/common/file_contexts
+@@ -675,5 +675,5 @@
+ #
+-/vendor/firmware(/.*)?                                              u:object_r:firmware_file:s0
++/vendor/firmware(/.*)?                                              u:object_r:vendor_file:s0
+ /system/etc/firmware(/.*)?                                          u:object_r:firmware_file:s0
+-/system/vendor/firmware(/.*)?                                       u:object_r:firmware_file:s0
++/system/vendor/firmware(/.*)?                                       u:object_r:vendor_file:s0
+ /firmware/image(/.*)?                                               u:object_r:firmware_file:s0

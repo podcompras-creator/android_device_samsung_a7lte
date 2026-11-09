@@ -1,0 +1,38 @@
+COMMAND: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 /workspace/a7lte-work/out/legacy-file-attributes/py3/sepolicy_tests.py -l /workspace/a7lte-work/out/legacy-file-attributes/libsepolwrap.so -f /workspace/a7lte-work/out/policy-audit/file_contexts -p /workspace/a7lte-work/out/policy-audit/sepolicy
+/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\.'
+  escapedMetaChars = frozenset(['\.', '\^', '\$', '\?', '\*', '\+', '\|', '\[', '\(', '\{'])
+/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\^'
+  escapedMetaChars = frozenset(['\.', '\^', '\$', '\?', '\*', '\+', '\|', '\[', '\(', '\{'])
+/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\$'
+  escapedMetaChars = frozenset(['\.', '\^', '\$', '\?', '\*', '\+', '\|', '\[', '\(', '\{'])
+/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\?'
+  escapedMetaChars = frozenset(['\.', '\^', '\$', '\?', '\*', '\+', '\|', '\[', '\(', '\{'])
+/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\*'
+  escapedMetaChars = frozenset(['\.', '\^', '\$', '\?', '\*', '\+', '\|', '\[', '\(', '\{'])
+/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\+'
+  escapedMetaChars = frozenset(['\.', '\^', '\$', '\?', '\*', '\+', '\|', '\[', '\(', '\{'])
+/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\|'
+  escapedMetaChars = frozenset(['\.', '\^', '\$', '\?', '\*', '\+', '\|', '\[', '\(', '\{'])
+/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\['
+  escapedMetaChars = frozenset(['\.', '\^', '\$', '\?', '\*', '\+', '\|', '\[', '\(', '\{'])
+/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\('
+  escapedMetaChars = frozenset(['\.', '\^', '\$', '\?', '\*', '\+', '\|', '\[', '\(', '\{'])
+/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\{'
+  escapedMetaChars = frozenset(['\.', '\^', '\$', '\?', '\*', '\+', '\|', '\[', '\(', '\{'])
+Traceback (most recent call last):
+  File "/workspace/a7lte-work/out/legacy-file-attributes/py3/sepolicy_tests.py", line 96, in <module>
+    pol = policy.Policy(options.policy, options.file_contexts, options.libpath)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/a7lte-work/out/legacy-file-attributes/py3/policy.py", line 432, in __init__
+    self.__InitFC(FcPaths)
+  File "/workspace/a7lte-work/out/legacy-file-attributes/py3/policy.py", line 421, in __InitFC
+    self.__FcSorted = FcSort.FcSort(FcPaths)
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py", line 118, in FcSort
+    Fc.sort(key=cmp_to_key(compare))
+  File "/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py", line 98, in compare
+    if a.strLen < b.strLen:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+
+EXIT: 1

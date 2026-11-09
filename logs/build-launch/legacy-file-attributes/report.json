@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "operation": "repair-Pie-legacy-policy-path-classifications",
+  "source_firmware": "SM-A700FD-CSB1",
+  "new_allow_rules": 0,
+  "neverallows_disabled": false,
+  "kernel_rebuilt": false,
+  "old46tests_repeated": false,
+  "native_attributes_added": 32,
+  "groups": {
+    "proc_type": 2,
+    "vendor_file_type": 3,
+    "core_data_file_type": 27
+  },
+  "firmware_fix": "Only packaged /vendor/firmware and /system/vendor/firmware map to existing vendor_file. Mounted /firmware/image keeps firmware_file fs_type/contextmount_type.",
+  "discarded_attempt": {
+    "direct_vendor_file_type_on_firmware_file": "FAIL",
+    "neverallow_violations": 264,
+    "log": "checkpolicy-initial-firmware-classification.log"
+  },
+  "validation": {
+    "m4_exit": 0,
+    "checkpolicy_exit": 0,
+    "checkpolicy_flags": [
+      "-M",
+      "-c",
+      "30"
+    ],
+    "checkfc_exit": 0,
+    "upstream_assertions_before_exit": 1,
+    "upstream_assertions_after_exit": 0,
+    "upstream_binary_python2_executed": false,
+    "upstream_assertion_host_scope": "Upstream sepolicy_tests.py and libsepolwrap assertion logic; Python3host boundary compatibility only, patch preserved; same33beforeerrors reproduced."
+  },
+  "sha256": {
+    "android/device/samsung/a7lte/sepolicy/legacy_file_attributes.te": "9d5e8f5caf8b2daa7e9b831afaa5aebfa505e531a35c890ee3f3aba31d14b2c7",
+    "patches/qcom-sepolicy-a7lte.patch": "d6734a847c608f26c7b7c4520309a8e8e3b41091d3a01984bcd5a6d6d42ac805",
+    "sources/platform-sepolicy/tests/sepolicy_tests.py": "b376ca4c3ac8e78e0ad86110c7a8e64708703a795feb6f5352dde4a768146e7e",
+    "sources/platform-sepolicy/tests/policy.py": "1d37bdd431b3bdf9714203fd1332573c117cfdcb40a1d43a43cb095340444968",
+    "sources/platform-sepolicy/tests/FcSort.py": "ba97ff485b1c931a0e2a03a859e88292084f061ed0bfe51517f40e4969984d3f",
+    "sources/platform-sepolicy/tests/sepol_wrap.cpp": "cd7636cfb616ca50759c09fa320029bb09b3c606487d7ceb14dc135edfc7bab3",
+    "sources/platform-sepolicy/public/attributes": "e793cb06a7e116d72ff0eb8e6ffb5308996981a640303826eab59cf2bcecd00d",
+    "sources/platform-sepolicy/public/domain.te": "3aca0c4ee7868c31f171b75683349e8a9466b85d4de5885098f72b1ed395c77d",
+    "out/legacy-file-attributes/sepolicy": "08bb59b86f96f0aeb47985f12750ed6dcace020b7ba2b60cadc8ebc94a4ec5e3",
+    "out/legacy-file-attributes/file_contexts": "254037e0ed9dff872be2cf2f15e6abdf6c4e124c9459edae03ae82e751e5def5",
+    "out/legacy-file-attributes/libsepolwrap.so": "0df1f436ae3cb60584bea168330bbbe9375c4ef23d6183bdbe1cc0772d4b987c",
+    "templates/device/a7lte/sepolicy/legacy_file_attributes.te": "9d5e8f5caf8b2daa7e9b831afaa5aebfa505e531a35c890ee3f3aba31d14b2c7"
+  },
+  "runtime_device_validation": false,
+  "template_matches_native": true
+}

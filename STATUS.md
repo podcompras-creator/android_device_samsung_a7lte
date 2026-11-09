@@ -1,72 +1,78 @@
-# Estado atualizado — SM-A700FD / a7lte
+# Estado atual — LineageOS 16 / SM-A700FD a7lte
 
-O desenvolvimento foi continuado sem depender de espaço para o Android completo.
-Base Samsung/Qualcomm Galaxy-MSM8916, LineageOS 16/Pie, com configuração A7 nativa.
-Nenhum componente OPPO foi utilizado. Nenhum funcionamento no aparelho é declarado.
+Base Samsung/Qualcomm Galaxy-MSM8916, userspace ARM32. Nenhum componente OPPO
+foi utilizado. Nenhuma gravação nem teste de inicialização no aparelho ocorreu.
 
-## Concluído e verificado
+## Resultado real mais recente
 
-- Kernel original 3.10.108, zImage de 6.032.512 bytes, cinco DTBs e dt.img QCDT v2
-  preservados byte por byte, junto aos patches e logs originais.
-- Nova compilação real do mesmo kernel/config concluiu com saída 0. O resultado
-  fresco permanece em out/kernel; o zImage original não foi substituído. Diferença
-  de timestamp/host impede tratar o hash novo como idêntico ao build anterior.
-- Árvore a7lte auditada: overlays Pie, herança e HAL Samsung de luzes, init
-  modelo/device/DSDS, fstab montando system, firmware/EFS, recovery, GCC7.2,
-  remoção de destinos duplicados e de tamanhos de partição inválidos.
-- GNU Make avaliou o recorte de produto/BoardConfig: 66 destinos de cópia únicos.
-  Regeneração reproduziu 196 arquivos. XML e sintaxe Python/shell passaram.
-- Policy monolítica real compilada com `checkpolicy -M -c 30`, sem `-N`, mais
-  checkfc Android 9 de contextos locais e combinados, todos saída 0. Patch Qualcomm
-  restritivo elimina grants legados conflitantes; neverallows permanecem ativos.
-- repo init/manifest real passou; sync de sete dependências pequenas passou.
-  Revisions locais fixadas e replay standalone testado. Scripts para plataforma
-  completa, overlay idempotente, kernel/policy/imagens/bacon e logs entregues.
-- Extrator CSB1 e staging ZIP/TAR.MD5, auditoria ELF/NEEDED/símbolos, gerador vendor
-  com plano revisado, parser PIT/boot e validação de hashes atuais implementados.
-- 39 testes unittest integrados e 7 testes do downloader passaram (46 no total).
-  Incluem DSOs ARM reais, arquivos ausentes/alterados, versões erradas, caminhos,
-  symlinks, arquivos comprimidos e geometria sintética.
-- Ferramentas locais simg2img/img2simg/lz4/debugfs/mke2fs obtidas com URLs e hashes
-  fixos. Fixture real de 16 MiB: ext4↔sparse e LZ4 com hashes idênticos, extração
-  debugfs somente leitura e origem inalterada.
+O projeto foi publicado em
+https://github.com/podcompras-creator/android_device_samsung_a7lte . A plataforma
+LineageOS16 foi sincronizada por completo no GitHub Actions. O runner observado
+possui16GiB de RAM; havia61GiB livres antes do build da execução42541519000.
+O disco local de aproximadamente8GiB não é usado para compilar o Android inteiro.
 
-## O que continua bloqueado
+A execução42543011567 parou na duplicação de librmnetctl, já corrigida.
+A execução42544239502 compilou66011das76036etapas e parou a86% nos testes
+nativos de classificação SELinux. O fallback bootimage concluiu com saída0 e
+produziu8902672bytes, mas a verificação local detectou offsets de ramdisk/tags
+incorretos. A imagem foi preservada sem modificações em
+artifacts/android-run6-unvalidated, identificada como não pronta para flash.
+Não há ROM ZIP gerada. Logs completos: logs/build-launch/actions-run6.
 
-1. **Firmware exato real:** os índices SamFW/SamFrew estão acessíveis e identificam
-   AP A700FDXXS1CSB1, CSC A700FDZTO1CSB1 e CP A700FDXXU1CPF1. SamFrew publica um
-   ZIP alternativo de 1.454.404.384 bytes/MD5 próprio. Os fluxos de download
-   observados exigem verificação; o cliente FUS legado falhou na leitura de nonce.
-   Nenhum arquivo stock foi baixado ou autenticado. Há downloader verificável
-   para URL direta autorizada e instruções para arquivo adquirido legitimamente.
-2. **Stock/PIT/ABI:** faltam SYSTEM, boot/recovery e PIT reais para gerar layout e
-   vendor. 77 entradas comuns não coincidem com a lista A7 histórica; não foram
-   preenchidas com blobs de outros dispositivos. Símbolos Pie, HALs completos,
-   NFC PN547 e ANT ainda precisam de validação com stock/build integral.
-3. **Build Android completo:** não foi sincronizado/compilado neste disco. Scripts
-   estão preparados para volume adequado, com snapshot resolvido após o primeiro
-   sync completo. Ainda faltam lunch/Ninja, recursos/VINTF, linkagem HAL e policy
-   split/CIL/imagens reais. O Containerfile foi preparado, não construído aqui.
-4. **Aparelho:** não há testes de boot, rádio/dual SIM, câmera, áudio, sensores,
-   energia, recuperação ou enforcing. Boot permanece permissive para bring-up;
-   policy compilar não comprova permissões corretas nem funcionamento.
+As classificações SELinux foram corrigidas sem novos grants:32atributos mais
+dois contextos de firmware empacotado, preservando o tipo da partição montada.
+checkpolicy com neverallows e checkfc passaram; as assertivas upstream, com
+compatibilidade Python3documentada, reproduziram a falha anterior e passaram
+após a correção. O teste com as receitas reais do mkbootimg confirmou os offsets
+CSB1corretos para boot e recovery; a imagem antiga não foi editada para simular
+um novo build. As correções precisam agora da próxima execução nativa.
 
-Detalhes e evidências em docs/ e logs/continuation/. O pacote atualizado contém
-as árvores, templates, scripts, patches, testes, locks e logs. O pacote inicial
-`artifacts/a7lte-progress.tar.gz` foi preservado, sem sobrescrita.
+## Concluído nesta integração
 
-## Continuação e estratégia GitHub Actions
+- Aquisição completa do AP CSB1 oficial via Samsung FUS normal: CRC da entrada
+  ZIP e MD5 TAR conferidos; SYSTEM convertido e extraído sem executar firmware.
+- Vendor CSB1 real preservado em cache e artefato:238arquivos selecionados na
+  primeira geração e243na execução6, com todos os seis provedores novos reais;
+  hashes dos arquivos e receitas conferidos localmente.
+- Perfil Dalvik inexistente corrigido por sed após o sync. O destino Pie real
+  phone-xhdpi-2048-dalvik-heap.mk é verificado antes do build.
+- LINEAGE_BUILD permanece no ambiente pai; flags ARM e namespace Soong nativos
+  confirmados no próprio JSON gerado pelo runner na execução42543011567.
+- Marcador .find-ignore exclui módulos duplicados dos snapshots de .a7lte-port;
+  verificado com o finder real do Pie e pelo avanço da compilação no runner.
+- Wrapper de sensores corrigido: posse dos objetos, falhas de abertura,
+  fechamento e reabertura; mock de ciclo de vida passou. Não valida hardware.
+- Fonte Qualcomm fornece librmnetctl; regeneração dos237demais arquivos reais
+  passou sem alterar os bytes de câmera. A lista agora tem263candidatos,
+  incluindo seis provedores exigidos por DT_NEEDED dos blobs efetivos.
+- Cache de compilação e métricas de RAM/disco preparados para as tentativas
+  seguintes. O target nativo sepolicy_tests é compilado antes do restante do
+  Android; o fallback bootimage permanece disponível se esse teste falhar.
+- Cache depende também da lista de candidatos; a próxima aquisição guarda um
+  catálogo de caminhos reais de SYSTEM, sem seguir links Android no host.
+- Kernel, zImage, cinco DTBs, dt.img QCDTv2, QCDTv3 separado, patches e logs
+  anteriores permanecem preservados. Os46testes antigos não foram repetidos
+  nesta fase; as verificações novas estão em logs/build-launch e logs/csb1-abi.
 
-Boot/recovery/PIT oficiais CSB1 foram recuperados via FUS e HTTPS Range normal,
-com hashes e fonte registrados; SYSTEM e os blobs CSB1 ainda não foram extraídos.
-Foram adicionados contratos HAL, auditoria ELF real histórica, policy/source
-corrections, layout stock parcial e QCDTv3 candidato separado. Artefatos originais
-permanecem preservados. As tentativas locais de bootimage foram interrompidas
-na mudança de estratégia; nenhum boot Lineage Android9 foi gerado.
+## Pendências demonstradas
 
-A configuração final solicitada está em `.github/workflows/build_rom.yml`:
-runner ubuntu22.04, limpeza descartável, sync raso, blobs de dispositivo/blobs,
-serviços sem isolamento, ALLOW_MISSING_DEPENDENCIES=true e brunch direto.
-Não há gate prévio para criação/upload do ZIP; ocorre fallback bootimage se o
-brunch falhar. O workflow foi validado estaticamente, não executado no GitHub.
-Veja docs/github-actions.md e logs/ci-validation. Nenhuma imagem foi testada no A7.
+- Android completo, imagens finais e empacotamento: dependem da próxima
+  execução; a falha real a86% e os offsets do boot foram corrigidos nas fontes,
+  sem declarar compilação integral bem-sucedida antes de executá-la.
+- GPS: libloc_api_v02.so exige o objeto sec_gps_conf, ausente no fornecedor de
+  fonte selecionado. O objeto existe no libgps.utils.so stock não instalado.
+- RIL: o protobuf nativo3.0 usa assinatura de construtor incompatível com a
+  importada pelo blob CSB1; precisa de ABI legada isolada, sem substituir o
+  protobuf de toda a plataforma. A evidência está em
+  logs/csb1-abi/actual-source-abi-audit.json.
+- Permanecem duas ausências RenderScript registradas na seleção. Os seis
+  provedores adicionais passaram na aquisição real; nenhuma biblioteca
+  substituta ou placeholder foi criada.
+- Testes no aparelho, funcionamento das HALs e SELinux enforcing continuam
+  pendentes. Policy compilar e um ZIP ser gerado não demonstram boot funcional.
+
+O modo diagnóstico explicitamente solicitado continua ativo:
+ALLOW_MISSING_DEPENDENCIES=true, serviços normais e brunch a7lte, sem gate de ZIP.
+Isso não corrige ABI nem certifica uma imagem para instalação.
+O histórico anterior permanece nos commits e logs; os pacotes originais não
+foram sobrescritos. Fontes, auditorias e scripts atuais estão versionados.

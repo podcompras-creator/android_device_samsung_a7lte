@@ -1,0 +1,3 @@
+PASS: exact workflow runs required native policy target before brunch; policy failure skips full compilation truthfully and still attempts bootimage
+PASS: original primary failure code preserved in both paths; all embedded Bash blocks parse
+Scope: shell control-flow fixtures only; not a new Android build or policy assertion execution

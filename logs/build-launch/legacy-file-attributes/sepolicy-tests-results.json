@@ -1,0 +1,18 @@
+{
+  "scope": "upstream sepolicy_tests.py assertions, Python3host boundary and None-comparison compatibility only; native libsepolwrap logic compiled locally",
+  "python2_upstream_binary_executed": false,
+  "results": {
+    "before": {
+      "exit": 1,
+      "stdout": "",
+      "stderr": "/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\\.'\n  escapedMetaChars = frozenset(['\\.', '\\^', '\\$', '\\?', '\\*', '\\+', '\\|', '\\[', '\\(', '\\{'])\n/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\\^'\n  escapedMetaChars = frozenset(['\\.', '\\^', '\\$', '\\?', '\\*', '\\+', '\\|', '\\[', '\\(', '\\{'])\n/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\\$'\n  escapedMetaChars = frozenset(['\\.', '\\^', '\\$', '\\?', '\\*', '\\+', '\\|', '\\[', '\\(', '\\{'])\n/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\\?'\n  escapedMetaChars = frozenset(['\\.', '\\^', '\\$', '\\?', '\\*', '\\+', '\\|', '\\[', '\\(', '\\{'])\n/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\\*'\n  escapedMetaChars = frozenset(['\\.', '\\^', '\\$', '\\?', '\\*', '\\+', '\\|', '\\[', '\\(', '\\{'])\n/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\\+'\n  escapedMetaChars = frozenset(['\\.', '\\^', '\\$', '\\?', '\\*', '\\+', '\\|', '\\[', '\\(', '\\{'])\n/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\\|'\n  escapedMetaChars = frozenset(['\\.', '\\^', '\\$', '\\?', '\\*', '\\+', '\\|', '\\[', '\\(', '\\{'])\n/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\\['\n  escapedMetaChars = frozenset(['\\.', '\\^', '\\$', '\\?', '\\*', '\\+', '\\|', '\\[', '\\(', '\\{'])\n/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\\('\n  escapedMetaChars = frozenset(['\\.', '\\^', '\\$', '\\?', '\\*', '\\+', '\\|', '\\[', '\\(', '\\{'])\n/workspace/a7lte-work/out/legacy-file-attributes/py3/FcSort.py:25: SyntaxWarning: invalid escape sequence '\\{'\n  escapedMetaChars = frozenset(['\\.', '\\^', '\\$', '\\?', '\\*', '\\+', '\\|', '\\[', '\\(', '\\{'])\nThe following types in proc must be associated with the \"proc_type\" attribute: proc_audiod proc_dirty_ratio\nThe following types on /vendor/ must be associated with the \"vendor_file_type\" attribute: bluetooth_loader_exec firmware_file hbtp_cfg_file regionalization_file\nThe following types on /data/ must be associated with the \"core_data_file_type\" attribute: audio_pp_data_file camera_socket cnd_data_file data_qsee_file data_test_data_file diag_data_file display_vendor_data_file dts_data_file dynamic_nv_data_file fm_data_file iop_data_file ipacm_data_file location_data_file location_socket mmi_data_file mpctl_data_file mpctl_socket port_bridge_data_file qlogd_data_file qvop-daemon_data_file rfs_file rfs_shared_hlos_file sensors_data_file spss_data_file ssr_ramdump_data_file swap_data_file usf_data_file\n\n",
+      "policy_sha256": "4d11ce34b9887bcbb32ae98819f9da779e91d22a236622a19e16215442b7ed3f"
+    },
+    "after": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "policy_sha256": "08bb59b86f96f0aeb47985f12750ed6dcace020b7ba2b60cadc8ebc94a4ec5e3"
+    }
+  }
+}

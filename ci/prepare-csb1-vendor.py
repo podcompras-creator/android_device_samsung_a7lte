@@ -31,6 +31,7 @@ ADDITIONAL_SOURCE_MODULES = {
     'lib/libsecril-client.so': 'hardware/samsung@871d3f4777603ff6c33a021fc38c9b2265c54f83/ril/libsecril-client source module is included for BOARD_VENDOR=samsung',
     'lib/librmnetctl.so': 'vendor/qcom/opensource/dataservices@c2c036451782b6193923be8d6311ae1a43fa4a73/rmnetctl/src/Android.mk builds librmnetctl; qcom_target.mk selects this source path',
 }
+SOURCE_REFERENCE_PATHS = ('lib/libgps.utils.so', 'lib/libprotobuf-cpp-full.so')
 FIRMWARE_SYMLINK_DESTINATIONS = {
     f'vendor/firmware/keymaster/keymaster.{ext}':
     f'device/samsung/msm8916-common/Android.mk generates this link to /firmware/image/keymaste.{ext}; retain existing firmware partition'
@@ -78,6 +79,34 @@ def materialize(source, destination):
     destination.parent.mkdir(parents=True, exist_ok=True)
     try: os.link(source, destination)
     except OSError: shutil.copyfile(source, destination)
+
+
+def preserve_source_references(system, vendor, properties, prop_hash):
+    """Preserve two exact source files for ABI study; define no build modules."""
+    references = []
+    for source in SOURCE_REFERENCE_PATHS:
+        probe = inspect_source(system,source,source)
+        relative = 'stock-reference/'+source
+        entry = {'source':source, 'path':relative,
+                 'status':probe['status'], 'installed_into_image':False,
+                 'provenance':{'model':properties['ro.product.model'],
+                               'manufacturer':properties['ro.product.manufacturer'],
+                               'firmware':extractor.VERSION,
+                               'pda':properties.get('ro.build.PDA'),
+                               'incremental':properties.get('ro.build.version.incremental'),
+                               'source_build_prop_sha256':prop_hash},
+                 'scope':'Unmodified source reference for ABI analysis only; no module or image-copy rule'}
+        if probe['status']=='available':
+            resolved=Path(probe['resolved_source']); before=digest(resolved)
+            target=vendor/relative
+            materialize(resolved,target)
+            if digest(target)!=before: raise ValueError('source reference copy changed bytes: '+source)
+            entry.update(status='present',sha256=before,bytes=target.stat().st_size)
+        else:
+            entry['reason']=probe.get('reason','not present in verified CSB1 SYSTEM')
+            if probe.get('source_links'):entry['source_links']=probe['source_links']
+        references.append(entry)
+    return references
 
 
 def prepare(system, tree, staging, allow_missing=False, file_list=None):
@@ -186,11 +215,13 @@ def prepare(system, tree, staging, allow_missing=False, file_list=None):
     write_json(staging/'generation-audit.json',audit)
     if unresolved and not allow_missing: raise ValueError(f'{len(unresolved)} stock candidates unresolved ({len(essential_missing)} essential); see generation-audit.json; no vendor installed')
     report = generator.generate(extraction,plan_file,vendor)
-    report.update(forced_diagnostic=allow_missing,unresolved_candidates=unresolved,
+    references = preserve_source_references(system,vendor,properties,prop_hash)
+    report.update(source_reference_files=references, forced_diagnostic=allow_missing,unresolved_candidates=unresolved,
                   essential_stock_missing=essential_missing,ready_for_functional_rom=False,
                   source_provenance=provenance,review_method=plan['review_method'])
     write_json(vendor/'vendor-audit.json',report)
     audit.update(success=True,vendor_path=str(vendor),selected_files=report['selected_files'],
+                 source_reference_files=references,
                  vendor_audit_sha256=digest(vendor/'vendor-audit.json'))
     write_json(staging/'generation-audit.json',audit)
     write_json(vendor/'ci-generation-audit.json',audit)

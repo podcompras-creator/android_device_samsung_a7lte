@@ -1,0 +1,47 @@
+{
+  "result": "PASS",
+  "scope": "New validator focused synthetic tests and empty actual local PRODUCT_OUT only; no built ROM/boot produced or validated locally",
+  "files": {
+    "ci/validate-built-artifacts.py": "ff185893dabc0ec4030d3d511259d7dee6cec63a55d6bbfc5cc5760eb5e80ed5",
+    "tests/test_built_artifacts_new.py": "19a389badb5b0f3fdb549dc3a9e43b362189fb140afbc3582559df36fd7b7ec9",
+    "scripts/inspect-samsung-boot.py": "7af7499c14f5090fb30d897b363679d5ad845166eac704bf30c51eac73d4fb6b"
+  },
+  "reused_inspector": "scripts/inspect-samsung-boot.py",
+  "geometry": {
+    "page_size": 2048,
+    "kernel_address": 2147516416,
+    "ramdisk_address": 2181038080,
+    "second_address": 2163212288,
+    "tags_address": 2178940928
+  },
+  "partition_limits": {
+    "boot": 13631488,
+    "recovery": 15728640
+  },
+  "stock_reference_image_sha256": "01e1ff5ad1d1530cb922ae884f6796794e3dadae620341107fd5ebc993e27e12",
+  "tests": {
+    "count": 5,
+    "result": "PASS",
+    "log": "logs/built-artifact-validation-targeted-tests.log",
+    "fixtures": "temporary directories only; no artifacts/ or genuine PRODUCT_OUT files created"
+  },
+  "actual_local_product_out": {
+    "report": "logs/built-artifact-validation-local.json",
+    "result": "NO_ARTIFACTS",
+    "exit_code": 2,
+    "artifacts": []
+  },
+  "cli": "python3 ci/validate-built-artifacts.py --product-out \"$ANDROID_TREE/out/target/product/a7lte\" --output \"$GITHUB_WORKSPACE/logs/artifact-validation.json\"",
+  "exit_codes": {
+    "0": "PASS: valid ROM ZIP present; every inspected artifact passed static checks",
+    "1": "FAIL: one or more actual artifacts failed static checks",
+    "2": "NO_ARTIFACTS or PARTIAL images-only; not ROM build success"
+  },
+  "limitations": [
+    "No build provenance or signing verification",
+    "No system payload filesystem semantics or proprietary ABI verification",
+    "No device boot/hardware test and flash_ready remains false"
+  ],
+  "workflow_edited": false,
+  "kernel_rebuilt": false
+}

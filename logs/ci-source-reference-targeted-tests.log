@@ -1,0 +1,13 @@
+test_cached_reference_byte_change_rejected (__main__.SourceReferences.test_cached_reference_byte_change_rejected) ... ok
+test_cached_reference_identity_change_rejected (__main__.SourceReferences.test_cached_reference_identity_change_rejected) ... ok
+test_cached_reference_path_traversal_rejected (__main__.SourceReferences.test_cached_reference_path_traversal_rejected) ... ok
+test_cached_reference_symlink_escape_rejected (__main__.SourceReferences.test_cached_reference_symlink_escape_rejected) ... ok
+test_external_source_reference_link_not_followed (__main__.SourceReferences.test_external_source_reference_link_not_followed) ... ok
+test_missing_reference_is_recorded_and_cache_valid (__main__.SourceReferences.test_missing_reference_is_recorded_and_cache_valid) ... ok
+test_old_cache_without_optional_reference_field_valid (__main__.SourceReferences.test_old_cache_without_optional_reference_field_valid) ... ok
+test_preserved_bytes_provenance_and_no_image_rules (__main__.SourceReferences.test_preserved_bytes_provenance_and_no_image_rules) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.217s
+
+OK

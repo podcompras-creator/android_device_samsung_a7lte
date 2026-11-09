@@ -85,3 +85,29 @@ do Pie descubra novamente módulos dos snapshots em `.a7lte-port/android`,
 `templates` e `sources/hal-audit`. As árvores nativas instaladas pelo overlay
 continuam sendo compiladas nos caminhos normais. O job preserva as últimas50
 linhas de cada tentativa e o namespace de variáveis Lineage do Soong nos logs.
+
+Na execução42543011567, o namespace confirmou as variáveis nativas, mas o
+exportador do Pie reduziu `-j$$(nproc)` a `-j`. O workflow passa uma contagem
+numérica pelo parâmetro suportado `TARGET_KERNEL_ADDITIONAL_FLAGS`, antes de
+`envsetup.sh`, para limitar os workers do make do kernel. A contagem é registrada
+em `logs/build-concurrency.txt`; o teste da configuração nativa confirmou que
+esse argumento numérico permanece como a última opção de paralelismo.
+
+O cache de compilação, limitado a8GiB, é restaurado e salvo separadamente do
+vendor, inclusive após falhas de compilação. Falha do serviço de cache não altera
+o resultado do build. O namespace depende dos locks e cada execução salva uma
+nova chave, permitindo reutilização pelo ccache sem reusar objetos incompatíveis.
+
+Após o build, `ci/validate-built-artifacts.py` inspeciona somente arquivos já
+existentes em PRODUCT_OUT: CRC do OTA, metadados a7lte/não A/B, payload de sistema,
+boot embutido e imagem Samsung com geometria/limites/QCDTv3/SHA1 coerentes.
+Não gera nem altera imagens. `NO_ARTIFACTS` e boot isolado não equivalem a ROM
+completa. O upload continua com `always()`, preservando artefatos e relatório
+mesmo quando o build ou a validação falhar. A validação estática não demonstra
+boot físico, ABI, assinaturas ou prontidão para flash.
+
+Após a falha real a86% da execução42544239502, o workflow passa a compilar
+primeiro o target nativo obrigatório `sepolicy_tests`. Se ele passar, executa
+`brunch a7lte`; se falhar, registra que brunch não foi executado e ainda tenta
+`mka bootimage`. Assim os mesmos testes obrigatórios de política aparecem antes
+da compilação longa, mantendo todos os neverallows ativos.

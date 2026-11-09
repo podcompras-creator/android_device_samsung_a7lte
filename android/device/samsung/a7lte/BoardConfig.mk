@@ -2,6 +2,9 @@
 DEVICE_PATH := device/samsung/a7lte
 USE_CUSTOM_MIXER_PATHS := true
 include device/samsung/msm8916-common/BoardConfigCommon.mk
+# Pie core only passes base/pagesize; pass verified CSB1 offsets explicitly.
+BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 DEVICE_PATH := device/samsung/a7lte
 TARGET_KERNEL_CONFIG := msm8916_sec_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8939_sec_a7_eur_defconfig

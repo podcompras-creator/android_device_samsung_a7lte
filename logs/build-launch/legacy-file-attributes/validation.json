@@ -1,0 +1,28 @@
+{
+  "scope": "selected combined non-Treble policy, all active neverallows; native device files",
+  "directories": [
+    "/workspace/a7lte-work/sources/platform-sepolicy/public",
+    "/workspace/a7lte-work/sources/lineage-sepolicy/common/public",
+    "/workspace/a7lte-work/sources/sepolicy-legacy/public",
+    "/workspace/a7lte-work/sources/platform-sepolicy/private",
+    "/workspace/a7lte-work/sources/lineage-sepolicy/common/private",
+    "/workspace/a7lte-work/sources/sepolicy-legacy/private",
+    "/workspace/a7lte-work/sources/lineage-sepolicy/qcom/private",
+    "/workspace/a7lte-work/sources/platform-sepolicy/vendor",
+    "/workspace/a7lte-work/sources/lineage-sepolicy/common/dynamic",
+    "/workspace/a7lte-work/sources/lineage-sepolicy/common/vendor",
+    "/workspace/a7lte-work/sources/sepolicy-legacy/common",
+    "/workspace/a7lte-work/sources/sepolicy-legacy/ssg",
+    "/workspace/a7lte-work/sources/sepolicy-legacy/msm8916",
+    "/workspace/a7lte-work/sources/sepolicy-legacy/legacy-common",
+    "/workspace/a7lte-work/sources/lineage-sepolicy/qcom/dynamic",
+    "/workspace/a7lte-work/sources/lineage-sepolicy/qcom/vendor",
+    "/workspace/a7lte-work/android/device/samsung/a7lte/sepolicy"
+  ],
+  "m4_exit": 0,
+  "checkpolicy_exit": 0,
+  "policy_sha256": "08bb59b86f96f0aeb47985f12750ed6dcace020b7ba2b60cadc8ebc94a4ec5e3",
+  "contexts_m4_exit": 0,
+  "checkfc_exit": 0,
+  "packaged_firmware_contexts": "vendor_file; firmware_file fs_type unchanged for firmware mount"
+}

@@ -1,0 +1,141 @@
+{
+  "artifact_id": 13642683570,
+  "all_six_provider_files_present_and_hashed": true,
+  "providers": [
+    {
+      "source": "vendor/lib/libOpenCL.so",
+      "status": "extracted",
+      "selected": true,
+      "bytes": 63096,
+      "sha256": "ebf6bb6cd94907a09f2b3ca469cc8fb71c90ffb392892bec55a1c263b0b29ef4",
+      "needed": [
+        "libgsl.so",
+        "libdl.so",
+        "libcutils.so",
+        "libCB.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so"
+      ],
+      "soname": "libOpenCL.so"
+    },
+    {
+      "source": "lib/libexifa.so",
+      "status": "extracted",
+      "selected": true,
+      "bytes": 169464,
+      "sha256": "87e1cef0446a602f6e760d9bfe717218c0a4534ca1662d512cac689c3a95b215",
+      "needed": [
+        "libc++.so",
+        "libdl.so",
+        "libc.so",
+        "libm.so"
+      ],
+      "soname": "libexifa.so"
+    },
+    {
+      "source": "vendor/lib/libflp.so",
+      "status": "extracted",
+      "selected": true,
+      "bytes": 71284,
+      "sha256": "3e6447244a28312b23c3a422b6f882801074d0a7c3449770efde88d28c171d4d",
+      "needed": [
+        "libutils.so",
+        "libcutils.so",
+        "liblog.so",
+        "libloc_core.so",
+        "libizat_core.so",
+        "libgps.utils.so",
+        "libdl.so",
+        "libgeofence.so",
+        "liblbs_core.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so"
+      ],
+      "soname": "libflp.so"
+    },
+    {
+      "source": "vendor/lib/libqmi_client_helper.so",
+      "status": "extracted",
+      "selected": true,
+      "bytes": 17912,
+      "sha256": "7fa1d11864afb6a50ee050518886877b4fbadfb7f170fab8cbe5ded9c981f14a",
+      "needed": [
+        "libcutils.so",
+        "libdiag.so",
+        "libdsutils.so",
+        "libqmiservices.so",
+        "libqmi_client_qmux.so",
+        "libqmi_cci.so",
+        "libidl.so",
+        "liblog.so",
+        "libc++.so",
+        "libdl.so",
+        "libc.so",
+        "libm.so"
+      ],
+      "soname": "libqmi_client_helper.so"
+    },
+    {
+      "source": "lib/lib_SA_GoogleFX_ver119k.so",
+      "status": "extracted",
+      "selected": true,
+      "bytes": 78580,
+      "sha256": "9c48470a505075da54b58393a953e1731c3f611542da330657a81f6c27d0702c",
+      "needed": [
+        "liblog.so",
+        "libstdc++.so",
+        "libm.so",
+        "libc.so",
+        "libdl.so"
+      ],
+      "soname": "lib_SA_GoogleFX_ver119k.so"
+    },
+    {
+      "source": "lib/libsecaudioinfo.so",
+      "status": "extracted",
+      "selected": true,
+      "bytes": 17912,
+      "sha256": "0fa9945791bc08c7cf6891bba6ca4f897c4a5cf9d60c05a7a63fd4e894cd0de3",
+      "needed": [
+        "libcutils.so",
+        "libutils.so",
+        "libc++.so",
+        "libdl.so",
+        "libc.so",
+        "libm.so"
+      ],
+      "soname": "libsecaudioinfo.so"
+    }
+  ],
+  "rmnetctl_source_decision": {
+    "action": "skip",
+    "destination": "lib/librmnetctl.so",
+    "reason": "vendor/qcom/opensource/dataservices@c2c036451782b6193923be8d6311ae1a43fa4a73/rmnetctl/src/Android.mk builds librmnetctl; qcom_target.mk selects this source path",
+    "source": "lib/librmnetctl.so",
+    "source_provided": true,
+    "unresolved": false
+  },
+  "remaining_explicit_omissions": [
+    {
+      "action": "skip",
+      "destination": "vendor/lib/libRSDriver_adreno.so",
+      "reason": "not present in verified CSB1 SYSTEM",
+      "source": "vendor/lib/libRSDriver_adreno.so",
+      "source_provided": false,
+      "unresolved": true,
+      "unresolved_status": "missing"
+    },
+    {
+      "action": "skip",
+      "destination": "vendor/lib/librs_adreno.so",
+      "reason": "not present in verified CSB1 SYSTEM",
+      "source": "vendor/lib/librs_adreno.so",
+      "source_provided": false,
+      "unresolved": true,
+      "unresolved_status": "missing"
+    }
+  ],
+  "runtime_ABI_verified": false
+}

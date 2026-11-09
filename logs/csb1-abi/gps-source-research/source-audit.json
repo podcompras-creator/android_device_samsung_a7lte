@@ -1,0 +1,123 @@
+{
+  "checked_utc": "2026-11-09T01:18:54.918271+00:00",
+  "scope": "read-only public Samsung/Qualcomm GPS source research; no production source or blobs changed",
+  "exact_compatible_struct_found": false,
+  "selected_and_historical_galaxy_config_sources": [
+    {
+      "repository": "https://github.com/Galaxy-MSM8916/android_device_samsung_msm8916-common",
+      "revision": "c3f237234ce046a390bfaf10b9163f39268c4dc8",
+      "branch": "cm-13.0",
+      "path": "gps/utils/loc_cfg.h",
+      "sha256": "7946d6fff030b9993cc3af5e6f9e01e43b92561336346ea9a9851b3c5116be15",
+      "contains_sec_gps_conf": false,
+      "contains_Sec_Configuration": false,
+      "contains_loc_secgps": false
+    },
+    {
+      "repository": "https://github.com/Galaxy-MSM8916/android_device_samsung_msm8916-common",
+      "revision": "c3f237234ce046a390bfaf10b9163f39268c4dc8",
+      "branch": "cm-13.0",
+      "path": "gps/utils/loc_cfg.cpp",
+      "sha256": "cb575ef8cf3cbe8702347fd9cbc25788daa0e0ca70b27e8cc974254eb6d31e08",
+      "contains_sec_gps_conf": false,
+      "contains_Sec_Configuration": false,
+      "contains_loc_secgps": false
+    },
+    {
+      "repository": "https://github.com/Galaxy-MSM8916/android_device_samsung_msm8916-common",
+      "revision": "a4605b0fe5d029513a0af23d5d09bd45fe0364b9",
+      "branch": "cm-14.1",
+      "path": "gps/utils/loc_cfg.h",
+      "sha256": "7946d6fff030b9993cc3af5e6f9e01e43b92561336346ea9a9851b3c5116be15",
+      "contains_sec_gps_conf": false,
+      "contains_Sec_Configuration": false,
+      "contains_loc_secgps": false
+    },
+    {
+      "repository": "https://github.com/Galaxy-MSM8916/android_device_samsung_msm8916-common",
+      "revision": "a4605b0fe5d029513a0af23d5d09bd45fe0364b9",
+      "branch": "cm-14.1",
+      "path": "gps/utils/loc_cfg.cpp",
+      "sha256": "cb575ef8cf3cbe8702347fd9cbc25788daa0e0ca70b27e8cc974254eb6d31e08",
+      "contains_sec_gps_conf": false,
+      "contains_Sec_Configuration": false,
+      "contains_loc_secgps": false
+    },
+    {
+      "repository": "https://github.com/Galaxy-MSM8916/android_device_samsung_msm8916-common",
+      "revision": "1df417e595b4f67bb7bffc4d38eaec97e941f4a8",
+      "branch": "lineage-15.1",
+      "path": "gps/utils/loc_cfg.h",
+      "sha256": "7946d6fff030b9993cc3af5e6f9e01e43b92561336346ea9a9851b3c5116be15",
+      "contains_sec_gps_conf": false,
+      "contains_Sec_Configuration": false,
+      "contains_loc_secgps": false
+    },
+    {
+      "repository": "https://github.com/Galaxy-MSM8916/android_device_samsung_msm8916-common",
+      "revision": "1df417e595b4f67bb7bffc4d38eaec97e941f4a8",
+      "branch": "lineage-15.1",
+      "path": "gps/utils/loc_cfg.cpp",
+      "sha256": "cb575ef8cf3cbe8702347fd9cbc25788daa0e0ca70b27e8cc974254eb6d31e08",
+      "contains_sec_gps_conf": false,
+      "contains_Sec_Configuration": false,
+      "contains_loc_secgps": false
+    },
+    {
+      "repository": "https://github.com/Galaxy-MSM8916/android_device_samsung_msm8916-common",
+      "revision": "7f8723dc42663bf09d085d9c19ecaa2b28617241",
+      "branch": "lineage-16.0",
+      "path": "gps/utils/loc_cfg.h",
+      "sha256": "7946d6fff030b9993cc3af5e6f9e01e43b92561336346ea9a9851b3c5116be15",
+      "contains_sec_gps_conf": false,
+      "contains_Sec_Configuration": false,
+      "contains_loc_secgps": false
+    },
+    {
+      "repository": "https://github.com/Galaxy-MSM8916/android_device_samsung_msm8916-common",
+      "revision": "7f8723dc42663bf09d085d9c19ecaa2b28617241",
+      "branch": "lineage-16.0",
+      "path": "gps/utils/loc_cfg.cpp",
+      "sha256": "cb575ef8cf3cbe8702347fd9cbc25788daa0e0ca70b27e8cc974254eb6d31e08",
+      "contains_sec_gps_conf": false,
+      "contains_Sec_Configuration": false,
+      "contains_loc_secgps": false
+    }
+  ],
+  "rejected_prior_art": [
+    {
+      "repository": "Chemnitzer/android_device_samsung_msm8916-common",
+      "revision": "cb5aaa629f94f1521aec042bd263a3b8ab9364ab",
+      "commit_title": "gps: Add dummy functions stubs",
+      "file": "gps/utils/sec_gps.c",
+      "observed_definition": "sec_gps_conf: struct { char OPERATION_MODE[50]; }; Sec_Configuration: struct { char STUB[50]; };",
+      "reason": "Explicit dummy objects without complete Samsung configuration layout or parser behavior; cannot satisfy actual CSB1 ABI semantics merely by exporting names."
+    },
+    {
+      "repository": "CyanogenMod/android_device_samsung_d2-common",
+      "branch": "cm-14.1",
+      "file": "gps/utils/sec_gps.c",
+      "source_sha256": "7775f8a7939c428effa8ad518fbaa9d048e73449c952b1ddfe796b2baa8ba999",
+      "observed_definition": "int sec_gps_conf(void) { return 0; }; int Sec_Configuration(void) { return 0; };",
+      "reason": "Function symbols are not ABI-compatible with strong OBJECT import; unrelated older device dummy source not reused."
+    }
+  ],
+  "historical_a7_observation": {
+    "path": "verification/historical-a7/proprietary/lib/libgps.utils.so",
+    "sha256": "37a59901efd1a9b001d5fdfc90d6b4060c84a6cc71fbd672185cbab201114e8a",
+    "bytes": 46964,
+    "sec_gps_conf_object_bytes": 148,
+    "Sec_Configuration_object_bytes": 4,
+    "loc_secgps_param_num_object_bytes": 4,
+    "same_as_actual_csb1_sha256": false,
+    "status": "Historical A7 comparison only; not a verified replacement for CSB1."
+  },
+  "actual_csb1_requirement": {
+    "provider_sha256": "41212684637073b506b03aa8f205c95628224e61d3116e7a423969adc1e441c1",
+    "consumer": "libloc_api_v02.so",
+    "required_symbol": "sec_gps_conf",
+    "required_kind": "OBJECT",
+    "source": "logs/csb1-abi/actual-source-abi-audit.json"
+  },
+  "remaining": "Exact source struct/default/config-reader implementation not found in inspected sources. Need authenticated source release or coherent private namespace using verified genuine CSB1 providers with ABI closure checked; no fabricated zero object or dummy function."
+}

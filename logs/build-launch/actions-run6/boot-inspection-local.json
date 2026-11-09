@@ -1,0 +1,267 @@
+{
+  "result": "PASS",
+  "image": "/workspace/a7lte-work/verification/actions-run6-product-out/boot.img",
+  "image_sha256": "47b4e676934f3d3e54268f2593fe22113c1f1875669fabcf10e5259197a7d4f9",
+  "image_bytes": 8902672,
+  "format": "Samsung legacy DT/v0",
+  "header_sha1": "6b32418ede5b76de8337b52cd07da501df3893f2",
+  "page_size": 2048,
+  "kernel_address": 2147516416,
+  "ramdisk_address": 2164260864,
+  "second_address": 2163212288,
+  "tags_address": 2147483904,
+  "os_version": "9.0.0",
+  "os_patch_level": "2022-01",
+  "board": "",
+  "cmdline": "console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive buildvariant=userdebug",
+  "payloads": {
+    "kernel": {
+      "offset": 2048,
+      "bytes": 6038904,
+      "sha256": "1d2b4f7c464e0cb214fffdbe2077b118cc8dc66da79a379e36f632230e21dd36"
+    },
+    "ramdisk": {
+      "offset": 6041600,
+      "bytes": 1822764,
+      "sha256": "a22e26ee579842902b0d3ae71536dde886d5fcfd9a31504b47ed217e53179943"
+    },
+    "second": {
+      "offset": 7866368,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "dt": {
+      "offset": 7866368,
+      "bytes": 1036288,
+      "sha256": "74270d174fd2f7e55f9d50826e573224a1d993cbe7661e3d5bc692bafe9dc3ed"
+    }
+  },
+  "trailer": {
+    "offset": 8902656,
+    "bytes": 16,
+    "value": "SEANDROIDENFORCE",
+    "opaque_signature_bytes": 0,
+    "opaque_signature_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samsung_signature_verified": false
+  },
+  "qcdt": {
+    "version": 3,
+    "entries": 15,
+    "unique_dtbs": 5,
+    "table": [
+      {
+        "soc": 239,
+        "platform": 250646513,
+        "subtype": 1,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 2048,
+        "size": 206848
+      },
+      {
+        "soc": 239,
+        "platform": 250646513,
+        "subtype": 3,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 208896,
+        "size": 206848
+      },
+      {
+        "soc": 239,
+        "platform": 250646513,
+        "subtype": 4,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 415744,
+        "size": 206848
+      },
+      {
+        "soc": 239,
+        "platform": 250646513,
+        "subtype": 5,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 622592,
+        "size": 206848
+      },
+      {
+        "soc": 239,
+        "platform": 250646513,
+        "subtype": 6,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 829440,
+        "size": 206848
+      },
+      {
+        "soc": 241,
+        "platform": 250646513,
+        "subtype": 1,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 2048,
+        "size": 206848
+      },
+      {
+        "soc": 241,
+        "platform": 250646513,
+        "subtype": 3,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 208896,
+        "size": 206848
+      },
+      {
+        "soc": 241,
+        "platform": 250646513,
+        "subtype": 4,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 415744,
+        "size": 206848
+      },
+      {
+        "soc": 241,
+        "platform": 250646513,
+        "subtype": 5,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 622592,
+        "size": 206848
+      },
+      {
+        "soc": 241,
+        "platform": 250646513,
+        "subtype": 6,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 829440,
+        "size": 206848
+      },
+      {
+        "soc": 263,
+        "platform": 250646513,
+        "subtype": 1,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 2048,
+        "size": 206848
+      },
+      {
+        "soc": 263,
+        "platform": 250646513,
+        "subtype": 3,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 208896,
+        "size": 206848
+      },
+      {
+        "soc": 263,
+        "platform": 250646513,
+        "subtype": 4,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 415744,
+        "size": 206848
+      },
+      {
+        "soc": 263,
+        "platform": 250646513,
+        "subtype": 5,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 622592,
+        "size": 206848
+      },
+      {
+        "soc": 263,
+        "platform": 250646513,
+        "subtype": 6,
+        "revision": 0,
+        "pmic": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offset": 829440,
+        "size": 206848
+      }
+    ]
+  },
+  "reference_matches": {},
+  "stock_compatibility_verified": false,
+  "device_boot_tested": false
+}

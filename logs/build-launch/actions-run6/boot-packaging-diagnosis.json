@@ -1,0 +1,71 @@
+{
+  "scope": "Static audit of actual Actions run6 boot plus source/temporary offset regression; no device test, image repair or kernel rebuild",
+  "actual_boot": {
+    "path": "verification/actions-run6-product-out/boot.img",
+    "bytes": 8902672,
+    "sha256": "47b4e676934f3d3e54268f2593fe22113c1f1875669fabcf10e5259197a7d4f9",
+    "preserved_byte_for_byte": true,
+    "static_validator_result": "FAIL",
+    "header_sha1_verified": "6b32418ede5b76de8337b52cd07da501df3893f2",
+    "qcdt": {
+      "version": 3,
+      "entries": 15,
+      "unique_dtbs": 5
+    },
+    "footer": {
+      "offset": 8902656,
+      "value": "SEANDROIDENFORCE",
+      "sha256": "4f9a385f72b0b40f68a48b220b8e24b7b24ee7705e3c968d900c3a7f3d66bcf8"
+    },
+    "geometry_errors": [
+      "ramdisk_address: 0x81000000, expected verified A7 0x82000000",
+      "tags_address: 0x80000100, expected verified A7 0x81e00000"
+    ]
+  },
+  "source_cause": {
+    "build_make_revision": "1bfc37a3258f1129411e934abc341de9a60e7aaf",
+    "description": "Pie core passes base and pagesize but not BOARD_RAMDISK_OFFSET/BOARD_KERNEL_TAGS_OFFSET; upstream mkbootimg defaults 0x01000000/0x100 explain actual incorrect load addresses. Samsung recipe appends BOARD_MKBOOTIMG_ARGS to boot and recovery invocations."
+  },
+  "source_fix": {
+    "files": [
+      "android/device/samsung/a7lte/BoardConfig.mk",
+      "templates/device/a7lte/BoardConfig.mk"
+    ],
+    "added": "BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)",
+    "rebuild_required": true,
+    "actual_run6_image_was_not_modified": true
+  },
+  "loki_diagnosis": {
+    "hardware_samsung_revision": "871d3f4777603ff6c33a021fc38c9b2265c54f83",
+    "target_needs_loki_selected": false,
+    "effective_loki_tool": "echo",
+    "reason": "Non-Loki recipe explicitly selects echo and clears TARGET_LOKI_ABOOT_IMAGE, then unconditionally tries cp image.lok image || true. This exactly explains observed echo and missing-file warning; no actual Loki patch attempted. Setting another false flag cannot change those unconditional recipe lines.",
+    "flag_or_recipe_changed": false
+  },
+  "targeted_verification": {
+    "test": "tests/test_boot_offsets_new.py",
+    "result": "PASS",
+    "log": "logs/build-launch/actions-run6/offset-propagation-targeted-test.log",
+    "method": "Actual native BoardConfig include, extracted unchanged selected Pie boot/recovery arg definitions, actual pinned Samsung recipe and upstream mkbootimg. Temporary opaque NONFLASHABLE payloads only; no Android/kernel compilation.",
+    "verified_boot_and_recovery_addresses": {
+      "kernel": "0x80008000",
+      "ramdisk": "0x82000000",
+      "tags": "0x81e00000"
+    },
+    "attempt_logs": [
+      "logs/build-launch/actions-run6/offset-propagation-targeted-test-attempt01.log",
+      "logs/build-launch/actions-run6/offset-propagation-targeted-test-attempt02.log"
+    ],
+    "temporary_images_retained": false
+  },
+  "source_hashes": {
+    "android/device/samsung/a7lte/BoardConfig.mk": "005627c10033d879a65fef1f0e330f06a900d5db8fcd47bbda9a37e409d47c96",
+    "templates/device/a7lte/BoardConfig.mk": "005627c10033d879a65fef1f0e330f06a900d5db8fcd47bbda9a37e409d47c96",
+    "tests/test_boot_offsets_new.py": "3fbadaa5ea1c53478b28c23e3610a2f6a8defbc649e60247f1bd026494414d2d",
+    "verification/platform/build/make/core/Makefile": "d2ca61d5118834ac6ba4f525bb074239b7fbe679183a018151f11a77e9344c70",
+    "verification/platform/hardware/samsung/mkbootimg.mk": "ec5a2b6554327517eb7405c7f18d3fb621478c94939db0a8ed5036f308b3b234",
+    "tooling/boot-sources/mkbootimg": "d24c23efe4ff143eb9daf3f20857f4101d09c6dc367a2ab890e988ff9183f6d6"
+  },
+  "device_tested": false,
+  "flash_ready": false
+}

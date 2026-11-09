@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "kind": "actual-CSB1-native-source-ABI-audit",
+  "firmware": "A700FDXXS1CSB1",
+  "source_artifact_id": 13642035280,
+  "stock_code_executed": false,
+  "camera": {
+    "blob_sha256": "8fef504fd09fe119c6397e9e1c4c00e1c2d585394ca248523587116d7a46ed59",
+    "imported_CameraParameters_constants": 110,
+    "constants_defined_in_pinned_CPP": 109,
+    "not_defined_in_CPP": [
+      {
+        "symbol": "_ZN7android16CameraParameters26PIXEL_FORMAT_YUV420SP_NV21E",
+        "name": "PIXEL_FORMAT_YUV420SP_NV21"
+      }
+    ],
+    "missing_constants_covered_by_existing_shim": true,
+    "source_commit": "f8fdbc7e1ec01a384ff39834be89b158c763f22b",
+    "fix": "Keep existing camera_shim injection; no additional constant shim required by this static check. Other C++/HAL behavior unverified."
+  },
+  "gps": {
+    "consumer": "lib/libloc_api_v02.so",
+    "consumer_sha256": "67751f576f0ad1d05603a6779cf513f90625014f7427ad16fd406bfccb18357d",
+    "strong_import": "sec_gps_conf",
+    "import_in_actual_ELF": true,
+    "stock_provider_observed_in_verified_CI_inventory": "lib/libgps.utils.so",
+    "stock_provider_sha256": "41212684637073b506b03aa8f205c95628224e61d3116e7a423969adc1e441c1",
+    "symbol_in_stock_provider_inventory_exports": true,
+    "symbol_identifier_in_selected_common_GPS_source": false,
+    "current_shim_exports": "get_process_name only; does not satisfy sec_gps_conf",
+    "fix": "Port the real Samsung configuration object/layout and behavior into source GPS utils, or design a private coherent genuine-CSB1 GPS compatibility namespace; do not fabricate a zero-filled variable/stub."
+  },
+  "ril_sap": {
+    "imports": [
+      "RIL_SIM_SAP_APDU_REQ_fields",
+      "RIL_SIM_SAP_APDU_RSP_fields",
+      "RIL_SIM_SAP_CONNECT_REQ_fields",
+      "RIL_SIM_SAP_CONNECT_RSP_fields",
+      "RIL_SIM_SAP_POWER_REQ_fields",
+      "RIL_SIM_SAP_POWER_RSP_fields",
+      "RIL_SIM_SAP_RESET_SIM_RSP_fields",
+      "RIL_SIM_SAP_STATUS_IND_fields",
+      "RIL_SIM_SAP_TRANSFER_ATR_RSP_fields"
+    ],
+    "all_message_stems_present_in_selected_nanopb_proto": true,
+    "source_provider": "hardware/ril/librilutils/Android.mk:9,19-24 generates shared librilutils from sap-api.proto; rild/Android.mk:17-19 whole-static links librilutils_static",
+    "classification": "Expected source provider exists. Verify final generated/exported symbols; no missing-SAP shim justified."
+  },
+  "ril_protobuf": {
+    "consumer_sha256": "b196dad739568c1feb230b953a88e97f3e07d3c31414bd202864de87a0301131",
+    "needed": "libprotobuf-cpp-full.so",
+    "required_constructor_symbol": "_ZN6google8protobuf8internal26GeneratedMessageReflectionC1EPKNS0_10DescriptorEPKNS0_7MessageEPKiiiiPKNS0_14DescriptorPoolEPNS0_14MessageFactoryEi",
+    "required_constructor_demangled": "google::protobuf::internal::GeneratedMessageReflection::GeneratedMessageReflection(google::protobuf::Descriptor const*, google::protobuf::Message const*, int const*, int, int, int, google::protobuf::DescriptorPool const*, google::protobuf::MessageFactory*, int)",
+    "selected_protobuf_version": 3000000,
+    "selected_AOSP_tag": "android-9.0.0_r46",
+    "selected_protobuf_commit": "411501423307c29a160affef03485fd8000b3c1d",
+    "mismatch": "Blob expects9-parameter constructor; selected header133-143/implementation175-186 defines11-parameter constructor (arena_offset, is_default_instance_offset). No old9-argument overload is declared/implemented.",
+    "fix": "Provide correctly isolated legacy protobuf ABI (prefer exact genuine CSB1 provider or audited compatible source build under a unique module/private loader namespace), or implement a complete ABI-safe compatibility layer. Do not replace platform protobuf3 globally or bridge only this constructor with a fake stub; object layouts differ.",
+    "final_ELF_comparison_pending": true
+  },
+  "source_files": [
+    {
+      "path": "verification/csb1-abi-source-audit/CameraParameters.cpp",
+      "sha256": "a6a9ed988c2e9f0c687b0c4cc2c5106ee89e7d8fdf6539da9f3705281c73ffb9"
+    },
+    {
+      "path": "verification/csb1-abi-source-audit/CameraParameters.h",
+      "sha256": "6a253d41aac0e111386ed26720c54a0351825c70cee0ce040c8285d0fef52c73"
+    },
+    {
+      "path": "verification/csb1-abi-source-audit/librilutils.Android.mk",
+      "sha256": "00f38b16fb3cb94c2c7d767166b3a75124fc5ce229e4641ef4446d4540b80eac"
+    },
+    {
+      "path": "verification/csb1-abi-source-audit/sap-api.proto",
+      "sha256": "edb492eb656538b08682d3085cad07afbc0cc1d85dfe4bede4a60d504997f482"
+    },
+    {
+      "path": "verification/csb1-abi-source-audit/protobuf.common.h",
+      "sha256": "c7fb9204acf1c0269326a8736232a7c9be82d35ab5e376b9dae9b5276e7ef762"
+    },
+    {
+      "path": "verification/csb1-abi-source-audit/protobuf.reflection.h",
+      "sha256": "9ac59b0d116dc35f9430265931a9e1b6a147316480ffa26a24cfa6781fa5fc50"
+    },
+    {
+      "path": "verification/csb1-abi-source-audit/protobuf.reflection.cc",
+      "sha256": "23d5d089912fb0c9be26b7fa34565b6810a975f9167bc04fde2df48cce54b2bc"
+    },
+    {
+      "path": "verification/csb1-abi-source-audit/protobuf.Android.bp",
+      "sha256": "c0494e0b8b49334e09ff6fb4b0d840f961a14213e384d37412c7db7bca106984"
+    },
+    {
+      "path": "android/device/samsung/msm8916-common/libshims/camera_shim.c",
+      "sha256": "7de67168d50ea3802fe555bcc8704ace5461899c761e4a2e6355a31197301558"
+    },
+    {
+      "path": "android/device/samsung/msm8916-common/libshims/gps_shim.cpp",
+      "sha256": "a732c2b6765ecad3a3c65f044453dddfa379a6c86eb8e7c58b053ec808b97c09"
+    },
+    {
+      "path": "android/device/samsung/msm8916-common/gps/utils/Android.mk",
+      "sha256": "2447d8e105c25c2590dda483bc1b212ef5356954243850da162c39020de913f9"
+    }
+  ],
+  "production_edits": false,
+  "broad_test_suite_repeated": false,
+  "runtime_functionality_verified": false
+}
