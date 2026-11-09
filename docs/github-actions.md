@@ -64,3 +64,11 @@ Os scripts de aquisição continuam invocando `python3` explicitamente.
 O vendor íntegro gerado é preservado em cache e também em um artefato separado,
 `a7lte-csb1-vendor-N`, para auditoria dos bytes e metadados reais. Esse artefato
 nunca representa uma ROM instalável.
+
+Na integração, depois de `repo sync` e `apply-overlay.py`, o workflow usa `sed`
+para corrigir `phone-xxhdpi-2048-dalvik-heap.mk` para o perfil Pie existente
+`phone-xhdpi-2048-dalvik-heap.mk` em `device/samsung/qcom-common/qcom-common.mk`
+e no `device.mk` aplicado. Confere antes a existência do destino e rejeita uma
+referência antiga remanescente. O perfil configura o heap para2GiB de RAM;
+a densidade de tela480dpi permanece independente. A verificação é registrada
+em `logs/dalvik-heap-integration.log` antes de `brunch`.

@@ -187,6 +187,21 @@ jobs:
         run: |
           set -euo pipefail
           python3 "$PORT_ROOT/scripts/apply-overlay.py" --tree "$ANDROID_TREE"
+          # Pie ships the 2 GiB phone heap profile under xhdpi, not xxhdpi.
+          # Normalize the fetched common tree after sync and the native overlay.
+          heap_profile=frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk
+          test -f "$ANDROID_TREE/$heap_profile"
+          sed -i 's|phone-xxhdpi-2048-dalvik-heap\.mk|phone-xhdpi-2048-dalvik-heap.mk|g' \
+            "$ANDROID_TREE/device/samsung/qcom-common/qcom-common.mk" \
+            "$ANDROID_TREE/device/samsung/a7lte/device.mk"
+          if grep -nH -F 'phone-xxhdpi-2048-dalvik-heap.mk' \
+            "$ANDROID_TREE/device/samsung/qcom-common/qcom-common.mk" \
+            "$ANDROID_TREE/device/samsung/a7lte/device.mk"; then
+            echo '::error::Obsolete Dalvik heap profile remains after integration.'
+            exit 1
+          fi
+          printf 'Verified heap profile: %s\n' "$heap_profile" | \
+            tee "$GITHUB_WORKSPACE/logs/dalvik-heap-integration.log"
           echo 'Vendor usa apenas o pacote fornecido ou bytes extraidos do CSB1 oficial.'
           ls -l "$ANDROID_TREE/vendor/samsung/a7lte/a7lte-vendor.mk"
           # Os patches de isolamento diagnostico nao sao aplicados.

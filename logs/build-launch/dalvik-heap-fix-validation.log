@@ -1,0 +1,5 @@
+PASS: workflow YAML and all embedded Bash syntax
+PASS: exact workflow sed repairs fetched common and native includes; screen density retained
+PASS: second application is idempotent
+PASS: missing platform heap target fails before altering fetched common file
+Scope: targeted integration fixtures with real upstream qcom-common and Pie heap text; no Android build claimed
