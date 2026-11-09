@@ -1,9 +1,9 @@
 {
   "device": "a7lte",
   "product": "lineage_a7lte",
-  "source_commit": "42ce042a30bda81bec64b16a6b4dfe3c11a97a7b",
-  "requested_at_utc": "2026-11-09 01:11:31 UTC",
+  "source_commit": "65bc100c59e2b0fcf05fb98d00487f4ae5841e60",
+  "requested_at_utc": "2026-11-09 14:53:27 UTC",
   "requested_build": "brunch a7lte",
   "allow_missing_dependencies": true,
-  "reason": "Autonomous retry after reading run5: source-owned rmnetctl collision, real CSB1 additional providers"
+  "reason": "Autonomous retry after actual run6 policy test failure at86percent; fix native path classifications and verified Samsung load offsets"
 }
