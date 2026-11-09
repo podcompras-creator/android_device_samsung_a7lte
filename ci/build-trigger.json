@@ -1,9 +1,9 @@
 {
   "device": "a7lte",
   "product": "lineage_a7lte",
-  "source_commit": "919be1e5c7430aed6530335dc5717fe01a68cd34",
-  "requested_at_utc": "2026-11-09 00:57:57 UTC",
+  "source_commit": "42ce042a30bda81bec64b16a6b4dfe3c11a97a7b",
+  "requested_at_utc": "2026-11-09 01:11:31 UTC",
   "requested_build": "brunch a7lte",
   "allow_missing_dependencies": true,
-  "reason": "Autonomous retry: native Lineage Soong exports and transport module scan guard"
+  "reason": "Autonomous retry after reading run5: source-owned rmnetctl collision, real CSB1 additional providers"
 }
