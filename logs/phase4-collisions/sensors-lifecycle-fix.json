@@ -1,0 +1,46 @@
+{
+  "result": "PASS",
+  "scope": "Patch applicability and host mock lifecycle only; not Android target compilation or sensor ABI/runtime verification",
+  "upstream_revision": "7f8723dc42663bf09d085d9c19ecaa2b28617241",
+  "source": "sources/common/sensors_wrapper/sensorswrapper.c",
+  "source_sha256": "0cd534b7d6c680bf8ac25602463a36a93a90d7bbd3d73c3d603533e0dd184f63",
+  "patched_source_sha256": "89a654c60c23f2848a6c4ea70e305ddfd7ddc638514aab2778d775b7ff20d2c1",
+  "patch": "patches/common-lineage16.patch",
+  "patch_sha256": "a87c1a8ef4c728d2daf59055fc93051159fe7a40f1b5f5e64b4f6637f9fd5008",
+  "test": "tests/test_sensors_wrapper_lifecycle.py",
+  "test_sha256": "ced5cee180ca9d729805ca02be4abd079e08b8594b45f0d4aac585f47299a3b4",
+  "log": "logs/phase4-collisions/sensors-lifecycle-test.log",
+  "fixes": [
+    "Initialize wrapper/output pointers and reject null output",
+    "Do not close/free active vendor on repeated open",
+    "Use vendor device pointer for vendor close callback",
+    "Vendor owns vendor allocation; wrapper frees its wrapper only",
+    "Close opened vendor if wrapper allocation fails",
+    "Clear active state on close so reopen works even after close reports error"
+  ],
+  "verified_cases": [
+    "module lookup failure",
+    "vendor open failure",
+    "success-with-null vendor rejection",
+    "wrapper allocation failure cleanup",
+    "active second open rejection",
+    "null close rejection",
+    "callback pointer forwarding",
+    "close ownership",
+    "close error propagation",
+    "reopen"
+  ],
+  "line_endings": {
+    "upstream_crlf": 151,
+    "upstream_lf": 151,
+    "patched_preserves_crlf": true,
+    "explanation": "Upstream sensors source uses CRLF on all151 lines. Sensor hunk retains those line endings for default git apply. Running diff --check on the patch file as text also sees required unified-diff context prefixes before tabs/blank lines as whitespace, so that check is not suitable for embedded diff semantics. The patch instead passes git -c core.whitespace=cr-at-eol apply --check --whitespace=error-all --include=sensors_wrapper/sensorswrapper.c against pinned source."
+  },
+  "unchanged_product_sources": true,
+  "limitations": [
+    "Mock headers model only accessed fields; Android headers/linking not validated",
+    "Vendor module actual lifecycle/thread safety needs device testing",
+    "No runtime claim for proprietary sensors or firmware"
+  ],
+  "patch_prefix_preserved_exactly": true
+}

@@ -72,3 +72,16 @@ e no `device.mk` aplicado. Confere antes a existência do destino e rejeita uma
 referência antiga remanescente. O perfil configura o heap para2GiB de RAM;
 a densidade de tela480dpi permanece independente. A verificação é registrada
 em `logs/dalvik-heap-integration.log` antes de `brunch`.
+
+O ambiente do job define `LINEAGE_BUILD=a7lte` antes de `envsetup.sh`. Essa
+variável habilita `BoardConfigLineage.mk`, que prepara as flags ARM nativas e
+as exporta por `lineageVarsPlugin` para Soong. O `brunch | tee` executa em um
+subshell; sem esse ambiente no job, a tentativa posterior de `mka bootimage`
+perdia a configuração Lineage e falhava em `$(KERNEL_MAKE_FLAGS)`. Não é usado
+`TARGET_KERNEL_MAKE_FLAGS`, que não é lido por essa versão do build.
+
+O marcador `.find-ignore` no repositório de transporte evita que o source finder
+do Pie descubra novamente módulos dos snapshots em `.a7lte-port/android`,
+`templates` e `sources/hal-audit`. As árvores nativas instaladas pelo overlay
+continuam sendo compiladas nos caminhos normais. O job preserva as últimas50
+linhas de cada tentativa e o namespace de variáveis Lineage do Soong nos logs.

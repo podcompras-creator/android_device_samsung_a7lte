@@ -24,6 +24,9 @@ jobs:
       CCACHE_DIR: ${{ github.workspace }}/ccache
       CCACHE_MAXSIZE: 2G
       ALLOW_MISSING_DEPENDENCIES: 'true'
+      # BoardConfigLineage.mk exports kernel flags to Soong only for a Lineage build.
+      # Keep this set in the parent shell too, including the bootimage fallback.
+      LINEAGE_BUILD: a7lte
 
     steps:
       - name: Checkout do projeto
@@ -187,6 +190,9 @@ jobs:
         run: |
           set -euo pipefail
           python3 "$PORT_ROOT/scripts/apply-overlay.py" --tree "$ANDROID_TREE"
+          # Repo also checks out this staging package inside the Android tree.
+          # The Pie source finder must ignore its duplicate source snapshots.
+          test -f "$ANDROID_TREE/.a7lte-port/.find-ignore"
           # Pie ships the 2 GiB phone heap profile under xhdpi, not xxhdpi.
           # Normalize the fetched common tree after sync and the native overlay.
           heap_profile=frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk
@@ -235,6 +241,10 @@ jobs:
           fi
           tail -n 50 "$GITHUB_WORKSPACE/logs/brunch.log" \
             > "$GITHUB_WORKSPACE/logs/brunch-last-50.log"
+          if [[ -f "$GITHUB_WORKSPACE/logs/bootimage.log" ]]; then
+            tail -n 50 "$GITHUB_WORKSPACE/logs/bootimage.log" \
+              > "$GITHUB_WORKSPACE/logs/bootimage-last-50.log"
+          fi
           exit "$build_rc"
 
       - name: Gerar checksums dos artefatos realmente produzidos
@@ -256,6 +266,13 @@ jobs:
           output = Path(os.environ['GITHUB_WORKSPACE']) / 'logs'
           output.mkdir(parents=True, exist_ok=True)
           (output / 'SHA256SUMS').write_text('\n'.join(rows) + '\n')
+          variables = Path(os.environ['ANDROID_TREE']) / 'out/soong/soong.variables'
+          if variables.is_file():
+              import json
+              config = json.loads(variables.read_text())
+              kernel_vars = config.get('VendorVars', {}).get('lineageVarsPlugin', {})
+              (output / 'soong-lineage-kernel-vars.json').write_text(
+                  json.dumps(kernel_vars, indent=2, sort_keys=True) + '\n')
           PY
 
       - name: Upload ZIP ou boot.img e logs

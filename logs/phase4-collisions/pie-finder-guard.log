@@ -1,0 +1,35 @@
+[
+  {
+    "Phase": "before",
+    "Makefiles": [
+      ".a7lte-port/android/device/samsung/a7lte/Android.mk",
+      ".a7lte-port/templates/device/a7lte/Android.mk",
+      "device/samsung/a7lte/Android.mk"
+    ],
+    "Blueprints": [
+      ".a7lte-port/sources/hal-audit/example/Android.bp",
+      "device/samsung/a7lte/Android.bp"
+    ]
+  },
+  {
+    "Phase": "make-guard-only",
+    "Makefiles": [
+      ".a7lte-port/Android.mk",
+      "device/samsung/a7lte/Android.mk"
+    ],
+    "Blueprints": [
+      ".a7lte-port/sources/hal-audit/example/Android.bp",
+      "device/samsung/a7lte/Android.bp"
+    ]
+  },
+  {
+    "Phase": "find-ignore",
+    "Makefiles": [
+      "device/samsung/a7lte/Android.mk"
+    ],
+    "Blueprints": [
+      "device/samsung/a7lte/Android.bp"
+    ]
+  }
+]
+PASS: exact Pie finder prunes mirror Android.mk and Android.bp while retaining native sibling

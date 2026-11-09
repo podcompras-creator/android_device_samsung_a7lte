@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "scope": "Exact selected Pie Go finder with fixture tree only; no Android build or product edits",
+  "soong_revision": "c27467148be7a09251ebbefd59759066e3f1aa42",
+  "tool": "selected prebuilts/go linux-x86 go1.10",
+  "source_hashes": {
+    "verification/platform/build/soong/finder/cmd/finder.go": "b587278b43c0c840ee8d3d7da62b8511f1c23862f000a0e63ce0b1c374f42fbe",
+    "verification/platform/build/soong/finder/finder.go": "22a9bf4c470c57dea3e0d9e177798908507ea756480d34f85093c86b00a88f4f",
+    "verification/platform/build/soong/finder/fs/fs.go": "fb9dd10cc16f99bd8e2974ce2b6ee9de000bd2da0d54c83d4b995eea9d8112de",
+    "verification/platform/build/soong/finder/fs/fs_darwin.go": "0563fdac44451159a9bf7ea0ac757c5d354726f27feffb59cd2cf9b673542bdb",
+    "verification/platform/build/soong/finder/fs/fs_linux.go": "0d54e2a0490318fa352236a647f1e5c4f106fa2bd32a96e86e5c658608f0a562",
+    "verification/platform/build/soong/finder/fs/readdir.go": "4b4a564b017cb97fc9caa2cb43f851cf4ece9fbdf7ae8892de97a07b0d2ddf19"
+  },
+  "ui_source": {
+    "path": "verification/platform/build/soong/ui/build/finder.go",
+    "sha256": "5dc59e53dc5f0a26a77798c303045cf6f192c2d421dfb6bfd42ad8d155635c83"
+  },
+  "tracked_blueprint_snapshots": 48,
+  "guard": "nonempty .find-ignore in .a7lte-port mirror root, not platform root",
+  "scenarios": [
+    "baseline mirror mk/bp discovered",
+    "root Android.mk hides nested Makefiles but does not hide Blueprint snapshots",
+    "root .find-ignore hides whole mirror including mk/bp; active native sibling remains"
+  ]
+}

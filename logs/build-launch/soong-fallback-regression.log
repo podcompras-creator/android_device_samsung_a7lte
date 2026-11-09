@@ -1,0 +1,6 @@
+PASS: workflow YAML and all embedded Bash syntax
+PASS: exact fallback block exports native ARM kernel flags through real Lineage Make configuration
+PASS: fallback bootimage retains LINEAGE_BUILD when brunch runs in a pipeline subshell
+PASS: original primary failure code preserved; both final log tails produced
+PASS: removing parent LINEAGE_BUILD reproduces missing export in fallback
+Scope: real Make configuration with mocked build commands; no kernel or Android compilation claimed

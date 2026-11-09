@@ -1,0 +1,7 @@
+test_real_patched_wrapper_ownership (__main__.SensorsWrapperLifecycle.test_real_patched_wrapper_ownership) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.104s
+
+OK
+PASS: module/open/allocation failures, active-open rejection, ownership, callback forwarding, close errors and reopen

@@ -1,0 +1,4 @@
+# Build-source staging repository: Android makefiles and Blueprint snapshots here
+# are inputs to apply-overlay.py and audits, not a second set of platform modules.
+# Pie's source finder prunes directories containing this marker. The active
+# device/kernel/vendor trees are installed separately under their native paths.

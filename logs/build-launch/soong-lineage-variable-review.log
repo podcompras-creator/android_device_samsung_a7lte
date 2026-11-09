@@ -1,0 +1,36 @@
+Targeted GNU Make evaluation, using actual verification/platform files.
+Scope: configuration expansion only; no Android or kernel compilation.
+
+Inputs:
+  vendor/lineage/config/BoardConfigLineage.mk
+  vendor/lineage/config/BoardConfigKernel.mk
+  vendor/lineage/config/BoardConfigSoong.mk
+  TARGET_ARCH=arm
+  TARGET_DEVICE_DIR=device/samsung/a7lte
+  TARGET_KERNEL_SOURCE=kernel/samsung/msm8916
+  HOST_OS=linux
+
+Make wrapper used the exact core/config.mk condition:
+  ifneq ($(LINEAGE_BUILD),)
+  include vendor/lineage/config/BoardConfigLineage.mk
+  endif
+
+Case 1: LINEAGE_BUILD unset; GNU Make exit 0
+  KERNEL_MAKE_FLAGS=[]
+  EXPORTED_KEYS=[]
+  EXPORTED_FLAGS=[]
+
+Case 2: LINEAGE_BUILD=a7lte; GNU Make exit 0
+  KERNEL_MAKE_FLAGS=[-j$(nproc) CFLAGS_MODULE="-fno-pic"]
+  EXPORTED_KEYS=[KERNEL_ARCH KERNEL_CROSS_COMPILE KERNEL_MAKE_FLAGS TARGET_KERNEL_CONFIG TARGET_KERNEL_SOURCE]
+  EXPORTED_FLAGS=[-j$(nproc) CFLAGS_MODULE=\"-fno-pic\"]
+
+PASS: nonempty LINEAGE_BUILD enables native ARM kernel flags and Soong namespace export.
+BoardConfigKernel.mk resets KERNEL_MAKE_FLAGS before populating it; it accepts
+TARGET_KERNEL_ADDITIONAL_FLAGS, not TARGET_KERNEL_MAKE_FLAGS.
+generator/variables.go expands only keys present in lineageVarsPlugin.
+VendorConfig.IsSet checks presence, so an existing empty value is valid; a missing
+key remains unexpanded and causes the generic generator unknown-variable error.
+
+This verifies the supported configuration route. It does not claim that the
+whole Android build, headers_install, boot image or physical boot passed.

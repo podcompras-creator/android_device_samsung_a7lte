@@ -101,3 +101,126 @@
 +endif
  LOCAL_MODULE_PATH  := $(TARGET_RECOVERY_ROOT_OUT)/etc
  include $(BUILD_PREBUILT)
+--- a/sensors_wrapper/sensorswrapper.c
++++ b/sensors_wrapper/sensorswrapper.c
+@@ -19,6 +19,8 @@
+ //#define LOG_NDEBUG 0
+ 
+ #include <errno.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <cutils/log.h>
+ 
+ #include <hardware/hardware.h>
+@@ -51,14 +53,16 @@
+ }
+ 
+ static int wrapper_sensors_module_close(struct hw_device_t* device) {
++	struct sensors_poll_device_1 *vendor_dev;
+ 	int ret;
+ 
+-	if (!device) {
+-		ret = -EINVAL;
+-	}
++	if (!device || !samsung_hw_dev)
++		return -EINVAL;
+ 
+-	ret = samsung_hw_dev->common.close(device);
+-	free(samsung_hw_dev);
++	vendor_dev = samsung_hw_dev;
++	samsung_hw_dev = NULL;
++	ret = vendor_dev->common.close((struct hw_device_t*)vendor_dev);
++	free(device);
+ 
+ 	return ret;
+ }
+@@ -70,43 +74,46 @@
+ WRAP_HAL(batch, int, (struct sensors_poll_device_1 *dev, int handle, int flags, int64_t ns, int64_t timeout), (samsung_hw_dev, handle, flags, ns, timeout))
+ 
+ static int sensors_module_open(const struct hw_module_t* module, const char* id, struct hw_device_t** device) {
+-	int ret=0;
+-	struct sensors_poll_device_1 *dev;
++	int ret = 0;
++	struct sensors_poll_device_1 *dev = NULL;
++	struct sensors_poll_device_1 *vendor_dev = NULL;
++
++	if (!device)
++		return -EINVAL;
++	*device = NULL;
+ 
+ 	ALOGI("Initializing wrapper for Samsung Sensor-HAL");
+ 	if (samsung_hw_dev) {
+ 		ALOGE("Sensor HAL already opened!");
+-		ret = -ENODEV;
+-		goto fail;
++		return -ENODEV;
+ 	}
+-	
++
+ 	ret = check_vendor_module();
+ 
+ 	if (ret) {
+ 		ALOGE("%s couldn't open sensors module in %s. (%s)", __func__,
+ 				 SENSORS_HARDWARE_MODULE_ID, strerror(-ret));
+-		goto fail;
++		return ret;
+ 	}
+ 
+-	ret = gVendorModule->common.methods->open((const hw_module_t*)gVendorModule, id, (hw_device_t**)&samsung_hw_dev);
+-	
++	ret = gVendorModule->common.methods->open((const hw_module_t*)gVendorModule, id, (hw_device_t**)&vendor_dev);
++
+ 	if (ret) {
+ 		ALOGE("%s couldn't open sensors module in %s. (%s)", __func__,
+ 				 SENSORS_HARDWARE_MODULE_ID, strerror(-ret));
+-		goto fail;
++		return ret;
++	}
++	if (!vendor_dev)
++		return -ENODEV;
++
++	dev = malloc(sizeof(*dev));
++	if (!dev) {
++		ALOGE("Can't allocate memory for device, aborting...");
++		vendor_dev->common.close((struct hw_device_t*)vendor_dev);
++		return -ENOMEM;
+ 	}
+ 
+-	*device = malloc(sizeof(struct sensors_poll_device_1));
+-
+-	if (!*device) {
+-		ALOGE("Can't allocate memory for device, aborting...");
+-		ret = -ENOMEM;
+-		goto fail;
+-	}
+-
+-	memset(*device, 0, sizeof(struct sensors_poll_device_1));
+-	dev = (struct sensors_poll_device_1*)*device;
+-
++	memset(dev, 0, sizeof(*dev));
+ 	dev->common.tag = HARDWARE_DEVICE_TAG;
+ 	dev->common.version = SENSORS_DEVICE_API_VERSION_1_3;
+ 	dev->common.module = (struct hw_module_t*)module;
+@@ -118,19 +125,9 @@
+ 	dev->batch = wrapper_batch;
+ 	dev->flush = wrapper_flush;
+ 
+-	return ret;
+-	
+-	fail:
+-	if (samsung_hw_dev) {
+-		free(samsung_hw_dev);
+-		samsung_hw_dev = NULL;
+-	}
+-	if (dev) {
+-		free(dev);
+-		dev = NULL;
+-	}
+-	*device = NULL;
+-	return ret;
++	samsung_hw_dev = vendor_dev;
++	*device = (struct hw_device_t*)dev;
++	return 0;
+ }
+ 
+ struct hw_module_methods_t sensors_module_methods = {
