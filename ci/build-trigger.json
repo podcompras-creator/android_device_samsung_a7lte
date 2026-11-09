@@ -1,10 +1,9 @@
 {
   "device": "a7lte",
   "product": "lineage_a7lte",
-  "source_commit": "4b4dcb030083f52111b569402f50a5f2ae97bc8e",
-  "requested_at_utc": "2026-11-08 19:23:43 UTC",
+  "source_commit": "31fa4ede2682ef41913b3d52f3a5b8ec52b96404",
+  "requested_at_utc": "2026-11-09 00:41:01 UTC",
   "requested_build": "brunch a7lte",
   "allow_missing_dependencies": true,
-  "retry_reason": "Full official AP CRC and TAR MD5 passed; allow ordinary dalvik property overrides while preserving strict firmware identity",
-  "attempt": 3
+  "reason": "Correct fetched qcom-common legacy Dalvik heap include after repo sync"
 }
