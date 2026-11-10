@@ -6,7 +6,7 @@
   "trigger_commit": "1f2b06c7b1d5d91cba8ae58bcf996aaf4916da72",
   "run_url": "https://github.com/podcompras-creator/android_device_samsung_a7lte/actions/runs/42720944356",
   "state": "completed",
-  "next_action": "Preserve actual generated ROM; separate byte-identical outputs into smaller delivery artifacts without recompiling",
+  "next_action": "Complete: generated ROM delivered, static verification PASS; physical boot and known GPS/RIL ABI issues remain",
   "native_run6_boot": {
     "path": "artifacts/android-run6-unvalidated/boot.img",
     "sha256": "47b4e676934f3d3e54268f2593fe22113c1f1875669fabcf10e5259197a7d4f9",
@@ -36,5 +36,31 @@
     "static_validation": "PASS",
     "device_tested": false,
     "flash_ready": false
-  }
+  },
+  "delivery": {
+    "run_id": 42728375093,
+    "workflow_commit": "5bc8061306d48869937ae2a3da1eaf599c2e5d9c",
+    "source_run_id": 42720944356,
+    "conclusion": "success",
+    "operation": "Copy verified existing ROM and boot without compilation or modification",
+    "artifacts": [
+      {
+        "id": 13723233150,
+        "name": "a7lte-rom-run8",
+        "bytes": 460018946,
+        "sha256": "sha256:5f8fe8ca0de8c7c2fd2198f33aadea46d6649e230f0a102842da727925794575",
+        "url": "https://github.com/podcompras-creator/android_device_samsung_a7lte/actions/runs/42728375093/artifacts/13723233150",
+        "expires_at": "2026-11-24T00:27:44Z"
+      },
+      {
+        "id": 13722588646,
+        "name": "a7lte-boot-run8",
+        "bytes": 8125236,
+        "sha256": "sha256:913bf97c2ff2d0322c93c44c982fe391be204298a05057628e600a5268ee6482",
+        "url": "https://github.com/podcompras-creator/android_device_samsung_a7lte/actions/runs/42728375093/artifacts/13722588646",
+        "expires_at": "2026-11-24T00:27:49Z"
+      }
+    ]
+  },
+  "independent_delivered_rom_validation": "PASS"
 }

@@ -1,0 +1,15 @@
+{
+  "run_id": 42720944356,
+  "artifact_id": 13723127389,
+  "artifact_name": "a7lte-8",
+  "workflow_commit": "1f2b06c7b1d5d91cba8ae58bcf996aaf4916da72",
+  "rom_name": "lineage-16.0-20261109-UNOFFICIAL-a7lte.zip",
+  "rom_bytes": 460017403,
+  "rom_sha256": "65417a09052167303ba7cd275fe136e253b9555874b7f39882db9f73e9cbf488",
+  "boot_bytes": 8898576,
+  "boot_sha256": "c51e6b0ed903dbd4a990cb096c15d1598f8aaebf19e97744aa9d672ac90e6164",
+  "result": "PASS",
+  "operation": "Byte-identical copy of existing native build outputs; no compilation, image edits or signing",
+  "device_tested": false,
+  "flash_ready": false
+}

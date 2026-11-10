@@ -1,0 +1,1 @@
+Real native LineageOS16 a7lte build outputs from run42720944356, copied unchanged and hash-verified. Static packaging passed in that run. No device boot/HAL test; not certified for flashing. Known runtime GPS/RIL ABI issues remain documented in the project STATUS.md.

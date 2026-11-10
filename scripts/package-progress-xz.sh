@@ -4,6 +4,22 @@ set -euo pipefail
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 OUTPUT=${1:?Usage: package-progress-xz.sh NEW-OUTPUT.tar.xz}
 OUTPUT=$(realpath -m "$OUTPUT")
+PROFILE=${2:-core}
+EXTRA_EXCLUDES=()
+case "$PROFILE" in
+    full) ;;
+    core)
+        # These historical/debug outputs remain in the untouched older archive.
+        # Keep original zImage/DTBs/dt.img and the latest genuine run8 boot here.
+        EXTRA_EXCLUDES=(--exclude='artifacts/vmlinux'
+            --exclude='artifacts/boot-audit'
+            --exclude='artifacts/android-run6-unvalidated/boot.img'
+            --exclude='artifacts/android-run6-header-repack/boot.img'
+            --exclude='artifacts/android-run7-unvalidated/boot.img'
+            --exclude='artifacts/ril-protobuf-isolation-prototype/*.so')
+        ;;
+    *) echo 'Profile must be core or full.' >&2; exit 2 ;;
+esac
 [[ "$OUTPUT" == *.tar.xz && ! -e "$OUTPUT" ]] || {
     echo 'Choose a new .tar.xz output; existing packages are preserved.' >&2
     exit 2
@@ -24,6 +40,7 @@ trap 'rm -f "$TMP"' EXIT
 cd "$ROOT"
 tar -cf - --exclude='*.tar.gz' --exclude='*.tar.xz' --exclude='*.bundle' \
     --exclude='__pycache__' --exclude='tooling/git-repo' \
+    "${EXTRA_EXCLUDES[@]}" \
     README.md STATUS.md Containerfile local_manifests.xml .find-ignore .github ci \
     sources.lock.json host-tools.lock.json scripts manifests patches templates \
     tests android docs logs artifacts tooling sources/hal-audit \

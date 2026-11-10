@@ -29,8 +29,11 @@ API28. Os46testes antigos não foram repetidos, e não houve build local.
 
 O runner terminou com apenas1.6GiB livres, apesar de completar. O artefato
 combinado guarda duas cópias idênticas do ZIP e soma927448663bytes, acima do
-limite512MiB do conector. Um workflow de entrega separa os arquivos existentes
-com conferência dos hashes, sem compilar, alterar imagens nem reassinar a ROM.
+limite512MiB do conector. O workflow de entrega42728375093 concluiu com saída0 e separou os arquivos
+existentes com conferência dos hashes, sem compilar, alterar nem reassinar.
+A conferência independente baixou o artefato de460018946bytes em memória,
+verificou SHA256/CRC externo e do ZIP real e passou no validador OTA Samsung.
+O boot independente foi preservado intacto em artifacts/android-run8-unvalidated.
 Artefato original preservado:
 https://github.com/podcompras-creator/android_device_samsung_a7lte/actions/runs/42720944356/artifacts/13723127389 .
 
@@ -43,6 +46,12 @@ preservados, inclusive o boot da tentativa6 com seus offsets errados documentado
 Nenhum boot nem teste de HAL ocorreu no aparelho. O sucesso da compilação e
 as verificações estáticas não tornam este ZIP uma ROM funcional ou certificada
 para instalação. As incompatibilidades conhecidas de GPS/RIL continuam abaixo.
+
+ROM única e checksums:
+https://github.com/podcompras-creator/android_device_samsung_a7lte/actions/runs/42728375093/artifacts/13723233150
+
+Boot independente e checksums:
+https://github.com/podcompras-creator/android_device_samsung_a7lte/actions/runs/42728375093/artifacts/13722588646
 
 ## Concluído nesta integração
 

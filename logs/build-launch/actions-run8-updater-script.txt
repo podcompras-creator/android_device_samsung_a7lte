@@ -1,0 +1,16 @@
+assert(getprop("ro.product.device") == "a7lte" || getprop("ro.build.product") == "a7lte" || abort("E3004: This package is for device: a7lte; this device is " + getprop("ro.product.device") + "."););
+ui_print("Target: samsung/lineage_a7lte/a7lte:9/PQ3A.190801.002/runner11092343:userdebug/test-keys");
+package_extract_dir("install", "/tmp/install");
+set_metadata_recursive("/tmp/install", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644);
+set_metadata_recursive("/tmp/install/bin", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);
+run_program("/tmp/install/bin/backuptool.sh", "backup", "/dev/block/bootdevice/by-name/system", "ext4");
+show_progress(0.750000, 0);
+ui_print("Patching system image unconditionally...");
+block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat.br", "system.patch.dat") ||
+  abort("E1001: Failed to update system image.");
+show_progress(0.020000, 10);
+run_program("/tmp/install/bin/backuptool.sh", "restore", "/dev/block/bootdevice/by-name/system", "ext4");
+show_progress(0.050000, 5);
+package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
+show_progress(0.200000, 10);
+set_progress(1.000000);
