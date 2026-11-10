@@ -1,0 +1,6 @@
+{
+  "source_run_id": 42720944356,
+  "source_commit": "4ba83f651d06a95f5a1bffa91bb6c47e58d4b931",
+  "requested_at_utc": "2026-11-10 00:26:38 UTC",
+  "operation": "Preserve byte-identical ROM and boot in separate artifacts; no compilation"
+}
