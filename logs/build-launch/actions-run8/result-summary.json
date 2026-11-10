@@ -1,0 +1,40 @@
+{
+  "result": "PASS",
+  "completeness": "rom_zip_present",
+  "rom_zip_static_validated": true,
+  "device_tested": false,
+  "flash_ready": false,
+  "errors": [],
+  "artifacts": [
+    {
+      "name": "boot.img",
+      "kind": "boot",
+      "result": "PASS",
+      "bytes": 8898576,
+      "sha256": "c51e6b0ed903dbd4a990cb096c15d1598f8aaebf19e97744aa9d672ac90e6164"
+    },
+    {
+      "name": "recovery.img",
+      "kind": "recovery",
+      "result": "PASS",
+      "bytes": 11874320,
+      "sha256": "7bb32353287a63c7fcd29cf50a820b8cbfd08a4452c1d255e714b8fa87951405"
+    },
+    {
+      "name": "lineage-16.0-20261109-UNOFFICIAL-a7lte.zip",
+      "kind": "ota_zip",
+      "result": "PASS",
+      "bytes": 460017403,
+      "sha256": "65417a09052167303ba7cd275fe136e253b9555874b7f39882db9f73e9cbf488"
+    },
+    {
+      "name": "lineage_a7lte-ota-eng.runner.zip",
+      "kind": "ota_zip",
+      "result": "PASS",
+      "bytes": 460017403,
+      "sha256": "65417a09052167303ba7cd275fe136e253b9555874b7f39882db9f73e9cbf488"
+    }
+  ],
+  "build_result": "required_policy_exit_code=0\nbrunch_executed=true brunch_exit_code=0\n",
+  "last_resources": "2026-11-10T00:19:46Z\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/root       146G  143G  3.0G  98% /\n               total        used        free      shared  buff/cache   available\nMem:           15988         930        1794          28       13263       14682\nSwap:           3071        1204        1867\n2026-11-10T00:20:01Z\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/root       146G  143G  2.8G  99% /\n               total        used        free      shared  buff/cache   available\nMem:           15988         807        1744          28       13435       14805\nSwap:           3071        1204        1867\n2026-11-10T00:20:16Z\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/root       146G  144G  1.6G  99% /\n               total        used        free      shared  buff/cache   available\nMem:           15988         801         491          29       14695       14810\nSwap:           3071        1202        1869"
+}

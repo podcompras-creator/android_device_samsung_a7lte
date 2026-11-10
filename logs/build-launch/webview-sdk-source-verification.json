@@ -1,0 +1,32 @@
+{
+  "manifest": {
+    "manifest": {
+      "versionCode": 720406300,
+      "versionName": "138.0.7204.63",
+      "isolatedSplits": 4294967295,
+      "compileSdkVersion": 36,
+      "compileSdkVersionCodename": "16",
+      "package": "com.android.webview",
+      "platformBuildVersionCode": 36,
+      "platformBuildVersionName": 16
+    },
+    "uses-sdk": {
+      "minSdkVersion": 26,
+      "targetSdkVersion": 35
+    }
+  },
+  "android_9_min_sdk_compatible": true,
+  "result": "PASS",
+  "scope": "Full official public Git LFS object download, exact SHA256/size, every ZIP entry CRC and ARM32 JNI header; not Git LFS client CI integration or Android runtime",
+  "repository": "LineageOS/android_external_chromium-webview_prebuilt_arm",
+  "revision": "b2639126d02b401ae8a8a7f3ca302633713a12e6",
+  "endpoint": "https://review.lineageos.org/LineageOS/android_external_chromium-webview_prebuilt_arm.git/info/lfs/objects/batch",
+  "sha256": "b7268786318f404bdad53eaaec889619ff30100b935541a9e393e32efed3cf11",
+  "bytes": 90257078,
+  "full_crc_verified": true,
+  "full_sha256_verified": true,
+  "entries": 620,
+  "arm32_jni_verified": true,
+  "stored_on_disk": false,
+  "hardware_tested": false
+}

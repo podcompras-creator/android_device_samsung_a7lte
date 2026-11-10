@@ -1,0 +1,1195 @@
+{
+  "schema_version": 1,
+  "scope": "Static packaging, hashes and ZIP CRC only; no firmware signature, build provenance, filesystem semantics, HAL compatibility, flashing or device boot/hardware validation",
+  "checked_at_utc": "2026-11-10T00:21:01.785562+00:00",
+  "product": "a7lte",
+  "product_out": "/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte",
+  "artifacts": [
+    {
+      "name": "boot.img",
+      "path": "/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/boot.img",
+      "kind": "boot",
+      "result": "PASS",
+      "errors": [],
+      "bytes": 8898576,
+      "sha256": "c51e6b0ed903dbd4a990cb096c15d1598f8aaebf19e97744aa9d672ac90e6164",
+      "validation": {
+        "result": "PASS",
+        "scope": "Static packaging, hashes and ZIP CRC only; no firmware signature, build provenance, filesystem semantics, HAL compatibility, flashing or device boot/hardware validation",
+        "errors": [],
+        "inspection": {
+          "result": "PASS",
+          "image": "/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/boot.img",
+          "image_sha256": "c51e6b0ed903dbd4a990cb096c15d1598f8aaebf19e97744aa9d672ac90e6164",
+          "image_bytes": 8898576,
+          "format": "Samsung legacy DT/v0",
+          "header_sha1": "825fb9e4275a848bf6a85a01af9c3b0a0144ce5c",
+          "page_size": 2048,
+          "kernel_address": 2147516416,
+          "ramdisk_address": 2181038080,
+          "second_address": 2163212288,
+          "tags_address": 2178940928,
+          "os_version": "9.0.0",
+          "os_patch_level": "2022-01",
+          "board": "",
+          "cmdline": "console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive buildvariant=userdebug",
+          "payloads": {
+            "kernel": {
+              "offset": 2048,
+              "bytes": 6036416,
+              "sha256": "3e5605f26e35fee96eccdffa95f58a24c5e63e042b998b4bad78a5b8e2f87a5c"
+            },
+            "ramdisk": {
+              "offset": 6039552,
+              "bytes": 1821983,
+              "sha256": "33570a28513d2c68cfd781d5cfcccdf433690dfe57e891d77da50395177d21c7"
+            },
+            "second": {
+              "offset": 7862272,
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "dt": {
+              "offset": 7862272,
+              "bytes": 1036288,
+              "sha256": "74270d174fd2f7e55f9d50826e573224a1d993cbe7661e3d5bc692bafe9dc3ed"
+            }
+          },
+          "trailer": {
+            "offset": 8898560,
+            "bytes": 16,
+            "value": "SEANDROIDENFORCE",
+            "opaque_signature_bytes": 0,
+            "opaque_signature_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "samsung_signature_verified": false
+          },
+          "qcdt": {
+            "version": 3,
+            "entries": 15,
+            "unique_dtbs": 5,
+            "table": [
+              {
+                "soc": 239,
+                "platform": 250646513,
+                "subtype": 1,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 2048,
+                "size": 206848
+              },
+              {
+                "soc": 239,
+                "platform": 250646513,
+                "subtype": 3,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 208896,
+                "size": 206848
+              },
+              {
+                "soc": 239,
+                "platform": 250646513,
+                "subtype": 4,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 415744,
+                "size": 206848
+              },
+              {
+                "soc": 239,
+                "platform": 250646513,
+                "subtype": 5,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 622592,
+                "size": 206848
+              },
+              {
+                "soc": 239,
+                "platform": 250646513,
+                "subtype": 6,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 829440,
+                "size": 206848
+              },
+              {
+                "soc": 241,
+                "platform": 250646513,
+                "subtype": 1,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 2048,
+                "size": 206848
+              },
+              {
+                "soc": 241,
+                "platform": 250646513,
+                "subtype": 3,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 208896,
+                "size": 206848
+              },
+              {
+                "soc": 241,
+                "platform": 250646513,
+                "subtype": 4,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 415744,
+                "size": 206848
+              },
+              {
+                "soc": 241,
+                "platform": 250646513,
+                "subtype": 5,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 622592,
+                "size": 206848
+              },
+              {
+                "soc": 241,
+                "platform": 250646513,
+                "subtype": 6,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 829440,
+                "size": 206848
+              },
+              {
+                "soc": 263,
+                "platform": 250646513,
+                "subtype": 1,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 2048,
+                "size": 206848
+              },
+              {
+                "soc": 263,
+                "platform": 250646513,
+                "subtype": 3,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 208896,
+                "size": 206848
+              },
+              {
+                "soc": 263,
+                "platform": 250646513,
+                "subtype": 4,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 415744,
+                "size": 206848
+              },
+              {
+                "soc": 263,
+                "platform": 250646513,
+                "subtype": 5,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 622592,
+                "size": 206848
+              },
+              {
+                "soc": 263,
+                "platform": 250646513,
+                "subtype": 6,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 829440,
+                "size": 206848
+              }
+            ]
+          },
+          "reference_matches": {},
+          "stock_compatibility_verified": false,
+          "device_boot_tested": false
+        }
+      }
+    },
+    {
+      "name": "recovery.img",
+      "path": "/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/recovery.img",
+      "kind": "recovery",
+      "result": "PASS",
+      "errors": [],
+      "bytes": 11874320,
+      "sha256": "7bb32353287a63c7fcd29cf50a820b8cbfd08a4452c1d255e714b8fa87951405",
+      "validation": {
+        "result": "PASS",
+        "scope": "Static packaging, hashes and ZIP CRC only; no firmware signature, build provenance, filesystem semantics, HAL compatibility, flashing or device boot/hardware validation",
+        "errors": [],
+        "inspection": {
+          "result": "PASS",
+          "image": "/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/recovery.img",
+          "image_sha256": "7bb32353287a63c7fcd29cf50a820b8cbfd08a4452c1d255e714b8fa87951405",
+          "image_bytes": 11874320,
+          "format": "Samsung legacy DT/v0",
+          "header_sha1": "82cdd321c828bf995e57d28122f89c06dece6622",
+          "page_size": 2048,
+          "kernel_address": 2147516416,
+          "ramdisk_address": 2181038080,
+          "second_address": 2163212288,
+          "tags_address": 2178940928,
+          "os_version": "9.0.0",
+          "os_patch_level": "2022-01",
+          "board": "",
+          "cmdline": "console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive buildvariant=userdebug",
+          "payloads": {
+            "kernel": {
+              "offset": 2048,
+              "bytes": 6036416,
+              "sha256": "3e5605f26e35fee96eccdffa95f58a24c5e63e042b998b4bad78a5b8e2f87a5c"
+            },
+            "ramdisk": {
+              "offset": 6039552,
+              "bytes": 4797875,
+              "sha256": "6e70ac49d8699767b541e328fdfd8007c5f0036c06c5c4a828ffcfb9bf5989e4"
+            },
+            "second": {
+              "offset": 10838016,
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "dt": {
+              "offset": 10838016,
+              "bytes": 1036288,
+              "sha256": "74270d174fd2f7e55f9d50826e573224a1d993cbe7661e3d5bc692bafe9dc3ed"
+            }
+          },
+          "trailer": {
+            "offset": 11874304,
+            "bytes": 16,
+            "value": "SEANDROIDENFORCE",
+            "opaque_signature_bytes": 0,
+            "opaque_signature_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "samsung_signature_verified": false
+          },
+          "qcdt": {
+            "version": 3,
+            "entries": 15,
+            "unique_dtbs": 5,
+            "table": [
+              {
+                "soc": 239,
+                "platform": 250646513,
+                "subtype": 1,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 2048,
+                "size": 206848
+              },
+              {
+                "soc": 239,
+                "platform": 250646513,
+                "subtype": 3,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 208896,
+                "size": 206848
+              },
+              {
+                "soc": 239,
+                "platform": 250646513,
+                "subtype": 4,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 415744,
+                "size": 206848
+              },
+              {
+                "soc": 239,
+                "platform": 250646513,
+                "subtype": 5,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 622592,
+                "size": 206848
+              },
+              {
+                "soc": 239,
+                "platform": 250646513,
+                "subtype": 6,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 829440,
+                "size": 206848
+              },
+              {
+                "soc": 241,
+                "platform": 250646513,
+                "subtype": 1,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 2048,
+                "size": 206848
+              },
+              {
+                "soc": 241,
+                "platform": 250646513,
+                "subtype": 3,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 208896,
+                "size": 206848
+              },
+              {
+                "soc": 241,
+                "platform": 250646513,
+                "subtype": 4,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 415744,
+                "size": 206848
+              },
+              {
+                "soc": 241,
+                "platform": 250646513,
+                "subtype": 5,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 622592,
+                "size": 206848
+              },
+              {
+                "soc": 241,
+                "platform": 250646513,
+                "subtype": 6,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 829440,
+                "size": 206848
+              },
+              {
+                "soc": 263,
+                "platform": 250646513,
+                "subtype": 1,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 2048,
+                "size": 206848
+              },
+              {
+                "soc": 263,
+                "platform": 250646513,
+                "subtype": 3,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 208896,
+                "size": 206848
+              },
+              {
+                "soc": 263,
+                "platform": 250646513,
+                "subtype": 4,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 415744,
+                "size": 206848
+              },
+              {
+                "soc": 263,
+                "platform": 250646513,
+                "subtype": 5,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 622592,
+                "size": 206848
+              },
+              {
+                "soc": 263,
+                "platform": 250646513,
+                "subtype": 6,
+                "revision": 0,
+                "pmic": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "offset": 829440,
+                "size": 206848
+              }
+            ]
+          },
+          "reference_matches": {},
+          "stock_compatibility_verified": false,
+          "device_boot_tested": false
+        }
+      }
+    },
+    {
+      "name": "lineage-16.0-20261109-UNOFFICIAL-a7lte.zip",
+      "path": "/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/lineage-16.0-20261109-UNOFFICIAL-a7lte.zip",
+      "kind": "ota_zip",
+      "result": "PASS",
+      "errors": [],
+      "bytes": 460017403,
+      "sha256": "65417a09052167303ba7cd275fe136e253b9555874b7f39882db9f73e9cbf488",
+      "validation": {
+        "result": "PASS",
+        "scope": "Static packaging, hashes and ZIP CRC only; no firmware signature, build provenance, filesystem semantics, HAL compatibility, flashing or device boot/hardware validation",
+        "errors": [],
+        "crc_verified": true,
+        "non_ab_ota": true,
+        "ota_signature_verified": false,
+        "firmware_signature_verified": false,
+        "device_tested": false,
+        "crc_method": "ZipFile.testzip (bounded streaming)",
+        "entries": 11,
+        "total_uncompressed_bytes": 461398314,
+        "metadata": {
+          "ota-property-files": "metadata:69:320         ",
+          "ota-required-cache": "0",
+          "ota-type": "BLOCK",
+          "post-build": "samsung/lineage_a7lte/a7lte:9/PQ3A.190801.002/runner11092343:userdebug/test-keys",
+          "post-build-incremental": "eng.runner.20261109.234223",
+          "post-sdk-level": "28",
+          "post-security-patch-level": "2022-01-05",
+          "post-timestamp": "1794267809",
+          "pre-device": "a7lte"
+        },
+        "system_payloads": [
+          "system.new.dat.br"
+        ],
+        "embedded_boot_sha256": "c51e6b0ed903dbd4a990cb096c15d1598f8aaebf19e97744aa9d672ac90e6164",
+        "embedded_boot": {
+          "result": "PASS",
+          "scope": "Static packaging, hashes and ZIP CRC only; no firmware signature, build provenance, filesystem semantics, HAL compatibility, flashing or device boot/hardware validation",
+          "errors": [],
+          "inspection": {
+            "result": "PASS",
+            "image": "ZIP entry: boot.img",
+            "image_sha256": "c51e6b0ed903dbd4a990cb096c15d1598f8aaebf19e97744aa9d672ac90e6164",
+            "image_bytes": 8898576,
+            "format": "Samsung legacy DT/v0",
+            "header_sha1": "825fb9e4275a848bf6a85a01af9c3b0a0144ce5c",
+            "page_size": 2048,
+            "kernel_address": 2147516416,
+            "ramdisk_address": 2181038080,
+            "second_address": 2163212288,
+            "tags_address": 2178940928,
+            "os_version": "9.0.0",
+            "os_patch_level": "2022-01",
+            "board": "",
+            "cmdline": "console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive buildvariant=userdebug",
+            "payloads": {
+              "kernel": {
+                "offset": 2048,
+                "bytes": 6036416,
+                "sha256": "3e5605f26e35fee96eccdffa95f58a24c5e63e042b998b4bad78a5b8e2f87a5c"
+              },
+              "ramdisk": {
+                "offset": 6039552,
+                "bytes": 1821983,
+                "sha256": "33570a28513d2c68cfd781d5cfcccdf433690dfe57e891d77da50395177d21c7"
+              },
+              "second": {
+                "offset": 7862272,
+                "bytes": 0,
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "dt": {
+                "offset": 7862272,
+                "bytes": 1036288,
+                "sha256": "74270d174fd2f7e55f9d50826e573224a1d993cbe7661e3d5bc692bafe9dc3ed"
+              }
+            },
+            "trailer": {
+              "offset": 8898560,
+              "bytes": 16,
+              "value": "SEANDROIDENFORCE",
+              "opaque_signature_bytes": 0,
+              "opaque_signature_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "samsung_signature_verified": false
+            },
+            "qcdt": {
+              "version": 3,
+              "entries": 15,
+              "unique_dtbs": 5,
+              "table": [
+                {
+                  "soc": 239,
+                  "platform": 250646513,
+                  "subtype": 1,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 2048,
+                  "size": 206848
+                },
+                {
+                  "soc": 239,
+                  "platform": 250646513,
+                  "subtype": 3,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 208896,
+                  "size": 206848
+                },
+                {
+                  "soc": 239,
+                  "platform": 250646513,
+                  "subtype": 4,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 415744,
+                  "size": 206848
+                },
+                {
+                  "soc": 239,
+                  "platform": 250646513,
+                  "subtype": 5,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 622592,
+                  "size": 206848
+                },
+                {
+                  "soc": 239,
+                  "platform": 250646513,
+                  "subtype": 6,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 829440,
+                  "size": 206848
+                },
+                {
+                  "soc": 241,
+                  "platform": 250646513,
+                  "subtype": 1,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 2048,
+                  "size": 206848
+                },
+                {
+                  "soc": 241,
+                  "platform": 250646513,
+                  "subtype": 3,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 208896,
+                  "size": 206848
+                },
+                {
+                  "soc": 241,
+                  "platform": 250646513,
+                  "subtype": 4,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 415744,
+                  "size": 206848
+                },
+                {
+                  "soc": 241,
+                  "platform": 250646513,
+                  "subtype": 5,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 622592,
+                  "size": 206848
+                },
+                {
+                  "soc": 241,
+                  "platform": 250646513,
+                  "subtype": 6,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 829440,
+                  "size": 206848
+                },
+                {
+                  "soc": 263,
+                  "platform": 250646513,
+                  "subtype": 1,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 2048,
+                  "size": 206848
+                },
+                {
+                  "soc": 263,
+                  "platform": 250646513,
+                  "subtype": 3,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 208896,
+                  "size": 206848
+                },
+                {
+                  "soc": 263,
+                  "platform": 250646513,
+                  "subtype": 4,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 415744,
+                  "size": 206848
+                },
+                {
+                  "soc": 263,
+                  "platform": 250646513,
+                  "subtype": 5,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 622592,
+                  "size": 206848
+                },
+                {
+                  "soc": 263,
+                  "platform": 250646513,
+                  "subtype": 6,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 829440,
+                  "size": 206848
+                }
+              ]
+            },
+            "reference_matches": {},
+            "stock_compatibility_verified": false,
+            "device_boot_tested": false
+          }
+        }
+      }
+    },
+    {
+      "name": "lineage_a7lte-ota-eng.runner.zip",
+      "path": "/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/lineage_a7lte-ota-eng.runner.zip",
+      "kind": "ota_zip",
+      "result": "PASS",
+      "errors": [],
+      "bytes": 460017403,
+      "sha256": "65417a09052167303ba7cd275fe136e253b9555874b7f39882db9f73e9cbf488",
+      "validation": {
+        "result": "PASS",
+        "scope": "Static packaging, hashes and ZIP CRC only; no firmware signature, build provenance, filesystem semantics, HAL compatibility, flashing or device boot/hardware validation",
+        "errors": [],
+        "crc_verified": true,
+        "non_ab_ota": true,
+        "ota_signature_verified": false,
+        "firmware_signature_verified": false,
+        "device_tested": false,
+        "crc_method": "ZipFile.testzip (bounded streaming)",
+        "entries": 11,
+        "total_uncompressed_bytes": 461398314,
+        "metadata": {
+          "ota-property-files": "metadata:69:320         ",
+          "ota-required-cache": "0",
+          "ota-type": "BLOCK",
+          "post-build": "samsung/lineage_a7lte/a7lte:9/PQ3A.190801.002/runner11092343:userdebug/test-keys",
+          "post-build-incremental": "eng.runner.20261109.234223",
+          "post-sdk-level": "28",
+          "post-security-patch-level": "2022-01-05",
+          "post-timestamp": "1794267809",
+          "pre-device": "a7lte"
+        },
+        "system_payloads": [
+          "system.new.dat.br"
+        ],
+        "embedded_boot_sha256": "c51e6b0ed903dbd4a990cb096c15d1598f8aaebf19e97744aa9d672ac90e6164",
+        "embedded_boot": {
+          "result": "PASS",
+          "scope": "Static packaging, hashes and ZIP CRC only; no firmware signature, build provenance, filesystem semantics, HAL compatibility, flashing or device boot/hardware validation",
+          "errors": [],
+          "inspection": {
+            "result": "PASS",
+            "image": "ZIP entry: boot.img",
+            "image_sha256": "c51e6b0ed903dbd4a990cb096c15d1598f8aaebf19e97744aa9d672ac90e6164",
+            "image_bytes": 8898576,
+            "format": "Samsung legacy DT/v0",
+            "header_sha1": "825fb9e4275a848bf6a85a01af9c3b0a0144ce5c",
+            "page_size": 2048,
+            "kernel_address": 2147516416,
+            "ramdisk_address": 2181038080,
+            "second_address": 2163212288,
+            "tags_address": 2178940928,
+            "os_version": "9.0.0",
+            "os_patch_level": "2022-01",
+            "board": "",
+            "cmdline": "console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive buildvariant=userdebug",
+            "payloads": {
+              "kernel": {
+                "offset": 2048,
+                "bytes": 6036416,
+                "sha256": "3e5605f26e35fee96eccdffa95f58a24c5e63e042b998b4bad78a5b8e2f87a5c"
+              },
+              "ramdisk": {
+                "offset": 6039552,
+                "bytes": 1821983,
+                "sha256": "33570a28513d2c68cfd781d5cfcccdf433690dfe57e891d77da50395177d21c7"
+              },
+              "second": {
+                "offset": 7862272,
+                "bytes": 0,
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "dt": {
+                "offset": 7862272,
+                "bytes": 1036288,
+                "sha256": "74270d174fd2f7e55f9d50826e573224a1d993cbe7661e3d5bc692bafe9dc3ed"
+              }
+            },
+            "trailer": {
+              "offset": 8898560,
+              "bytes": 16,
+              "value": "SEANDROIDENFORCE",
+              "opaque_signature_bytes": 0,
+              "opaque_signature_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "samsung_signature_verified": false
+            },
+            "qcdt": {
+              "version": 3,
+              "entries": 15,
+              "unique_dtbs": 5,
+              "table": [
+                {
+                  "soc": 239,
+                  "platform": 250646513,
+                  "subtype": 1,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 2048,
+                  "size": 206848
+                },
+                {
+                  "soc": 239,
+                  "platform": 250646513,
+                  "subtype": 3,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 208896,
+                  "size": 206848
+                },
+                {
+                  "soc": 239,
+                  "platform": 250646513,
+                  "subtype": 4,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 415744,
+                  "size": 206848
+                },
+                {
+                  "soc": 239,
+                  "platform": 250646513,
+                  "subtype": 5,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 622592,
+                  "size": 206848
+                },
+                {
+                  "soc": 239,
+                  "platform": 250646513,
+                  "subtype": 6,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 829440,
+                  "size": 206848
+                },
+                {
+                  "soc": 241,
+                  "platform": 250646513,
+                  "subtype": 1,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 2048,
+                  "size": 206848
+                },
+                {
+                  "soc": 241,
+                  "platform": 250646513,
+                  "subtype": 3,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 208896,
+                  "size": 206848
+                },
+                {
+                  "soc": 241,
+                  "platform": 250646513,
+                  "subtype": 4,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 415744,
+                  "size": 206848
+                },
+                {
+                  "soc": 241,
+                  "platform": 250646513,
+                  "subtype": 5,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 622592,
+                  "size": 206848
+                },
+                {
+                  "soc": 241,
+                  "platform": 250646513,
+                  "subtype": 6,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 829440,
+                  "size": 206848
+                },
+                {
+                  "soc": 263,
+                  "platform": 250646513,
+                  "subtype": 1,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 2048,
+                  "size": 206848
+                },
+                {
+                  "soc": 263,
+                  "platform": 250646513,
+                  "subtype": 3,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 208896,
+                  "size": 206848
+                },
+                {
+                  "soc": 263,
+                  "platform": 250646513,
+                  "subtype": 4,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 415744,
+                  "size": 206848
+                },
+                {
+                  "soc": 263,
+                  "platform": 250646513,
+                  "subtype": 5,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 622592,
+                  "size": 206848
+                },
+                {
+                  "soc": 263,
+                  "platform": 250646513,
+                  "subtype": 6,
+                  "revision": 0,
+                  "pmic": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": 829440,
+                  "size": 206848
+                }
+              ]
+            },
+            "reference_matches": {},
+            "stock_compatibility_verified": false,
+            "device_boot_tested": false
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "device_tested": false,
+  "flash_ready": false,
+  "rom_zip_static_validated": true,
+  "result": "PASS",
+  "completeness": "rom_zip_present"
+}

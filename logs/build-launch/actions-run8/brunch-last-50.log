@@ -1,0 +1,50 @@
+extra_recovery_keys       = (str) vendor/lineage/build/target/product/security/lineage
+fs_type                   = (str) ext4
+fstab                     = (dict) {'/cache': <common.Partition object at 0x7fa5852d8590>, '/data': <common.Partition object at 0x7fa5852d8550>, '/system': <common.Partition object at 0x7fa5852d84d0>, '/efs': <common.Partition object at 0x7fa5852d8c10>, '/persist': <common.Partition object at 0x7fa5852d8490>, '/recovery': <common.Partition object at 0x7fa5852d8510>, '/firmware': <common.Partition object at 0x7fa5852d86d0>, '/firmware-modem': <common.Partition object at 0x7fa5852d8690>, '/boot': <common.Partition object at 0x7fa5852d85d0>}
+fstab_version             = (int) 2
+mkbootimg_args            = (str) --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
+mkbootimg_version_args    = (str) --os_version 9 --os_patch_level 2022-01-05
+multistage_support        = (str) 1
+no_gzip_recovery_ramdisk  = (str) true
+ota_override_device       = (str) auto
+recovery_api_version      = (int) 3
+recovery_mount_options    = (str) ext4=max_batch_time=0,commit=1,data=ordered,barrier=1,errors=panic,nodelalloc
+recovery_size             = (int) 15728640
+selinux_fc                = (str) /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin
+squashfs_sparse_flag      = (str) -s
+system_size               = (int) 2631925760
+tool_extensions           = (str) device/samsung/a7lte/../common
+use_set_metadata          = (str) 1
+vendor.build.prop         = (dict) {}
+  running:  openssl pkcs8 -in build/target/product/security/testkey.pk8 -inform DER -nocrypt
+unable to load device-specific module; assuming none
+using prebuilt recovery.img from BOOTABLE_IMAGES...
+Total of 642560 4096-byte output blocks in 22 input chunks.
+Finding transfers...
+Generating digraph...
+Finding vertex sequence...
+Reversing backward edges...
+  0/0 dependencies (0.00%) were violated; 0 source blocks stashed.
+Improving vertex order...
+Revising stash size...
+  Total 0 blocks (0 bytes) are packed as new blocks due to insufficient cache size.
+Reticulating splines...
+ 999145472  999145472 (100.00%)     new __DATA 0-165 174 190-384 8222-32769 32926-98305 98462-163841 163998-229377 229534-252411 294912-294913 524288 524291
+max stashed blocks: 0  (0 bytes), limit: 167772160 bytes (0.00%)
+
+  Imgdiff Stats Report  
+========================
+
+Compressing system.new.dat with brotli
+  running:  brotli --quality=6 --output=/tmp/tmpbLgxS4/system.new.dat.br /tmp/tmpbLgxS4/system.new.dat
+using prebuilt boot.img from BOOTABLE_IMAGES...
+   boot size (8898576) is 65.28% of limit (13631488)
+  running:  java -Xmx2048m -Djava.library.path=/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/host/linux-x86/lib64 -jar /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/host/linux-x86/framework/signapk.jar -w build/target/product/security/testkey.x509.pem build/target/product/security/testkey.pk8 /tmp/tmpR3wzeN.zip /tmp/tmpkF2dd0.zip
+  running:  zip -d /tmp/tmpkF2dd0.zip META-INF/com/android/metadata
+  running:  java -Xmx2048m -Djava.library.path=/home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/host/linux-x86/lib64 -jar /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/host/linux-x86/framework/signapk.jar -w build/target/product/security/testkey.x509.pem build/target/product/security/testkey.pk8 /tmp/tmpkF2dd0.zip /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/lineage_a7lte-ota-eng.runner.zip
+done.
+[100% 74939/74939] build bacon
+Package Complete: /home/runner/work/android_device_samsung_a7lte/android_device_samsung_a7lte/lineage/out/target/product/a7lte/lineage-16.0-20261109-UNOFFICIAL-a7lte.zip
+
+#### build completed successfully (36:51 (mm:ss)) ####
+

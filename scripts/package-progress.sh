@@ -16,9 +16,9 @@ for p in sorted(root.rglob('*')):
         rows.append(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+str(p.relative_to(root)))
 (root/'PHASE3-SHA256SUMS').write_text('\n'.join(rows)+'\n')
 PY
-TMP=$(mktemp /tmp/a7lte-update.XXXXXX.tar.gz)
-trap 'rm -f "$TMP"' EXIT
 mkdir -p "$(dirname "$OUTPUT")"
+TMP=$(mktemp "$(dirname "$OUTPUT")/.a7lte-update.XXXXXX.tar.gz")
+trap 'rm -f "$TMP"' EXIT
 tar -czf "$TMP" --exclude='*.tar.gz' --exclude='*.tar.gz.sha256' --exclude='__pycache__' --exclude='tooling/git-repo' \
     README.md STATUS.md Containerfile local_manifests.xml .find-ignore .github ci sources.lock.json host-tools.lock.json scripts manifests patches templates tests android docs logs artifacts tooling sources/hal-audit sources/dtbtool.c sources/dtbtool.origin.json
 mv "$TMP" "$OUTPUT"

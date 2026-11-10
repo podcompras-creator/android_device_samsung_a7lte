@@ -1,0 +1,40 @@
+{
+  "repo": "podcompras-creator/android_device_samsung_a7lte",
+  "run_id": 42720944356,
+  "job_id": 129514455494,
+  "source_commit": "85cd89dfc5d6e17a4ba24396bcc8ec86ba42c934",
+  "trigger_commit": "1f2b06c7b1d5d91cba8ae58bcf996aaf4916da72",
+  "run_url": "https://github.com/podcompras-creator/android_device_samsung_a7lte/actions/runs/42720944356",
+  "state": "completed",
+  "next_action": "Preserve actual generated ROM; separate byte-identical outputs into smaller delivery artifacts without recompiling",
+  "native_run6_boot": {
+    "path": "artifacts/android-run6-unvalidated/boot.img",
+    "sha256": "47b4e676934f3d3e54268f2593fe22113c1f1875669fabcf10e5259197a7d4f9",
+    "static_result": "FAIL_wrong_load_offsets"
+  },
+  "header_repack": {
+    "path": "artifacts/android-run6-header-repack/boot.img",
+    "sha256": "af5d65080e910fe8cc8abf6f463ccf340a704ba55206206b05688cd71971e277",
+    "overall_result": "PARTIAL_no_SYSTEM_no_ROM"
+  },
+  "goal": "Continue autonomous build/error correction until actual native ROM ZIP is generated and inspected, or demonstrated external blocker",
+  "conclusion": "success",
+  "failure": "WebView APK is an unresolved Git LFS pointer; signapk zip END header not found",
+  "previous_run7": {
+    "id": 42639113395,
+    "result": "failure",
+    "error": "unhydrated WebView Git LFS pointer",
+    "boot_sha256": "f51ff79947cebf236d5eac3bde198b834eab1c71d391ceea16056a7b552d44f7",
+    "boot_static_result": "PASS",
+    "complete_ROM": false
+  },
+  "rom": {
+    "name": "lineage-16.0-20261109-UNOFFICIAL-a7lte.zip",
+    "bytes": 460017403,
+    "sha256": "65417a09052167303ba7cd275fe136e253b9555874b7f39882db9f73e9cbf488",
+    "artifact_id": 13723127389,
+    "static_validation": "PASS",
+    "device_tested": false,
+    "flash_ready": false
+  }
+}

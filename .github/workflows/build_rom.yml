@@ -363,9 +363,22 @@ jobs:
         with:
           name: a7lte-${{ github.run_number }}
           path: |
-            ${{ github.workspace }}/lineage/out/target/product/a7lte/*.zip
+            ${{ github.workspace }}/lineage/out/target/product/a7lte/lineage-*.zip
             ${{ github.workspace }}/lineage/out/target/product/a7lte/boot.img
             ${{ github.workspace }}/logs/
+          if-no-files-found: warn
+          retention-days: 14
+          compression-level: 1
+
+      - name: Upload separado do boot realmente produzido
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a7lte-boot-${{ github.run_number }}
+          path: |
+            ${{ github.workspace }}/lineage/out/target/product/a7lte/boot.img
+            ${{ github.workspace }}/logs/SHA256SUMS
+            ${{ github.workspace }}/logs/artifact-validation.json
           if-no-files-found: warn
           retention-days: 14
           compression-level: 1

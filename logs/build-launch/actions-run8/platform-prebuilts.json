@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "target_arch": "arm",
+  "scope": "Git LFS archive inputs and ARM32 WebView integrity only; no full platform or hardware validation",
+  "inputs": [
+    {
+      "path": "external/chromium-webview/prebuilt/arm/webview.apk",
+      "repository": "external/chromium-webview/prebuilt/arm",
+      "revision": "b2639126d02b401ae8a8a7f3ca302633713a12e6",
+      "git_lfs_pointer": {
+        "sha256": "b7268786318f404bdad53eaaec889619ff30100b935541a9e393e32efed3cf11",
+        "bytes": 90257078
+      },
+      "materialized_with_normal_git_lfs": true,
+      "bytes": 90257078,
+      "sha256": "b7268786318f404bdad53eaaec889619ff30100b935541a9e393e32efed3cf11",
+      "zip_crc_verified": true,
+      "entries": 620,
+      "arm32_jni_verified": true,
+      "required_entries": [
+        "AndroidManifest.xml",
+        "classes.dex",
+        "resources.arsc",
+        "lib/armeabi-v7a/libwebviewchromium.so"
+      ]
+    }
+  ],
+  "unselected_webview_architectures": [
+    "external/chromium-webview/prebuilt/x86_64/webview.apk",
+    "external/chromium-webview/prebuilt/x86/webview.apk",
+    "external/chromium-webview/prebuilt/arm64/webview.apk"
+  ]
+}

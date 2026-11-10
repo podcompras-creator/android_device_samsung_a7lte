@@ -11,26 +11,38 @@ LineageOS16 foi sincronizada por completo no GitHub Actions. O runner observado
 possui16GiB de RAM; havia61GiB livres antes do build da execução42541519000.
 O disco local de aproximadamente8GiB não é usado para compilar o Android inteiro.
 
-A execução42639113395 (tentativa7) passou no target nativo sepolicy_tests e
-avançou até65196/74939etapas. Parou ao assinar WebView: o arquivo de entrada
-era um ponteiro Git LFS de texto, gerando zip END header not found. Não houve
-esgotamento de RAM ou disco:32GiB ainda livres no final. Não há ROM ZIP gerada.
-Logs: logs/build-launch/actions-run7, incluindo as últimas50linhas reais.
+A execução42720944356 (tentativa8) concluiu a compilação completa com saída0:
+74939/74939etapas, build bacon, duração36:51. sepolicy_tests nativo passou.
+O ZIP real lineage-16.0-20261109-UNOFFICIAL-a7lte.zip tem460017403bytes,
+SHA256 65417a09052167303ba7cd275fe136e253b9555874b7f39882db9f73e9cbf488.
+A validação estática nativa passou: CRC, OTA BLOCK/API28/a7lte, boot incorporado
+igual ao boot independente, cabeçalhos Samsung e limites de partições.
+Boot:8898576bytes, SHA256 c51e6b0ed903dbd4a990cb096c15d1598f8aaebf19e97744aa9d672ac90e6164.
+Recovery:11874320bytes validado no runner; não enviado como arquivo separado.
+Logs completos compactados e últimas50linhas: logs/build-launch/actions-run8.
 
-O fallback bootimage terminou com saída0:8894480bytes,
-SHA256 f51ff79947cebf236d5eac3bde198b834eab1c71d391ceea16056a7b552d44f7.
-A verificação estrutural passou com os offsets CSB1corrigidos; o resultado
-global permanece PARTIAL, sem SYSTEM nem ROM e sem teste físico.
-O boot anterior da tentativa6 permanece preservado em
-artifacts/android-run6-unvalidated, com seus offsets incorretos documentados.
+A causa da tentativa7 foi resolvida: webview.apk era um ponteiro Git LFS.
+A nova etapa materializou o APK oficial no runner e conferiu SHA256, tamanho,
+CRC das620entradas e JNI ELF32 ARM. Dez testes direcionados passaram.
+O APK oficial declara minSdkVersion26, compatível como requisito mínimo com
+API28. Os46testes antigos não foram repetidos, e não houve build local.
 
-A correção atual instala git-lfs e materializa os arquivos de entrada reais
-antes de compilar, verificando SHA256/tamanho do ponteiro versionado, CRC ZIP
-e JNI ELF32 ARM do WebView. O endpoint oficial respondeu com o objeto esperado
-de90257078bytes; a sonda verificou somente identidade e primeiros bytes.
-O download completo será conferido no runner. Dez testes direcionados passaram,
-incluindo hash errado, CRC, arquitetura, JNI, compressão incompatível e disco.
-Os46testes antigos não foram repetidos.
+O runner terminou com apenas1.6GiB livres, apesar de completar. O artefato
+combinado guarda duas cópias idênticas do ZIP e soma927448663bytes, acima do
+limite512MiB do conector. Um workflow de entrega separa os arquivos existentes
+com conferência dos hashes, sem compilar, alterar imagens nem reassinar a ROM.
+Artefato original preservado:
+https://github.com/podcompras-creator/android_device_samsung_a7lte/actions/runs/42720944356/artifacts/13723127389 .
+
+A inspeção do ramdisk real da tentativa7 confirmou init.target, init.qcom,
+fstab e ueventd idênticos às fontes atuais. A referência ausente init.carrier.rc
+é um aviso legado não fatal segundo o código Pie fixado; nenhum arquivo stock
+foi copiado para preenchê-la. As imagens anteriores e os pacotes permanecem
+preservados, inclusive o boot da tentativa6 com seus offsets errados documentados.
+
+Nenhum boot nem teste de HAL ocorreu no aparelho. O sucesso da compilação e
+as verificações estáticas não tornam este ZIP uma ROM funcional ou certificada
+para instalação. As incompatibilidades conhecidas de GPS/RIL continuam abaixo.
 
 ## Concluído nesta integração
 
@@ -61,9 +73,8 @@ Os46testes antigos não foram repetidos.
 
 ## Pendências demonstradas
 
-- Android completo, imagens finais e empacotamento: dependem da próxima
-  execução com o APK WebView real. A tentativa7 confirmou as correções nativas
-  de política e offsets; a correção Git LFS ainda precisa passar no runner.
+- A compilação completa e o ZIP estão concluídos. Permanecem as verificações
+  físicas e de ABI/HAL abaixo; nenhuma aprovação para flash foi emitida.
 - GPS: libloc_api_v02.so exige o objeto sec_gps_conf, ausente no fornecedor de
   fonte selecionado. O objeto existe no libgps.utils.so stock não instalado.
 - RIL: o protobuf nativo3.0 usa assinatura de construtor incompatível com a
